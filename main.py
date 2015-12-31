@@ -23,7 +23,7 @@ def serve(date):
     choice = int(input(prompt))
 
     if choice == len(games) + 1:
-        return '\n' + html.unescape(prep_all(games))
+        return html.unescape(prep_all(games))
     else:
         return '\n' + html.unescape(prep_single(games[choice - 1]))
 
@@ -59,20 +59,14 @@ def parse(response):
 def prep_all(games):
     output = ''
     for game in games:
-        output += '\n' + prep_single(game) + '\n'
+        output += '\n' + prep_single(game)
     return output
 
 
 def prep_single(game):
-
-    team_1 = game['visitor']['name'].ljust(14)
-    score_1 = game['visitor']['score'].rjust(3)
-
-    team_2 = game['home']['name'].rjust(14)
-    score_2 = game['home']['score'].ljust(3)
-
-    line = '{0} {1} : {2} {3} [{4}]'.format(team_1, score_1, score_2, team_2, game['status'])
-    return line
+    team_1, score_1 = game['visitor']['name'].ljust(14), game['visitor']['score'].rjust(3)
+    team_2, score_2 = game['home']['name'].rjust(14), game['home']['score'].ljust(3)
+    return '{0} {1} : {2} {3} [{4}]'.format(team_1, score_1, score_2, team_2, game['status'])
 
 if __name__ == '__main__':
     print(serve(date))

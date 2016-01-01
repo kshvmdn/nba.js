@@ -1,10 +1,12 @@
 import requests
-import sys
 import html
 from datetime import date as d
+from args import parse_args
 
 URL = 'http://data.nba.com/data/json/cms/noseason/scoreboard/{0}/games.json'
-date = d.today().strftime('%Y%m%d') if len(sys.argv) == 1 else str(sys.argv[1])
+
+args = parse_args()
+date, show_all = d.today().strftime('%Y%m%d') if args.d is None else args.d, args.a
 
 
 def serve(date):
@@ -17,21 +19,21 @@ def serve(date):
     if len(games) == 0:  # no games
         return 'No games for provided date'
 
+    if show_all:
+        return stringify_all(games) + '\n'
+
     prompt = ''
     for i in range(len(games)):
         game_str = '{0}: {1} @ {2}'
         prompt += game_str.format(i + 1, games[i]['visitor']['abbr'], games[i]['home']['abbr'])
         prompt += '\n'
-    prompt += str(len(games) + 1) + ': All\n' + '>>> '
+    prompt += '>>> '
 
     choice = input(prompt)
-    while not choice.isnumeric():
+    while not choice.isnumeric() and (1 <= choice <= len(games)):
         choice = input(prompt)
 
-    if int(choice) == len(games) + 1:
-        return stringify_all(games)
-    else:
-        return stringify_single(games[int(choice) - 1])
+    return stringify_single(games[int(choice) - 1])
 
 
 def fetch(date):

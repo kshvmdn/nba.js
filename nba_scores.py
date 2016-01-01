@@ -30,7 +30,7 @@ def serve(date):
     prompt += '>>> '
 
     choice = input(prompt)
-    while not choice.isnumeric() and (1 <= choice <= len(games)):
+    while not choice.isnumeric() and 1 <= choice <= len(games):
         choice = input(prompt)
 
     return stringify_single(games[int(choice) - 1])

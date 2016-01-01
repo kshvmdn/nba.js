@@ -1,20 +1,23 @@
-import requests
-import html
-from datetime import date as d
-from args import parse_args
+import requests, html
+import datetime as dt
+
+from args import parse_arguments as parse_args
 
 URL = 'http://data.nba.com/data/json/cms/noseason/scoreboard/{0}/games.json'
 
 args = parse_args()
-date, show_all = d.today().strftime('%Y%m%d') if args.d is None else args.d, args.a
+score_date, show_all = dt.date.today().strftime('%Y%m%d') if args.d is None else args.d, bool(args.a)
 
 
 def serve(date):
-    # check for date out of range
+
+    # check for invalid date
     try:
-        games = parse(fetch(date))
+        dt.datetime.strptime(date, '%Y%m%d').date()
     except ValueError:
-        games = parse(fetch(d.today().strftime('%Y%m%d')))
+        date = dt.date.today().strftime('%Y%m%d')
+
+    games = parse(fetch(date))
 
     if len(games) == 0:  # no games
         return 'No games for provided date'
@@ -30,7 +33,7 @@ def serve(date):
     prompt += '>>> '
 
     choice = input(prompt)
-    while not choice.isnumeric() and 1 <= choice <= len(games):
+    while not choice.isnumeric() or int(choice) not in range(1, len(games) + 1):
         choice = input(prompt)
 
     return stringify_single(games[int(choice) - 1])
@@ -76,4 +79,4 @@ def stringify_single(game):
     return html.unescape(output)
 
 if __name__ == '__main__':
-    print(serve(date))
+    print(serve(score_date))

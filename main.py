@@ -47,7 +47,7 @@ def parse(response):
              'game_clock': game['period_time']['game_clock']}
 
         g['status'] = '{0} - {1}'.format(g['period_status'], g['game_clock'])
-        if g['game_clock'] == '':
+        if g['game_clock'] == '' or g['period_status'] == 'Final':
             g['status'] = g['period_status']
 
         for team in ('visitor', 'home'):

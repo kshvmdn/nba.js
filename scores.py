@@ -70,10 +70,9 @@ def parse(response):
 def stringify_all(games):
     output = ''
     for game in games:
-        output += '\n'
         team_1, score_1 = game['visitor']['name'].ljust(14), game['visitor']['score'].rjust(3)
         team_2, score_2 = game['home']['name'].rjust(14), game['home']['score'].ljust(3)
-        output += '{0} {1} : {2} {3} [{4}]'.format(team_1, score_1, score_2, team_2, game['status'])
+        output += '{0} {1} : {2} {3} [{4}]\n'.format(team_1, score_1, score_2, team_2, game['status'])
     return html.unescape(output)
 
 

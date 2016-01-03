@@ -27,10 +27,13 @@ def serve(date):
     prompt += '>>> '
 
     choice = input(prompt)
-    while not choice.isnumeric() or int(choice) not in range(1, len(games) + 1):
+    while not choice.isnumeric() or int(choice) not in range(0, len(games) + 1):
         choice = input(prompt)
 
-    return stringify_single(games[int(choice) - 1])
+    if int(choice) ==  0:
+        return stringify_all(games)
+    else:
+        return stringify_single(games[int(choice) - 1])
 
 
 def validate_date(date):

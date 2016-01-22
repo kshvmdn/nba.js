@@ -1,13 +1,21 @@
 import requests
 import html
 import datetime as dt
-from args import parse_arguments as parse_args
+import argparse
 
-URL = 'http://data.nba.com/data/json/cms/noseason/scoreboard/{0}/games.json'
 TODAY = dt.date.today().strftime('%Y%m%d')
 
-args = parse_args()
-score_date, show_all = TODAY if args.d is None else args.d, bool(args.a)
+TODAY = dt.date.today()
+
+parser = argparse.ArgumentParser(description='Get live NBA game updates.')
+parser.add_argument('--d', dest="date", type=str,
+                    help='the date for which scores will be shown (default: today)')
+parser.add_argument('--a', dest='show_all', action='store_true',
+                    help='choose to see all scores for given date (default: False)')
+parser.set_defaults(show_all=False, date=TODAY)
+
+args = parser.parse_args()
+score_date, show_all = args.date, args.show_all  # default to TODAY, False if None
 
 
 def serve(date):

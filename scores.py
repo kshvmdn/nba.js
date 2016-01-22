@@ -39,14 +39,14 @@ def serve(date):
     return stringify.all(games) if int(choice) == 0 else stringify.single(games[int(choice) - 1])
 
 
-def validate_date(date):
-    '''Determine if arg date is valid, else return TODAY.'''
+def validate_date(d):
+    '''Determine if arg --d is valid date, else return TODAY.'''
 
-    if date == 'y':
+    if d == 'y' or d == 'yesterday':
         return (TODAY - dt.timedelta(1)).strftime('%Y%m%d')
 
     try:
-        dt.datetime.strptime(date, '%Y%m%d').date()
+        dt.datetime.strptime(d, '%Y%m%d').date()
     except ValueError:
         return TODAY.strftime('%Y%m%d')
 

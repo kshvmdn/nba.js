@@ -53,12 +53,12 @@ def parse(response):
     games = []
     for game in response['sports_content']['games']['game']:
         g = {
-            'loc': '{0} - {1}, {2}'.format(game['arena'], game['city'], game['state']),
+            'loc': '{} - {}, {}'.format(game['arena'], game['city'], game['state']),
             'date': game['date'], 'time': game['time'],
             'period_status': game['period_time']['period_status'],
             'game_clock': game['period_time']['game_clock']
         }
-        g['status'] = '{0} - {1}'.format(g['period_status'], g['game_clock'])
+        g['status'] = '{} - {}'.format(g['period_status'], g['game_clock'])
         if g['game_clock'] == '' or g['period_status'] == 'Final':
             g['status'] = g['period_status']
         for team in ('visitor', 'home'):
@@ -75,16 +75,14 @@ def stringify_all(games):
     for game in games:
         team_1, score_1 = game['visitor']['name'].ljust(14), game['visitor']['score'].rjust(3)
         team_2, score_2 = game['home']['name'].rjust(14), game['home']['score'].ljust(3)
-        output += '{0} {1} : {2} {3} [{4}]\n'.format(team_1, score_1, score_2, team_2, game['status'])
+        output += '{} {} : {} {} [{}]\n'.format(team_1, score_1, score_2, team_2, game['status'])
     return html.unescape(output)
 
 
 def stringify_single(game):
-    # TODO add quarterly scores.
-
     team_1, score_1 = game['visitor']['name'], game['visitor']['score']
     team_2, score_2 = game['home']['name'], game['home']['score']
-    output = '{0} {1} : {2} {3} [{4}]'.format(team_1, score_1, score_2, team_2, game['status'])
+    output = '{} {} : {} {} [{}]'.format(team_1, score_1, score_2, team_2, game['status'])
     return html.unescape(output)
 
 

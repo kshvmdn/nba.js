@@ -51,3 +51,7 @@ def validate_date(d):
         return TODAY.strftime('%Y%m%d')
 
     return d
+
+
+if __name__ == '__main__':
+    print(serve(score_date))

@@ -1,6 +1,6 @@
 # NBAScores
 Get live NBA game updates through the command line.
-## Usage
+#### Usage
 Clone project
 ```bash
 git clone https://github.com/kshvmdn/nba-scores && cd nba-scores
@@ -14,4 +14,7 @@ Run `main.py` for a list of *today's* games to choose from.
 python3 main.py
 ```
 
-View scores from a given date w/ `--d` (format: YYYYMMDD)[`y` for *yesterday's* games] and see all scores for a given date w/ `--a`. **Run `scores.py -h` for more help.**
+View scores from a given date w/ `--d` (format: YYYYMMDD) [`y` for *yesterday's* games], see all scores for a date w/ `--a`, `-h` for more help.
+
+#### Contribute
+Feel free to open issues/make pull requests! All contributions are welcome.

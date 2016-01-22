@@ -37,11 +37,16 @@ def serve(date):
 
 
 def validate_date(date):
-    """Determine if arg date is valid, else return TODAY."""
+    '''Determine if arg date is valid, else return TODAY.'''
+
+    if date == 'y':
+        return (TODAY - dt.timedelta(1)).strftime('%Y%m%d')
+
     try:
         dt.datetime.strptime(date, '%Y%m%d').date()
     except ValueError:
-        return TODAY
+        return TODAY.strftime('%Y%m%d')
+
     return date
 
 

@@ -11,7 +11,7 @@ parser.add_argument('--d', dest="date", type=str,
                     help='the date for which scores will be shown (default: today)')
 parser.add_argument('--a', dest='show_all', action='store_true',
                     help='choose to see all scores for given date (default: False)')
-parser.set_defaults(show_all=False, date=TODAY)
+parser.set_defaults(show_all=False, date=TODAY.strftime('%Y%m%d'))
 
 args = parser.parse_args()
 score_date, show_all = args.date, args.show_all  # default to TODAY, False if None

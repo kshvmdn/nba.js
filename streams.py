@@ -2,7 +2,7 @@ import bs4
 import html
 import requests
 
-STREAMS_URL = 'http://www.reddit.com/r/nbastreams.json?limit=20'
+STREAMS_URL = 'http://www.reddit.com/r/nbastreams.json?limit=30'
 # STREAMS_URL = 'https://api.myjson.com/bins/40flf'
 
 

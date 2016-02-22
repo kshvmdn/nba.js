@@ -7,10 +7,10 @@ from fetch import fetch
 TODAY = dt.date.today()
 
 parser = argparse.ArgumentParser(description='Get live NBA game updates.')
-parser.add_argument('--d', dest="date", type=str,
-                    help='the date for which scores will be shown (default: today)')
-parser.add_argument('--a', dest='show_all', action='store_true',
-                    help='choose to see all scores for given date (default: False)')
+parser.add_argument('-d', dest="date", type=str,
+                    help='date to see scores for (default=today)')
+parser.add_argument('-a', dest='show_all', action='store_true',
+                    help='see all scores or choose game (default=False)')
 parser.set_defaults(show_all=False, date=TODAY.strftime('%Y%m%d'))
 
 args = parser.parse_args()

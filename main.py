@@ -1,7 +1,7 @@
 import datetime as dt
 import argparse
 
-import stringify
+import output
 from fetch import fetch
 
 TODAY = dt.date.today()
@@ -14,7 +14,7 @@ parser.add_argument('-a', dest='show_all', action='store_true',
 parser.set_defaults(show_all=False, date=TODAY.strftime('%Y%m%d'))
 
 args = parser.parse_args()
-score_date, show_all = args.date, args.show_all  # default to TODAY, False if None
+score_date, show_all = args.date, args.show_all
 
 
 def serve(date):
@@ -24,7 +24,7 @@ def serve(date):
         return 'No games for provided date.'
 
     if show_all:
-        return stringify.all(games)
+        return output.all(games)
 
     prompt = ''
     for i in range(len(games)):
@@ -32,11 +32,11 @@ def serve(date):
             i + 1, games[i]['visitor']['abbr'], games[i]['home']['abbr'])
     prompt += '>>> '
 
-    choice = input(prompt)
-    while not choice.isnumeric() or int(choice) not in range(0, len(games) + 1):
-        choice = input(prompt)
+    c = input(prompt)
+    while not c.isnumeric() or int(c) not in range(0, len(games)+1):
+        c = input(prompt)
 
-    return stringify.all(games) if int(choice) == 0 else stringify.single(games[int(choice) - 1])
+    return output.all(games) if int(c) == 0 else output.single(games[int(c)-1])
 
 
 def validate_date(d):

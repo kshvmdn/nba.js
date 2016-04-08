@@ -4,6 +4,7 @@ const got = require('got');
 const _ = require('underscore');
 const Table = require('cli-table');
 const leftpad = require('left-pad');
+const options = require('./options');
 
 const getHost = date => `http://data.nba.com/data/5s/json/cms/noseason/scoreboard/${date}/games.json`;
 

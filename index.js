@@ -71,3 +71,19 @@ const format = (date, games) => {
   });
   return table.toString();
 };
+
+const fetch = date => {
+  return got(getHost(date), options)
+    .then(response => {
+      return parse(response.body);
+    })
+    .then(response => {
+      console.log(format(date, response));
+    })
+    .catch(error => {
+      console.error(error.message);
+      process.exit(1);
+    });
+};
+
+module.exports = options => fetch(options.date);

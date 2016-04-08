@@ -1,6 +1,5 @@
 'use strict';
 
-// const chalk = require('chalk');
 const got = require('got');
 const _ = require('underscore');
 const Table = require('cli-table');

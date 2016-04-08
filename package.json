@@ -3,12 +3,21 @@
   "version": "0.0.0",
   "description": "A cli for viewing scores and updates for NBA games.",
   "main": "index.js",
-  "scripts": {
-    "test": "ava"
+  "engines": {
+    "node": ">=4"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kshvmdn/nba-games.git"
+  },
+  "bin": {
+    "nba": "./bin/nba-games"
+  },
+  "author": "Kashav Madan <kshvmdn@gmail.com> (kshvmdn.me)",
+  "license": "MIT",
+  "scripts": {
+    "lint": "xo *.js --space --esnext --env=node",
+    "test": "npm run lint"
   },
   "keywords": [
     "nba",
@@ -17,10 +26,17 @@
     "kshvmdn",
     "cli"
   ],
-  "author": "Kashav Madan <kshvmdn@gmail.com> (kshvmdn.me)",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/kshvmdn/nba-games/issues"
   },
-  "homepage": "https://github.com/kshvmdn/nba-games#readme"
+  "homepage": "https://github.com/kshvmdn/nba-games#readme",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "got": "^6.3.0",
+    "minimist": "^1.2.0",
+    "pinkie-promise": "^2.0.0"
+  },
+  "devDependencies": {
+    "xo": "^0.13.0"
+  }
 }

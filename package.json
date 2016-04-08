@@ -1,0 +1,26 @@
+{
+  "name": "nba-games",
+  "version": "0.0.0",
+  "description": "A cli for viewing scores and updates for NBA games.",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kshvmdn/nba-games.git"
+  },
+  "keywords": [
+    "nba",
+    "scores",
+    "daily",
+    "kshvmdn",
+    "cli"
+  ],
+  "author": "Kashav Madan <kshvmdn@gmail.com> (kshvmdn.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kshvmdn/nba-games/issues"
+  },
+  "homepage": "https://github.com/kshvmdn/nba-games#readme"
+}

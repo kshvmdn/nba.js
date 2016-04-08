@@ -32,9 +32,11 @@
   "homepage": "https://github.com/kshvmdn/nba-games#readme",
   "dependencies": {
     "chalk": "^1.1.3",
+    "cli-table": "^0.3.1",
     "got": "^6.3.0",
     "minimist": "^1.2.0",
-    "pinkie-promise": "^2.0.0"
+    "moment": "^2.12.0",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "xo": "^0.13.0"

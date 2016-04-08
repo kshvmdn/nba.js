@@ -1,9 +1,7 @@
 'use strict';
 
-const chalk = require('chalk');
 // const chalk = require('chalk');
 const got = require('got');
-const Promise = require('pinkie-promise');
 const _ = require('underscore');
 const Table = require('cli-table');
 

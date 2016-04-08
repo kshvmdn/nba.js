@@ -3,6 +3,7 @@
 const got = require('got');
 const _ = require('underscore');
 const Table = require('cli-table');
+const leftpad = require('left-pad');
 
 const getHost = date => `http://data.nba.com/data/5s/json/cms/noseason/scoreboard/${date}/games.json`;
 
@@ -46,6 +47,7 @@ const format = (date, games) => {
     const homeTeam = game.home.team.name.trim();
     const homeScore = game.home.score.trim() === '' ? 0 : game.home.score;
     const awayTeam = game.visitor.team.name.trim();
+    const awayScore = game.visitor.score.trim() === '' ? 0 : leftpad(game.visitor.score.trim(), 3, ' ');
     const status = `${game.period.status.trim()}${(game.period.clock.trim() === '' ? '' : `, ${game.period.clock.trim()}`)}`;
 
     let row = [awayTeam, awayScore, homeScore, homeTeam, status]

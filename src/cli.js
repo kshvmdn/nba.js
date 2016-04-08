@@ -57,7 +57,7 @@ exports.run = options => {
         date = today.add(1, 'days');
         break;
       default:
-        date = moment(date, 'YYYYMMDD');
+        date = moment(date, ['YYYYMMDD', 'MM-DD-YYYY']);
         break;
     }
   }

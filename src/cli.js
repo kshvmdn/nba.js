@@ -3,7 +3,7 @@
 const nba = require('./');
 const moment = require('moment');
 const minimist = require('minimist');
-const version = require('./package.json').version;
+const version = require('../package.json').version;
 const today = moment();
 const defaults = {
   boolean: [

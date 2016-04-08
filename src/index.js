@@ -7,7 +7,7 @@ const leftpad = require('left-pad');
 const options = require('./options');
 const moment = require('moment');
 
-const cleanDate = date => moment(date, ['YYYYMMDD', 'MM-DD-YYYY']).format('MMM. Do YYYY');
+const cleanDate = date => moment(date, 'YYYYMMDD').format('MMM. Do YYYY');
 
 const getHost = date => `http://data.nba.com/data/5s/json/cms/noseason/scoreboard/${date}/games.json`;
 
@@ -64,7 +64,7 @@ const format = (date, games) => {
   return table.toString();
 };
 
-const fetch = date => {
+const run = date => {
   return got(getHost(date), options.request)
     .then(response => {
       return parse(response);
@@ -73,11 +73,11 @@ const fetch = date => {
       console.log(format(date, response));
     })
     .catch(error => {
-      // console.error(error.message);
-      console.error(`Couldn't find any games for ${cleanDate(date)}.`);
-      console.error(`Please ensure that you're connected to the Internet and you entered a valid date. Run "nba -h" for help.`);
+      console.error(error.message);
+      // console.error(`Couldn't find any games for ${cleanDate(date)}.`);
+      // console.error(`Please ensure that you're connected to the Internet and you entered a valid date. Run "nba -h" for help.`);
       process.exit(1);
     });
 };
 
-module.exports = options => fetch(options.date);
+module.exports = args => { console.log(args); run(args.date) };

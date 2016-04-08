@@ -6,7 +6,7 @@ r = praw.Reddit(user_agent='nba_stream_parser')
 
 
 def get_streams_for_team(teams):
-    teams.append('Game Thread')
+    teams.append('Game Thread')  # to check if submission is not irrelevant
     submissions = r.get_subreddit('nbastreams').get_hot(limit=20)
     streams = []
     for submission in submissions:

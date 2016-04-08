@@ -12,20 +12,22 @@ const defaults = {
   ],
   alias: {
     h: 'help',
-    v: 'version'
+    v: 'version',
+    t: 'team'
   }
 };
 const help = `
-Usage: nba <DATE>
-
+Usage: nba [-h] [-v] DATE [-t TEAM]
   Get NBA scores and updates in your command line.
 
 Example:
-  nba 20160407
+  $ nba 20160407
+  $ nba today
 
 Options:
   -v --version        Display current version
   -h --help           Display this help message
+  -t --team           View scores for this team
 `;
 
 exports.parse = argv => minimist(argv, defaults);
@@ -41,31 +43,25 @@ exports.run = options => {
     return;
   }
 
-  let date = String(options._[0]);
+  let date = options._[0];
 
-  if (date === 'undefined' || !date.length) {
-    date = today;
+  if (date !== undefined && date.length && !isNaN(date)) {
+    date = moment(date, 'YYYYMMDD');
+  } else if (date === 'tomorrow') {
+    date = today.add(1, 'days');
+  } else if (date === 'yesterday') {
+    date = today.subtract(1, 'days');
   } else {
-    switch (date) {
-      case 'today':
-        date = today;
-        break;
-      case 'yesterday':
-        date = today.subtract(1, 'days');
-        break;
-      case 'tomorrow':
-        date = today.add(1, 'days');
-        break;
-      default:
-        date = moment(date, ['YYYYMMDD', 'MM-DD-YYYY']);
-        break;
-    }
+    date = today;
   }
 
   if (date.isValid()) {
-    nba({date: date.format('YYYYMMDD')});
+    nba({
+      date: date.format('YYYYMMDD'),
+      team: options.team || ''
+    });
   } else {
-    process.stderr.write('Expected valid date of form `YYYYMMDD`.\n');
+    process.stderr.write('Expected date of form `YYYYMMDD`.\n');
     process.exit(1);
   }
 };

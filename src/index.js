@@ -8,8 +8,13 @@ const options = require('./options');
 
 const getHost = date => `http://data.nba.com/data/5s/json/cms/noseason/scoreboard/${date}/games.json`;
 
-const parse = data => {
-  return _.reduce(data.sports_content.games.game, (memo, game) => {
+const parse = res => {
+  if (res.statusCode !== 200) {
+    throw new Error(`Couldn't retrieve game data.`);
+  }
+
+  const games = res.body.sports_content.games.game;
+  return _.reduce(games, (memo, game) => {
     memo.push({
       arena: game.arena,
       location: `${game.city}, ${game.state}`,
@@ -45,14 +50,13 @@ const format = (date, games) => {
 
   const table = new Table(options.table);
   _.each(games, game => {
-    const homeTeam = game.home.team.name.trim();
-    const homeScore = game.home.score.trim() === '' ? 0 : game.home.score;
-    const awayTeam = game.visitor.team.name.trim();
-    const awayScore = game.visitor.score.trim() === '' ? 0 : leftpad(game.visitor.score.trim(), 3, ' ');
-    const status = `${game.period.status.trim()}${(game.period.clock.trim() === '' ? '' : `, ${game.period.clock.trim()}`)}`;
+    const homeTeam = game.home.team.name;
+    const homeScore = game.home.score === '' ? 0 : game.home.score;
+    const awayTeam = game.visitor.team.name;
+    const awayScore = game.visitor.score === '' ? 0 : leftpad(game.visitor.score, 3, ' ');
+    const status = `${game.period.status}${(game.period.clock === '' ? '' : `, ${game.period.clock}`)}`;
 
-    let row = [awayTeam, awayScore, homeScore, homeTeam, status]
-    table.push(row);
+    table.push([awayTeam, awayScore, homeScore, homeTeam, status]);
   });
   return table.toString();
 };
@@ -60,7 +64,7 @@ const format = (date, games) => {
 const fetch = date => {
   return got(getHost(date), options.request)
     .then(response => {
-      return parse(response.body);
+      return parse(response);
     })
     .then(response => {
       console.log(format(date, response));

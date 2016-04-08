@@ -76,9 +76,9 @@ const run = (date, team) => {
       console.log(format(response, date, team));
     })
     .catch(error => {
-      console.error(error.message);
-      // console.error(`Couldn't find any games for ${utils.cleanDate(date)}.`);
-      // console.error(`Please ensure that you're connected to the Internet and you entered a valid date. Run "nba -h" for help.`);
+      // console.error(error.message);
+      console.error(`Couldn't find any games for ${utils.cleanDate(date)}.`);
+      console.error(`Please ensure that you're connected to the Internet and you entered a valid date. Run "nba -h" for help.`);
       process.exit(1);
     });
 };

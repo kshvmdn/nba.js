@@ -58,7 +58,7 @@ exports.run = options => {
   if (date.isValid()) {
     nba({
       date: date.format('YYYYMMDD'),
-      team: options.team || ''
+      team: options.team && options.team.length ? options.team.toLowerCase() : ''
     });
   } else {
     process.stderr.write('Expected date of form `YYYYMMDD`.\n');

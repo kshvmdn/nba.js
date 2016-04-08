@@ -5,19 +5,22 @@ const _ = require('underscore');
 const Table = require('cli-table');
 const leftpad = require('left-pad');
 const options = require('./options');
-const moment = require('moment');
-
-const cleanDate = date => moment(date, 'YYYYMMDD').format('MMM. Do YYYY');
+const utils = require('./utils');
 
 const getHost = date => `http://data.nba.com/data/5s/json/cms/noseason/scoreboard/${date}/games.json`;
 
-const parse = res => {
+const parse = (res, team) => {
   if (res.statusCode !== 200) {
     throw new Error(`Couldn't retrieve game data.`);
   }
 
   const games = res.body.sports_content.games.game;
   return _.reduce(games, (memo, game) => {
+
+    if (!utils.inStr(team, [game.home, game.visitor], ['nickname', 'abbreviation', 'city'])) {
+      return memo;
+    }
+
     memo.push({
       arena: game.arena,
       location: `${game.city}, ${game.state}`,
@@ -46,9 +49,9 @@ const parse = res => {
   }, []);
 };
 
-const format = (date, games) => {
+const format = (games, date, team) => {
   if (!games.length) {
-    throw new Error(`Couldn't find any games for ${cleanDate(date)}.`);
+    throw new Error(`Couldn't find any ${team && team.length ? utils.sentenceCase(team) : ''} games for ${utils.cleanDate(date)}.`);
   }
 
   const table = new Table(options.table);
@@ -64,20 +67,20 @@ const format = (date, games) => {
   return table.toString();
 };
 
-const run = date => {
+const run = (date, team) => {
   return got(getHost(date), options.request)
     .then(response => {
-      return parse(response);
+      return parse(response, team);
     })
     .then(response => {
-      console.log(format(date, response));
+      console.log(format(response, date, team));
     })
     .catch(error => {
       console.error(error.message);
-      // console.error(`Couldn't find any games for ${cleanDate(date)}.`);
+      // console.error(`Couldn't find any games for ${utils.cleanDate(date)}.`);
       // console.error(`Please ensure that you're connected to the Internet and you entered a valid date. Run "nba -h" for help.`);
       process.exit(1);
     });
 };
 
-module.exports = args => { console.log(args); run(args.date) };
+module.exports = args => run(args.date, args.team);

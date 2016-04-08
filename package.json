@@ -16,7 +16,7 @@
   "author": "Kashav Madan <kshvmdn@gmail.com> (kshvmdn.me)",
   "license": "MIT",
   "scripts": {
-    "lint": "xo *.js --space --esnext --env=node",
+    "lint": "xo --space --esnext --env=node",
     "test": "npm run lint"
   },
   "keywords": [

@@ -5,6 +5,9 @@ const _ = require('underscore');
 const Table = require('cli-table');
 const leftpad = require('left-pad');
 const options = require('./options');
+const moment = require('moment');
+
+const cleanDate = date => moment(date, ['YYYYMMDD', 'MM-DD-YYYY']).format('MMM. Do YYYY');
 
 const getHost = date => `http://data.nba.com/data/5s/json/cms/noseason/scoreboard/${date}/games.json`;
 
@@ -45,7 +48,7 @@ const parse = res => {
 
 const format = (date, games) => {
   if (!games.length) {
-    throw new Error(`Couldn't find any games for ${date}.`);
+    throw new Error(`Couldn't find any games for ${cleanDate(date)}.`);
   }
 
   const table = new Table(options.table);
@@ -70,7 +73,9 @@ const fetch = date => {
       console.log(format(date, response));
     })
     .catch(error => {
-      console.error(error.message);
+      // console.error(error.message);
+      console.error(`Couldn't find any games for ${cleanDate(date)}.`);
+      console.error(`Please ensure that you're connected to the Internet and you entered a valid date. Run "nba -h" for help.`);
       process.exit(1);
     });
 };

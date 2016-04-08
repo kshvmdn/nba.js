@@ -47,3 +47,27 @@ const parse = data => {
     return memo;
   }, []);
 };
+
+const format = (date, games) => {
+  if (!games.length) {
+    throw new Error(`Couldn't find any games for ${date}.`);
+  }
+
+  const table = new Table({
+    head: ['AWAY', 'SCORE', 'HOME', 'STATUS'],
+    colAligns: ['middle', 'middle', 'middle', 'middle'],
+    style: {
+      head: ['blue'],
+      border: ['white']
+    }
+  });
+  _.each(games, game => {
+    const home = `${game.home.team.name}`;
+    const away = `${game.visitor.team.name}`;
+    const score = `${game.visitor.score} - ${game.home.score}`;
+    const status = `${game.period.status}${(game.period.clock.trim() === '' ? '' : `, ${game.period.clock}`)}`;
+
+    table.push([away, score, home, status]);
+  });
+  return table.toString();
+};

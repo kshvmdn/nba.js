@@ -30,22 +30,22 @@ const parse = res => {
   }, []);
 };
 
-const organizeTeams = teams => {
-  let organized = {
+const separateTeams = teams => {
+  let separated = {
     west: [],
     east: []
   };
 
   _.each(teams, team => {
     if (_.contains(options.teams.west, team.info.abbr)) {
-      team.stats.rank = organized.west.length + 1;
-      organized.west.push(team);
+      team.stats.rank = separated.west.length + 1;
+      separated.west.push(team);
     } else {
-      team.stats.rank = organized.west.length;
-      organized.east.push(team);
+      team.stats.rank = separated.east.length + 1;
+      separated.east.push(team);
     }
   });
-  return organized;
+  return separated;
 };
 
 const format = teams => {
@@ -61,9 +61,9 @@ const format = teams => {
     east.push([team.stats.rank, teamName, team.stats.wins, team.stats.losses]);
   });
 
-  let westOutput = ` ${'West'}\n${west.toString()}`;
-  let eastOutput = ` ${'East'}\n${east.toString()}`;
-  return `${westOutput}\n\n${eastOutput}`;
+  let westOutput = ` WEST\n${west.toString()}`;
+  let eastOutput = ` EAST\n${east.toString()}`;
+  return `${westOutput}\n${eastOutput}`;
 };
 
 module.exports = args => {
@@ -73,7 +73,7 @@ module.exports = args => {
       return parse(response);
     })
     .then(response => {
-      return organizeTeams(response);
+      return separateTeams(response);
     })
     .then(response => {
       return console.log(format(response));

@@ -1,7 +1,0 @@
-#!/usr/bin/env node
-
-const cli = require('../src/cli');
-const argv = process.argv.slice(2);
-const options = cli.parse(argv);
-
-cli.run(options);

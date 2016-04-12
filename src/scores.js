@@ -4,6 +4,7 @@ const got = require('got');
 const _ = require('underscore');
 const Table = require('cli-table');
 const leftpad = require('left-pad');
+
 const options = require('./options');
 const utils = require('./utils');
 
@@ -51,7 +52,7 @@ const parse = (res, team) => {
 
 const format = (games, date, team) => {
   if (!games.length) {
-    throw new Error(`Couldn't find any ${team && team.length ? utils.sentenceCase(team) : ''} games for ${utils.cleanDate(date)}.`);
+    throw new Error(`Couldn't find any games for ${utils.cleanDate(date)}.`)
   }
 
   const table = new Table(options.table);
@@ -67,20 +68,19 @@ const format = (games, date, team) => {
   return table.toString();
 };
 
-const run = (date, team) => {
+module.exports = args => {
+
+  let date = args.date;
+  let team = args.team;
+
   return got(getHost(date), options.request)
     .then(response => {
       return parse(response, team);
     })
     .then(response => {
-      console.log(format(response, date, team));
+      return console.log(format(response, date, team));
     })
     .catch(error => {
-      // console.error(error.message);
-      console.error(`Couldn't find any games for ${utils.cleanDate(date)}.`);
-      console.error(`Please ensure that you're connected to the Internet and you entered a valid date. Run "nba -h" for help.`);
-      process.exit(1);
+      throw error
     });
 };
-
-module.exports = args => run(args.date, args.team);

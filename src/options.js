@@ -7,7 +7,7 @@ module.exports = {
       'user-agent': 'https://github.com/kshvmdn/nba-games'
     }
   },
-  table: {
+  scoresTable: {
     head: ['AWAY', '', '', 'HOME', 'STATUS'],
     chars: {'top': '═', 'top-mid': '╤', 'top-left': '╔', 'top-right': '╗',
             'bottom': '═', 'bottom-mid': '╧', 'bottom-left': '╚', 'bottom-right': '╝',
@@ -17,6 +17,15 @@ module.exports = {
     style: {
       head: ['blue'],
       border: ['white']
+    }
+  },
+  standingsTable: {
+    head: ['', 'TEAM', 'W', 'L'],
+    colAligns: ['right', 'left', 'middle', 'middle'],
+    style: {
+      head: ['blue'],
+      border: ['white'],
+      compact: true
     }
   },
   teams: {

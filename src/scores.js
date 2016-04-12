@@ -17,7 +17,6 @@ const parse = (res, team) => {
 
   const games = res.body.sports_content.games.game;
   return _.reduce(games, (memo, game) => {
-
     if (!utils.inStr(team, [game.home, game.visitor], ['nickname', 'abbreviation', 'city'])) {
       return memo;
     }
@@ -50,12 +49,12 @@ const parse = (res, team) => {
   }, []);
 };
 
-const format = (games, date, team) => {
+const format = (games, date) => {
   if (!games.length) {
-    throw new Error(`Couldn't find any games for ${utils.cleanDate(date)}.`)
+    throw new Error(`Couldn't find any games for ${utils.cleanDate(date)}.`);
   }
 
-  const table = new Table(options.table);
+  const table = new Table(options.scoresTable);
   _.each(games, game => {
     const homeTeam = game.home.team.name;
     const homeScore = game.home.score === '' ? 0 : game.home.score;
@@ -69,7 +68,6 @@ const format = (games, date, team) => {
 };
 
 module.exports = args => {
-
   let date = args.date;
   let team = args.team;
 
@@ -81,6 +79,6 @@ module.exports = args => {
       return console.log(format(response, date, team));
     })
     .catch(error => {
-      throw error
+      throw error;
     });
 };

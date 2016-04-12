@@ -54,7 +54,7 @@ module.exports = argv => {
     let currentSeason = today.subtract(1, 'years');
     let year = moment(date, 'YYYY', true);
 
-    if (!year.isValid() || currentSeason < year){
+    if (!year.isValid() || currentSeason < year) {
       year = currentSeason;
     }
 
@@ -71,13 +71,12 @@ module.exports = argv => {
     date = today;
   }
 
-  if (date.isValid()) {
-    return {
-      date: date.format('YYYYMMDD'),
-      team: options.team && options.team.length ? options.team.toLowerCase() : ''
-    }
-  } else {
+  if (!date.isValid()) {
     process.stderr.write(`Expected date of form 'YYYYMMDD'.\n`);
     return;
   }
+  return {
+    date: date.format('YYYYMMDD'),
+    team: options.team && options.team.length ? options.team.toLowerCase() : ''
+  };
 };

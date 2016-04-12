@@ -1,23 +1,26 @@
 'use strict';
 
-const nba = require('./');
 const moment = require('moment');
 const minimist = require('minimist');
 const version = require('../package.json').version;
-const today = moment();
 const defaults = {
   boolean: [
     'help',
-    'version'
+    'version',
+    'standings'
+  ],
+  string: [
+    'team'
   ],
   alias: {
     h: 'help',
     v: 'version',
-    t: 'team'
+    t: 'team',
+    s: 'standings'
   }
 };
 const help = `
-Usage: nba [-h] [-v] DATE [-t TEAM]
+Usage: nba [-h] [-v] DATE [-t TEAM] [-s]
   Get NBA scores and updates in your command line.
 
 Example:
@@ -25,14 +28,16 @@ Example:
   $ nba today
 
 Options:
-  -v --version        Display current version
-  -h --help           Display this help message
+  -v --version        Display current version and exit
+  -h --help           Display this help message and exit
   -t --team           View scores for this team
+  -s --standings      View season standings
 `;
 
-exports.parse = argv => minimist(argv, defaults);
+module.exports = argv => {
+  let today = moment();
+  let options = minimist(argv, defaults);
 
-exports.run = options => {
   if (options.help) {
     process.stdout.write(help);
     return;
@@ -43,25 +48,36 @@ exports.run = options => {
     return;
   }
 
-  let date = options._[0];
+  let date = String(options._[0]);
+
+  if (options.standings) {
+    let currentSeason = today.subtract(1, 'years');
+    let year = moment(date, 'YYYY', true);
+
+    if (!year.isValid() || currentSeason < year){
+      year = currentSeason;
+    }
+
+    return {year: year.format('YYYY')};
+  }
 
   if (date !== undefined && date.length && !isNaN(date)) {
-    date = moment(date, 'YYYYMMDD');
-  } else if (date === 'tomorrow') {
+    date = moment(date, 'YYYYMMDD', true);
+  } else if (date.includes('tomorrow')) {
     date = today.add(1, 'days');
-  } else if (date === 'yesterday') {
+  } else if (date.includes('yesterday')) {
     date = today.subtract(1, 'days');
   } else {
     date = today;
   }
 
   if (date.isValid()) {
-    nba({
+    return {
       date: date.format('YYYYMMDD'),
       team: options.team && options.team.length ? options.team.toLowerCase() : ''
-    });
+    }
   } else {
-    process.stderr.write('Expected date of form `YYYYMMDD`.\n');
-    process.exit(1);
+    process.stderr.write(`Expected date of form 'YYYYMMDD'.\n`);
+    return;
   }
 };

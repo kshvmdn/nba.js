@@ -1,12 +1,6 @@
 const _ = require('underscore');
 const moment = require('moment');
 
-const cleanDate = date => moment(date, 'YYYYMMDD').format('MMM. Do YYYY');
-const sentenceCase = txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-const inStr = (needle, objs, keys) => _.map(objs, obj => keys.some(key => obj[key].toLowerCase().indexOf(needle) > -1)).some(el => el);
-
-module.exports = {
-  cleanDate: cleanDate,
-  sentenceCase: sentenceCase,
-  inStr: inStr
-}
+module.exports.cleanDate = date => moment(date, 'YYYYMMDD').format('MMM. Do YYYY');
+module.exports.sentenceCase = x => x.charAt(0).toUpperCase() + x.substr(1).toLowerCase();
+module.exports.inStr = (needle, objs, keys) => _.map(objs, obj => keys.some(key => obj[key].toLowerCase().indexOf(needle) > -1)).some(el => el);

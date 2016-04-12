@@ -8,14 +8,14 @@ const standings = require('./src/standings');
 if (cli) {
   let func = cli.year ? standings : scores;
   func(cli)
-    .then(res => {
+    .then(() => {
       process.exit(0);
     })
     .catch(e => {
       console.error(e.message);
       console.error(`Please ensure that you're connected to the Internet and you entered a valid date. Run "nba -h" for help.`);
       process.exit(1);
-    })
+    });
 } else {
   process.exit(1);
 }

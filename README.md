@@ -1,5 +1,5 @@
 # NBA Games
-Get live NBA game updates through your command line.
+Get live updates for NBA games and standings through your command line.
 
 ### Usage
 

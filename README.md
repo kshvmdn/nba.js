@@ -1,5 +1,5 @@
 # NBA Games
-Get live updates for NBA games and standings through your command line.
+Get live updates for NBA games and standings through your command line. Install via [npm](https://www.npmjs.com/package/nba-games).
 
 ### Usage
 

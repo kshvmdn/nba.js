@@ -33,4 +33,4 @@ Get live updates for NBA games and standings through your command line. Install 
 
 ### Contribute
 
-Feel free to open an [issue](https://github.com/kshvmdn/nba-games/issues) or make a [pull request](https://github.com/kshvmdn/nba-games/pulls). All contributions are welcome!(:
+Feel free to open an [issue](https://github.com/kshvmdn/nba-games/issues) or make a [pull request](https://github.com/kshvmdn/nba-games/pulls). All contributions are welcome!

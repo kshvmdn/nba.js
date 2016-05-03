@@ -28,10 +28,10 @@ Example:
   $ nba today
 
 Options:
-  -v --version        Display current version and exit
-  -h --help           Display this help message and exit
-  -t --team           View scores for this team
-  -s --standings      View season standings
+  -v --version        Display current version and exit.
+  -h --help           Display this help message and exit.
+  -t --team           View scores for this team.
+  -s --standings      View season standings for the provided year.
 `;
 
 module.exports = argv => {

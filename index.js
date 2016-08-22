@@ -12,8 +12,8 @@ if (cli) {
       process.exit(0);
     })
     .catch(e => {
-      console.error(e.message);
-      // console.error(`Please ensure that you're connected to the Internet and you've entered a valid date. Run "nba -h" for help.`);
+      // console.error(e.message);
+      console.error(`Please ensure that you're connected to the Internet and you've entered a valid date. Run "nba -h" for help.`);
       process.exit(1);
     });
 } else {

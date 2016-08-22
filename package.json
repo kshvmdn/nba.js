@@ -1,6 +1,6 @@
 {
-  "name": "nba-games",
-  "version": "0.2.2",
+  "name": "nba.js",
+  "version": "0.0.2",
   "description": "A cli for viewing scores and updates for NBA games.",
   "main": "index.js",
   "engines": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kshvmdn/nba-games.git"
+    "url": "git+https://github.com/kshvmdn/nba.js.git"
   },
   "bin": {
     "nba": "./bin/nba-games"
@@ -27,9 +27,9 @@
     "cli"
   ],
   "bugs": {
-    "url": "https://github.com/kshvmdn/nba-games/issues"
+    "url": "https://github.com/kshvmdn/nba.js/issues"
   },
-  "homepage": "https://github.com/kshvmdn/nba-games#readme",
+  "homepage": "https://github.com/kshvmdn/nba.js#readme",
   "dependencies": {
     "cli-table": "^0.3.1",
     "got": "^6.3.0",

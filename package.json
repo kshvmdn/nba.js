@@ -25,10 +25,14 @@
     "build": "babel src/ -d lib/",
     "build:watch": "npm run build -- -w",
     "lint": "eslint src/**/*.js",
+    "prepublish": "npm run test",
     "test": "npm run lint && mocha test/"
   },
   "babel": {
-    "presets": ["es2015"]
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
   },
   "eslintConfig": {
     "extends": "standard"
@@ -37,6 +41,7 @@
   "devDependencies": {
     "babel-cli": "^6.11.4",
     "babel-preset-es2015": "^6.13.2",
+    "babel-preset-stage-0": "^6.5.0",
     "eslint": "^3.3.1",
     "eslint-config-standard": "^6.0.0-beta.3",
     "eslint-plugin-promise": "^2.0.1",

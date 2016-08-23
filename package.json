@@ -1,44 +1,49 @@
 {
   "name": "nba.js",
   "version": "0.0.2",
-  "description": "A cli for viewing scores and updates for NBA games.",
-  "main": "index.js",
-  "engines": {
-    "node": ">=4"
+  "description": "Interact with current and historical NBA stats, scores, and data.",
+  "keywords": [
+    "nba",
+    "basketball"
+  ],
+  "homepage": "https://github.com/kshvmdn/nba.js#readme",
+  "bugs": {
+    "url": "https://github.com/kshvmdn/nba.js/issues"
   },
+  "license": "MIT",
+  "author": {
+    "name": "Kashav Madan",
+    "email": "kshvmdn@gmail.com",
+    "url": "http://kshvmdn.com/"
+  },
+  "main": "lib/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kshvmdn/nba.js.git"
   },
-  "bin": {
-    "nba": "./bin/nba-games"
-  },
-  "author": "Kashav Madan <kshvmdn@gmail.com> (kshvmdn.me)",
-  "license": "MIT",
   "scripts": {
-    "lint": "xo --space --esnext --env=node",
-    "test": "npm run lint"
+    "build": "babel src/ -d lib/",
+    "build:watch": "npm run build -- -w",
+    "lint": "eslint src/**/*.js",
+    "test": "npm run lint && mocha test/"
   },
-  "keywords": [
-    "nba",
-    "scores",
-    "daily",
-    "kshvmdn",
-    "cli"
-  ],
-  "bugs": {
-    "url": "https://github.com/kshvmdn/nba.js/issues"
+  "babel": {
+    "presets": ["es2015"]
   },
-  "homepage": "https://github.com/kshvmdn/nba.js#readme",
-  "dependencies": {
-    "cli-table": "^0.3.1",
-    "got": "^6.3.0",
-    "left-pad": "^1.0.1",
-    "minimist": "^1.2.0",
-    "moment": "^2.12.0",
-    "underscore": "^1.8.3"
+  "eslintConfig": {
+    "extends": "standard"
   },
+  "dependencies": {},
   "devDependencies": {
-    "xo": "^0.13.0"
+    "babel-cli": "^6.11.4",
+    "babel-preset-es2015": "^6.13.2",
+    "eslint": "^3.3.1",
+    "eslint-config-standard": "^6.0.0-beta.3",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-standard": "^2.0.0",
+    "mocha": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=4"
   }
 }

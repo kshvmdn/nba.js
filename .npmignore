@@ -42,4 +42,6 @@ jspm_packages
 
 # Source
 src/
-!src/**/*.test.js
+
+# Tests
+*.spec.js

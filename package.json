@@ -24,12 +24,12 @@
   "scripts": {
     "clean": "rimraf lib/",
     "build": "npm run clean && babel src/ -d lib/",
-    "build:watch": "npm run build && npm run build -- -w",
-    "lint": "eslint src/**/*.js",
-    "prepublish": "npm run test",
+    "build:watch": "npm run build -- -w",
+    "lint": "eslint src/",
     "pretest": "npm run build",
+    "test": "npm run lint && mocha lib/*.spec.js lib/**/*.spec.js",
     "posttest": "npm run clean",
-    "test": "npm run lint && mocha lib/**/*.test.js"
+    "prepublish": "npm run test && npm run build"
   },
   "dependencies": {
     "got": "^6.3.0"

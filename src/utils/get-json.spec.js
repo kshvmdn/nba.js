@@ -32,6 +32,8 @@ describe('getJson', () => {
 
   it('allows callback to be provided as 2nd argument', (done) => {
     getJson(endpoint, (err, res) => {
+      // will throw a ParseError since /stats/homepagev2 w. no query returns
+      // HTML (???), not JSON (thx NBA, gr8 API)
       should.not.exist(res)
       should.exist(err)
       done()

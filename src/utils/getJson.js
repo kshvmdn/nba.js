@@ -3,17 +3,14 @@ import got from 'got'
 import { BASE_URL } from './../constants'
 
 /**
- * Make a request to the API and return a callback with the error or response.
+ * Make a request to the API and return an error-first callback with the
+ * JSON response.
+ *
  * @param  {string}          endpoint Optional API endpoint
  * @param  {Object|Function} opts     Optional object of request options
- * @param  {Function}        cb       Error-first callback
+ * @return {Promise}                  HTTP request response or error
  */
-function getJson (endpoint = '', opts, cb) {
-  if (typeof opts === 'function') {
-    cb = opts
-    opts = {}
-  }
-
+function getJson (endpoint = '', opts) {
   opts = Object.assign({
     headers: {
       connection: 'keep-alive',
@@ -22,12 +19,9 @@ function getJson (endpoint = '', opts, cb) {
       referer: 'http://stats.nba.com/'
     },
     json: true
-  }, opts)
+  }, opts || {})
 
-  got(`${BASE_URL}${endpoint}`, opts)
-    .then(response => cb(null, response.body))
-    .catch(error => cb(error, null))
+  return got(`${BASE_URL}${endpoint}`, opts)
 }
 
 export default getJson
-

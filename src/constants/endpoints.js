@@ -154,7 +154,7 @@ export const DRAFT_HISTORY = {
     RoundPick: null,
     Season: DEFAULTS.seasonSingleYear,
     TeamID: DEFAULTS.teamID,
-    TopX: null,
+    TopX: null
   }
 }
 

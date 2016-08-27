@@ -28,7 +28,7 @@
     "lint": "eslint src/",
     "pretest": "npm run build",
     "test": "npm run lint && mocha lib/**/*.spec.js",
-    "posttest": "",
+    "posttest": "# npm run clean",
     "prepublish": "npm run test && npm run build"
   },
   "dependencies": {

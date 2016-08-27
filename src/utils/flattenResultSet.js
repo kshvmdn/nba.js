@@ -5,7 +5,7 @@
  * @param  {Object|Object[]} resultSets Result set(s) to be flattened
  * @return {Promise}
  */
-function flattenResultSet (resultSets) {
+export default function flattenResultSet (resultSets) {
   return new Promise((resolve, reject) => {
     let isArray = resultSets.constructor === Array
 
@@ -35,5 +35,3 @@ function flattenResultSet (resultSets) {
     return resolve(isArray ? flattened : flattened[0])
   })
 }
-
-export default flattenResultSet

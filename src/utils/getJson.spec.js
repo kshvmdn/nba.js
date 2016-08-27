@@ -12,7 +12,7 @@ let query = {
   StatType: 'Traditional'
 }
 
-describe('utils.getJson', () => {
+describe('utils/getJson', () => {
   it('returns response/error as a Promise', (done) => {
     let request = getJson(endpoint, { query })
     request.should.be.Promise()

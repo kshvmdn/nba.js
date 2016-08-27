@@ -7,7 +7,7 @@ let rowSet = [
   [2, 201935, 'James Harden', 1610612745, 'HOU', 'Houston Rockets', '13', 'G', 29.0]
 ]
 
-describe('utils.flattenResultSet', () => {
+describe('utils/flattenResultSet', () => {
   it('returns a Promise', (done) => {
     let flattened = flattenResultSet({ headers, rowSet })
     flattened.should.be.Promise()

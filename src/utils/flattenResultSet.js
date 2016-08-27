@@ -7,9 +7,9 @@
  */
 function flattenResultSet (resultSets) {
   return new Promise((resolve, reject) => {
-    let resultIsArray = resultSets.constructor === Array
+    let isArray = resultSets.constructor === Array
 
-    if (!resultIsArray) resultSets = [resultSets]
+    if (!isArray) resultSets = [resultSets]
 
     let flattened = resultSets.map((result, i) => {
       let mappedResult = {}
@@ -32,8 +32,7 @@ function flattenResultSet (resultSets) {
       return mappedResult
     })
 
-    flattened = resultIsArray ? flattened : flattened[0]
-    return resolve(flattened)
+    return resolve(isArray ? flattened : flattened[0])
   })
 }
 

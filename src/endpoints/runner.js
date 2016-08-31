@@ -2,16 +2,16 @@ import { ENDPOINTS as c } from './../constants'
 
 /**
  * Endpoint runner wrapper.
- * @param  {Function} worker  Endpoint worker function
- * @return {Function}         Worker wrapper
+ * @param  {Function}  worker Worker function to be used
+ * @return {Function}         Request function
  */
 export function run (worker) {
   /**
-   * Curried function to make request.
-   * @param  {string}            type  Endpoint name
-   * @param  {Object|Function}   query Optional request query
-   * @param  {Function}          cb    Error-first cb
-   * @return {Function}         [description]
+   * Make request
+   * @param  {string}           type  Endpoint name
+   * @param  {Object|Function}  query Optional request query
+   * @param  {Function}         cb    Error-first cb
+   * @return {Function}               Request response or error
    */
   return (type, query, cb) => {
     if (!worker) {

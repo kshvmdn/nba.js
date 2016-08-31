@@ -1,2 +1,2 @@
 import should from 'should'
-import worker from './worker'
+import { work } from './worker'

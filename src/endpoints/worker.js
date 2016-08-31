@@ -12,7 +12,7 @@ function get (endpoint, defaults, cb) {
   getJson(endpoint, { query: defaults })
     .then((res) => res.body)
     .then((body) => JSON.parse(body))
-    .then((json) => flattenResultSet(json.resultSets))
+    .then((json) => flattenResultSet(json.resultSets || json.resultSet))
     .then((flattened) => cb(null, flattened))
     .catch((err) => cb(err))
 }
@@ -24,7 +24,7 @@ function get (endpoint, defaults, cb) {
  * @param  {Function}         cb        Error first callback
  * @return {Function|Promise}           Request response / error
  */
-export function run (constants, query, cb) {
+export function work (constants, query, cb) {
   if (typeof query === 'function') {
     cb = query
     query = null

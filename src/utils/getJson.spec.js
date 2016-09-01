@@ -24,8 +24,10 @@ describe('utils/getJson', () => {
       should.exist(res)
       res.should.have.property('body')
       done()
+    }).catch((e) => {
+      console.log(e)
     })
-  })
+  }).timeout(10000)
 
   it('throws 400 on invalid request', (done) => {
     getJson(endpoint, { query: {} }).catch((err) => {

@@ -13,23 +13,25 @@ let query = {
 }
 
 describe('utils/getJson', () => {
-  it('returns response/error as a Promise', (done) => {
+  it('should return response/error as a Promise', (done) => {
     let request = getJson(endpoint, { query })
     request.should.be.Promise()
     done()
   })
 
-  it('resolves to JSON response', (done) => {
-    getJson(endpoint, { query }).then((res) => {
-      should.exist(res)
-      res.should.have.property('body')
-      done()
-    }).catch((e) => {
-      console.log(e)
-    })
+  it('should respond with response/error', (done) => {
+    getJson(endpoint, { query })
+      .then((res) => {
+        should.exist(res)
+        res.should.have.property('body')
+        done()
+      }).catch((err) => {
+        should.exist(err)
+        done()
+      })
   }).timeout(10000)
 
-  it('throws 400 on invalid request', (done) => {
+  it('should throw 400 on invalid request', (done) => {
     getJson(endpoint, { query: {} }).catch((err) => {
       should.exist(err)
       err.statusCode.should.equal(400)

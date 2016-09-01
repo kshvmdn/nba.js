@@ -8,13 +8,13 @@ let rowSet = [
 ]
 
 describe('utils/flattenResultSet', () => {
-  it('returns a Promise', (done) => {
+  it('should return a Promise', (done) => {
     let flattened = flattenResultSet({ headers, rowSet })
     flattened.should.be.Promise()
     done()
   })
 
-  it('doesn\'t alter values', (done) => {
+  it('should not alter values', (done) => {
     flattenResultSet({ headers, rowSet }).then((flattened) => {
       for (let i in rowSet) {
         Object.keys(flattened.rows[i]).map(v => flattened.rows[i][v]).should.eql(rowSet[i])
@@ -24,7 +24,7 @@ describe('utils/flattenResultSet', () => {
     })
   })
 
-  it('has lowercase keys', (done) => {
+  it('should have lowercase keys', (done) => {
     flattenResultSet({ headers, rowSet }).then((flattened) => {
       for (let i in rowSet) {
         Object.keys(flattened.rows[i]).every(v => v === v.toLowerCase()).should.be.true()
@@ -34,14 +34,14 @@ describe('utils/flattenResultSet', () => {
     })
   })
 
-  it('includes name key (when it exists)', (done) => {
+  it('should include name key (when it exists)', (done) => {
     flattenResultSet({ name: 'test', headers, rowSet }).then((flattened) => {
       flattened.name.should.equal('test')
       done()
     })
   })
 
-  it('flattens multiple sets and returns all as an array', (done) => {
+  it('should flatten multiple sets and return all as an array', (done) => {
     flattenResultSet([{ headers, rowSet }, { headers, rowSet }]).then((flattened) => {
       flattened.should.be.an.Array
       flattened.should.have.length(2)

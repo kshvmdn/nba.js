@@ -1,8 +1,8 @@
 import should from 'should'
-import * as constants from '.'
+import * as constants from './'
 
-describe('constants', () => {
-  it('exports BASE_URL', (done) => {
+describe('constants/index', () => {
+  it('should export BASE_URL', (done) => {
     should.exist(constants.BASE_URL)
     constants.BASE_URL.should.not.be.empty()
     constants.BASE_URL.should.startWith('http')
@@ -10,7 +10,7 @@ describe('constants', () => {
     done()
   })
 
-  it('exports ENDPOINTS', (done) => {
+  it('should export ENDPOINTS', (done) => {
     constants.should.have.property('ENDPOINTS')
     should.exist(constants.ENDPOINTS)
     done()

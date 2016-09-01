@@ -1,3 +1,7 @@
-import endpointRunner from './endpoints'
+import { run } from './utils/endpointRunner'
+import { work } from './utils/endpointWorker'
 
-export default endpointRunner
+export const runner = run(work)
+export const endpoints = require('./endpoints')
+
+export default endpoints

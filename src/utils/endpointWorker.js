@@ -30,10 +30,10 @@ export function work (constants, query, cb) {
     query = null
   }
 
-  query = query || {}
+  query = Object.assign(constants.defaults, query || {})
 
   return new Promise((resolve, reject) => {
-    get(constants.endpoint, constants.defaults, (err, res) => {
+    get(constants.endpoint, query, (err, res) => {
       if (err) {
         if (cb) cb(err)
         reject(err)

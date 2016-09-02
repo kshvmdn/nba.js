@@ -5,41 +5,22 @@ import { ENDPOINTS } from './../constants' // eslint-disable-line no-unused-vars
 const nba = run(work)
 
 /* PLAYERS ********************************************************************/
-const allPlayers = (query, cb) => nba('ALL_PLAYERS', query, cb)
-const playerAwards = (query, cb) => nba('PLAYER_AWARDS', query, cb)
-const playerCareerStats = (query, cb) => nba('PLAYER_CAREER_STATS', query, cb)
-const playerGamelog = (query, cb) => nba('PLAYER_GAMELOG', query, cb)
-const playerInfo = (query, cb) => nba('PLAYER_INFO', query, cb)
-const playerProfile = (query, cb) => nba('PLAYER_PROFILE', query, cb)
-const leagueLeaders = (query, cb) => nba('LEAGUE_LEADERS', query, cb)
+export const allPlayers = (query, cb) => nba('ALL_PLAYERS', query, cb)
+export const playerAwards = (query, cb) => nba('PLAYER_AWARDS', query, cb)
+export const playerCareerStats = (query, cb) => nba('PLAYER_CAREER_STATS', query, cb)
+export const playerGamelog = (query, cb) => nba('PLAYER_GAMELOG', query, cb)
+export const playerInfo = (query, cb) => nba('PLAYER_INFO', query, cb)
+export const playerProfile = (query, cb) => nba('PLAYER_PROFILE', query, cb)
+export const leagueLeaders = (query, cb) => nba('LEAGUE_LEADERS', query, cb)
 
 /* TEAMS **********************************************************************/
 
 /* MISC. **********************************************************************/
-const assistTracker = (query, cb) => nba('ASSIST_TRACKER', query, cb)
-const defenseHub = (query, cb) => nba('DEFENSE_HUB', query, cb)
-const draftCombine = (query, cb) => nba('DRAFT_COMBINE', query, cb)
-const draftHistory = (query, cb) => nba('DRAFT_HISTORY', query, cb)
-const franchiseHistory = (query, cb) => nba('FRANCHISE_HISTORY', query, cb)
-const homepage = (query, cb) => nba('HOMEPAGE', query, cb)
-const playerCompare = (query, cb) => nba('PLAYER_COMPARE', query, cb)
-const scoreboard = (query, cb) => nba('SCOREBOARD', query, cb)
-
-export {
-  allPlayers,
-  playerAwards,
-  playerCareerStats,
-  playerGamelog,
-  playerInfo,
-  playerProfile,
-  leagueLeaders,
-
-  assistTracker,
-  defenseHub,
-  draftCombine,
-  draftHistory,
-  franchiseHistory,
-  homepage,
-  playerCompare,
-  scoreboard
-}
+export const assistTracker = (query, cb) => nba('ASSIST_TRACKER', query, cb)
+export const defenseHub = (query, cb) => nba('DEFENSE_HUB', query, cb)
+export const draftCombine = (query, cb) => nba('DRAFT_COMBINE', query, cb)
+export const draftHistory = (query, cb) => nba('DRAFT_HISTORY', query, cb)
+export const franchiseHistory = (query, cb) => nba('FRANCHISE_HISTORY', query, cb)
+export const homepage = (query, cb) => nba('HOMEPAGE', query, cb)
+export const playerCompare = (query, cb) => nba('PLAYER_COMPARE', query, cb)
+export const scoreboard = (query, cb) => nba('SCOREBOARD', query, cb)

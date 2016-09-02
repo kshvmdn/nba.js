@@ -14,6 +14,11 @@ describe('endpoints/index', () => {
       Object.keys(e).every(o => typeof e[o] === 'function').should.be.true()
       done()
     })
+
+    it('should not export endpoint runner', (done) => {
+      e.should.not.have.property('nba')
+      done()
+    })
   })
 
   describe('requests', () => {

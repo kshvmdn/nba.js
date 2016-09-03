@@ -16,7 +16,7 @@ const DEFAULTS = {
   graphStats: 'PTS',
   height: null, // 'GT {ft}-{in}', 'LT {ft}-{in}'
   lastNGames: '0', // n
-  leagueID: '00',
+  leagueID: '00', // '10', '20'
   location: null, // 'Home', 'Away'
   measureType: 'Base', // 'Advanced', 'Misc', 'Scoring', 'Usage', 'Opponent', 'Defense'
   month: '0', // null, 0 for all, 1-12 for months of year (12=sept, 1=oct, 2=dec, etc)
@@ -208,6 +208,14 @@ export const FRANCHISE_HISTORY = {
   endpoint: '/stats/franchisehistory',
   defaults: {
     LeagueID: DEFAULTS.leagueID
+  }
+}
+
+export const FRANCHISE_LEADERS = {
+  endpoint: '/stats/franchiseleaders',
+  defaults: {
+    LeagueID: DEFAULTS.leagueID,
+    TeamID: DEFAULTS.teamID
   }
 }
 
@@ -587,5 +595,31 @@ export const SHOOTING_STATS = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division,
     Weight: DEFAULTS.weight
+  }
+}
+
+export const TEAM_DETAILS = {
+  endpoint: '/stats/teamdetails',
+  defaults: {
+    TeamID: DEFAULTS.teamID
+  }
+}
+
+export const TEAM_INFO = {
+  endpoint: '/stats/teaminfocommon',
+  defaults: {
+    LeagueID: DEFAULTS.leagueID,
+    Season: DEFAULTS.season,
+    SeasonType: DEFAULTS.seasonType,
+    TeamID: DEFAULTS.teamID
+  }
+}
+
+export const TEAM_ROSTER = {
+  endpoint: '/stats/commonteamroster',
+  defaults: {
+    LeagueID: DEFAULTS.leagueID,
+    Season: DEFAULTS.season,
+    TeamID: DEFAULTS.teamID
   }
 }

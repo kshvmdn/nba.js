@@ -1,36 +1,42 @@
-# NBA Games
-Get live updates for NBA games and standings through your command line. Install via [npm](https://www.npmjs.com/package/nba-games).
+# nba.js 
 
-### Usage
+[![npm version](https://badge.fury.io/js/nba.js.svg)](https://badge.fury.io/js/nba.js) [![Build Status](https://travis-ci.org/kshvmdn/nba.js.svg?branch=master)](https://travis-ci.org/kshvmdn/nba.js)
 
-+ Install
+A Node.js library for current and historical NBA stats, scores, and data.
 
-  ```
-  $ npm i -g nba-games
-  ```
+## Installation
 
-+ Use with `nba` and _optional_ DATE (one of: "today", "tomorrow", "yesterday", date of form `YYYYMMDD`)
-  
-  ```
-  $ nba <DATE>
+You can either install via [npm](https://npmjs.com/package/nba.js) or directly through source.
+
+- npm
+  ```sh
+  npm install nba.js [--save]
   ```
 
-+ Run help with `-h`
+- Source
 
-  ```
-  Usage: nba <DATE>
-
-    Get NBA scores and updates in your command line.
-
-  Example:
-    nba 20160407
-
-  Options:
-    -v --version        Display current version
-    -h --help           Display this help message
+  ```sh
+  git clone https://github.com/kshvmdn/nba.js.git && cd nba.js && npm install
   ```
 
+## Usage
 
-### Contribute
+```js
+const nba = require('nba')
+// OR
+import nba from 'nba'
+// OR
+import { moduleA, moduleB } from 'nba'
+```
 
-Feel free to open an [issue](https://github.com/kshvmdn/nba-games/issues) or make a [pull request](https://github.com/kshvmdn/nba-games/pulls). All contributions are welcome!
+## API
+
+_Coming soon..._
+
+## Contribute
+
+This project is completely open source. Feel free to [open an issue](https://github.com/kshvmdn/nba.js/issues) or [make a pull request](https://github.com/kshvmdn/nba.js/pulls). :smile:
+
+## License
+
+[MIT © Kashav Madan](./LICENSE).

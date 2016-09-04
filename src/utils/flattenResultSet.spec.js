@@ -1,0 +1,51 @@
+import should from 'should'
+import flattenResultSet from './flattenResultSet'
+
+let headers = ['RANK', 'PLAYER_ID', 'PLAYER', 'TEAM_ID', 'TEAM_ABBREVIATION', 'TEAM_NAME', 'JERSEY_NUM', 'PLAYER_POSITION', 'PTS']
+let rowSet = [
+  [1, 201939, 'Stephen Curry', 1610612744, 'GSW', 'Golden State Warriors', '30', 'G', 30.1],
+  [2, 201935, 'James Harden', 1610612745, 'HOU', 'Houston Rockets', '13', 'G', 29.0]
+]
+
+describe('utils/flattenResultSet', () => {
+  it('should return a Promise', (done) => {
+    let flattened = flattenResultSet({ headers, rowSet })
+    flattened.should.be.Promise()
+    done()
+  })
+
+  it('should not alter values', (done) => {
+    flattenResultSet({ headers, rowSet }).then((flattened) => {
+      for (let i in rowSet) {
+        Object.keys(flattened.rows[i]).map(v => flattened.rows[i][v]).should.eql(rowSet[i])
+      }
+
+      done()
+    })
+  })
+
+  it('should have lowercase keys', (done) => {
+    flattenResultSet({ headers, rowSet }).then((flattened) => {
+      for (let i in rowSet) {
+        Object.keys(flattened.rows[i]).every(v => v === v.toLowerCase()).should.be.true()
+      }
+
+      done()
+    })
+  })
+
+  it('should include name key (when it exists)', (done) => {
+    flattenResultSet({ name: 'test', headers, rowSet }).then((flattened) => {
+      flattened.name.should.equal('test')
+      done()
+    })
+  })
+
+  it('should flatten multiple sets and return all as an array', (done) => {
+    flattenResultSet([{ headers, rowSet }, { headers, rowSet }]).then((flattened) => {
+      flattened.should.be.an.Array
+      flattened.should.have.length(2)
+      done()
+    })
+  })
+})

@@ -24,6 +24,7 @@ const DEFAULTS = {
   outcome: null, // 'W', 'L'
   period: '0', // 1-14
   perMode: 'PerGame', // 'Per100Possessions', 'Per36', 'Per40', Per48', 'PerMinute', 'PerPossession', 'PerPlay', 'MinutePer', 'Totals'
+  ptMeasureType: 'CatchShoot', // 'SpeedDistance', 'Rebounding', 'Possessions', 'CatchShoot', 'PullUpShot', 'Defense', 'Drives', 'Passing', 'ElbowTouch', 'PostTouch', 'PaintTouch', 'Efficiency'
   playerID: '0',
   playerOrTeam: 'Player', // 'Team'
   playerPosition: null, // 'F', 'C', 'G'
@@ -631,7 +632,38 @@ export const TEAM_ROSTER = {
 // http://stats.nba.com/tracking/#!/player/
 export const TRACKING_STATS = {
   endpoint: '/stats/leaguedashptstats',
-  defaults: {}
+  defaults: {
+    College: null,
+    Conference: DEFAULTS.conference,
+    Country: null,
+    DateFrom: null,
+    DateTo: null,
+    Division: DEFAULTS.division,
+    DraftPick: null,
+    DraftYear: DEFAULTS.draftYear,
+    GameScope: DEFAULTS.gameScope,
+    Height: DEFAULTS.height,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    PerMode: DEFAULTS.perMode,
+    PlayerExperience: null,
+    PlayerOrTeam: DEFAULTS.playerOrTeam,
+    PlayerPosition: DEFAULTS.playerPosition,
+    PORound: DEFAULTS.playoffRound,
+    PtMeasureType: DEFAULTS.ptMeasureType,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    StarterBench: DEFAULTS.starterBench,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division,
+    Weight: DEFAULTS.weight
+  }
 }
 
 // http://stats.nba.com/league/team/#!/

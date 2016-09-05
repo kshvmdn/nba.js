@@ -25,11 +25,12 @@
     "clean": "rimraf lib/",
     "build": "npm run clean && babel src/ -d lib/",
     "build:watch": "npm run build -- -w",
+    "prepublish": "npm run test && npm run build",
+    "postinstall": "npm run build",
     "lint": "eslint src/",
-    "pretest": "npm run build",
-    "test": "npm run lint && mocha lib/**/*.spec.js",
-    "posttest": "# npm run clean",
-    "prepublish": "npm run test && npm run build"
+    "test": "npm run lint && mocha --compilers js:babel-core/register --colors --bail --reporter spec src/**/*.spec.js",
+    "coverage": "istanbul cover _mocha -- --compilers js:babel-core/register --colors --reporter dot src/**/*.spec.js",
+    "coveralls": "npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls"
   },
   "dependencies": {
     "got": "^6.3.0"
@@ -39,11 +40,15 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.14.0",
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-stage-0": "^6.5.0",
+    "babel-register": "^6.14.0",
+    "coveralls": "^2.11.12",
     "eslint": "^3.3.1",
     "eslint-config-standard": "^6.0.0-beta.3",
     "eslint-plugin-promise": "^2.0.1",
     "eslint-plugin-standard": "^2.0.0",
+    "istanbul": "^1.1.0-alpha.1",
     "mocha": "^3.0.2",
+    "mocha-lcov-reporter": "^1.2.0",
     "rimraf": "^2.5.4",
     "should": "^11.1.0"
   },

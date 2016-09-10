@@ -10,10 +10,12 @@ const DEFAULTS = {
   draftYear: null, // YYYY
   dribbleRange: null, // '0 Dribbles', '1 Dribble', '2 Dribbles', '3-6 Dribbles', '7+ Dribbles'
   gameDate: '04/20/2015', // MM/DD/YYYY
+  gameID: null,
   gameScope: 'Season', // 'Yesterday', 'Last 10'
   gameSegment: null, // 'First Half', 'Second Half', 'Overtime'
   generalRange: 'Overall', // 'Catch and Shoot', 'Pullups', 'Less Than 10 ft'
   graphStats: 'PTS',
+  groupQuantity: 5, // 4, 3, 2
   height: null, // 'GT {ft}-{in}', 'LT {ft}-{in}'
   lastNGames: '0', // n
   leagueID: '00', // '10', '20'
@@ -24,6 +26,7 @@ const DEFAULTS = {
   outcome: null, // 'W', 'L'
   period: '0', // 1-14
   perMode: 'PerGame', // 'Per100Possessions', 'Per36', 'Per40', Per48', 'PerMinute', 'PerPossession', 'PerPlay', 'MinutePer', 'Totals'
+  ptMeasureType: 'CatchShoot', // 'SpeedDistance', 'Rebounding', 'Possessions', 'CatchShoot', 'PullUpShot', 'Defense', 'Drives', 'Passing', 'ElbowTouch', 'PostTouch', 'PaintTouch', 'Efficiency'
   playerID: '0',
   playerOrTeam: 'Player', // 'Team'
   playerPosition: null, // 'F', 'C', 'G'
@@ -175,6 +178,38 @@ export const LEAGUE_LEADERS = {
     Season: DEFAULTS.season,
     SeasonType: DEFAULTS.seasonType,
     StatCategory: DEFAULTS.statCategory
+  }
+}
+
+export const LINEUPS = {
+  endpoint: '/stats/leaguedashlineups',
+  defaults: {
+    Conference: DEFAULTS.conference,
+    DateFrom: null,
+    DateTo: null,
+    Division: DEFAULTS.division,
+    GameSegment: DEFAULTS.gameSegment,
+    GroupQuantity: DEFAULTS.groupQuantity,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    MeasureType: DEFAULTS.measureType,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    PaceAdjust: DEFAULTS.optional,
+    Period: DEFAULTS.period,
+    PerMode: DEFAULTS.perMode,
+    PlusMinus: DEFAULTS.optional,
+    PORound: DEFAULTS.playoffRound,
+    Rank: DEFAULTS.optional,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    ShotClockRange: DEFAULTS.shotClockRange,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division
   }
 }
 
@@ -466,12 +501,81 @@ export const PLAYER_INFO = {
   }
 }
 
+export const PLAYER_OPPONENT_STATS = {
+  endpoint: '/stats/leagueplayerondetails',
+  defaults: {
+    DateFrom: null,
+    DateTo: null,
+    GameSegment: DEFAULTS.gameSegment,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    MeasureType: DEFAULTS.measureType,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    PaceAdjust: DEFAULTS.optional,
+    Period: DEFAULTS.period,
+    PerMode: DEFAULTS.perMode,
+    PlusMinus: DEFAULTS.optional,
+    Rank: DEFAULTS.optional,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division
+  }
+}
+
 export const PLAYER_PROFILE = {
   endpoint: '/stats/playerprofilev2',
   defaults: {
     LeagueID: DEFAULTS.leagueID,
     PerMode: DEFAULTS.perMode,
     PlayerID: DEFAULTS.playerID
+  }
+}
+
+export const PLAYER_SHOT_LOCATION_STATS = {
+  endpoint: '/stats/leaguedashplayershotlocations',
+  defaults: {
+    College: null,
+    Conference: DEFAULTS.conference,
+    Country: null,
+    DateFrom: null,
+    DateTo: null,
+    DistanceRange: DEFAULTS.distanceRange,
+    Division: DEFAULTS.division,
+    DraftPick: null,
+    DraftYear: DEFAULTS.draftYear,
+    GameScope: null,
+    GameSegment: DEFAULTS.gameSegment,
+    Height: DEFAULTS.height,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    MeasureType: DEFAULTS.measureType,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    PaceAdjust: DEFAULTS.optional,
+    Period: DEFAULTS.period,
+    PerMode: DEFAULTS.perMode,
+    PlayerExperience: null,
+    PlayerPosition: DEFAULTS.playerPosition,
+    PlusMinus: DEFAULTS.optional,
+    PORound: DEFAULTS.playoffRound,
+    Rank: DEFAULTS.optional,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    ShotClockRange: DEFAULTS.shotClockRange,
+    StarterBench: DEFAULTS.starterBench,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division,
+    Weight: DEFAULTS.weight
   }
 }
 
@@ -525,21 +629,109 @@ export const SCOREBOARD = {
   }
 }
 
-export const PLAYER_SHOT_LOCATION_STATS = {
-  endpoint: '/stats/leaguedashplayershotlocations',
+export const TEAM_CLUTCH_STATS = {
+  endpoint: 'stats/leaguedashteamclutch',
   defaults: {
-    College: null,
+    AheadBehind: DEFAULTS.aheadOrBehind,
+    ClutchTime: DEFAULTS.clutchTime,
     Conference: DEFAULTS.conference,
-    Country: null,
     DateFrom: null,
     DateTo: null,
-    DistanceRange: DEFAULTS.distanceRange,
     Division: DEFAULTS.division,
-    DraftPick: null,
-    DraftYear: DEFAULTS.draftYear,
-    GameScope: null,
+    GameScope: DEFAULTS.gameScope,
     GameSegment: DEFAULTS.gameSegment,
-    Height: DEFAULTS.height,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    MeasureType: DEFAULTS.measureType,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    PaceAdjust: DEFAULTS.optional,
+    Period: DEFAULTS.period,
+    PerMode: DEFAULTS.perMode,
+    PlayerExperience: DEFAULTS.playerExperience,
+    PlayerPosition: DEFAULTS.playerPosition,
+    PlusMinus: DEFAULTS.optional,
+    PointDiff: DEFAULTS.pointDiff,
+    PORound: DEFAULTS.playoffRound,
+    Rank: DEFAULTS.optional,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    ShotClockRange: DEFAULTS.shotClockRange,
+    StarterBench: DEFAULTS.starterBench,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division
+  }
+}
+
+export const TEAM_DEFENSE_STATS = {
+  endpoint: '/stats/leaguedashptteamdefend',
+  defaults: {
+    Conference: DEFAULTS.conference,
+    DateFrom: null,
+    DateTo: null,
+    DefenseCategory: DEFAULTS.defenseCategory,
+    Division: DEFAULTS.division,
+    GameSegment: DEFAULTS.gameSegment,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    Period: DEFAULTS.period,
+    PerMode: DEFAULTS.perMode,
+    PORound: DEFAULTS.playoffRound,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division
+  }
+}
+
+export const TEAM_DETAILS = {
+  endpoint: '/stats/teamdetails',
+  defaults: {
+    TeamID: DEFAULTS.teamID
+  }
+}
+
+export const TEAM_INFO = {
+  endpoint: '/stats/teaminfocommon',
+  defaults: {
+    LeagueID: DEFAULTS.leagueID,
+    Season: DEFAULTS.season,
+    SeasonType: DEFAULTS.seasonType,
+    TeamID: DEFAULTS.teamID
+  }
+}
+
+export const TEAM_GAMELOG = {
+  endpoint: '/stats/teamgamelog',
+  defaults: {
+    DateFrom: null,
+    DateTo: null,
+    LeagueID: DEFAULTS.leagueID,
+    Season: DEFAULTS.season,
+    SeasonType: DEFAULTS.seasonType,
+    TeamID: DEFAULTS.teamID
+  }
+}
+
+export const TEAM_GENERAL_STATS = {
+  endpoint: '/stats/leaguedashteamstats',
+  defaults: {
+    Conference: DEFAULTS.conference,
+    DateFrom: null,
+    DateTo: null,
+    Division: DEFAULTS.division,
+    GameScope: null,
+    GameSegment: null,
     LastNGames: DEFAULTS.lastNGames,
     LeagueID: DEFAULTS.leagueID,
     Location: DEFAULTS.location,
@@ -562,15 +754,38 @@ export const PLAYER_SHOT_LOCATION_STATS = {
     StarterBench: DEFAULTS.starterBench,
     TeamID: DEFAULTS.teamID,
     VsConference: DEFAULTS.conference,
-    VsDivision: DEFAULTS.division,
-    Weight: DEFAULTS.weight
+    VsDivision: DEFAULTS.division
   }
 }
 
-export const TEAM_DETAILS = {
-  endpoint: '/stats/teamdetails',
+export const TEAM_HUSTLE_STATS = {
+  endpoint: '/stats/leaguehustlestatsteam',
   defaults: {
-    TeamID: DEFAULTS.teamID
+    College: null,
+    Conference: DEFAULTS.conference,
+    Country: null,
+    DateFrom: null,
+    DateTo: null,
+    Division: DEFAULTS.division,
+    DraftPick: null,
+    DraftYear: DEFAULTS.draftYear,
+    Height: DEFAULTS.height,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    PerMode: DEFAULTS.perMode,
+    PlayerExperience: null,
+    PlayerPosition: DEFAULTS.playerPosition,
+    PORound: DEFAULTS.playoffRound,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division,
+    Weight: DEFAULTS.weight
   }
 }
 
@@ -605,13 +820,135 @@ export const TEAM_HUSTLE_STATS_LEADERS = {
   }
 }
 
-export const TEAM_INFO = {
-  endpoint: '/stats/teaminfocommon',
+export const TEAM_LINEUPS = {
+  endpoint: '/stats/teamdashlineups',
   defaults: {
+    DateFrom: null,
+    DateTo: null,
+    GameID: DEFAULTS.gameID,
+    GameSegment: DEFAULTS.gameSegment,
+    GroupQuantity: DEFAULTS.groupQuantity,
+    LastNGames: DEFAULTS.lastNGames,
     LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    MeasureType: DEFAULTS.measureType,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    PaceAdjust: DEFAULTS.optional,
+    Period: DEFAULTS.period,
+    PerMode: DEFAULTS.perMode,
+    PlusMinus: DEFAULTS.optional,
+    PORound: DEFAULTS.playoffRound,
+    Rank: DEFAULTS.optional,
     Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
     SeasonType: DEFAULTS.seasonType,
-    TeamID: DEFAULTS.teamID
+    ShotClockRange: DEFAULTS.shotClockRange,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division
+  }
+}
+
+export const TEAM_ON_OFF_COURT = {
+  endpoint: '/stats/teamplayeronoffdetails',
+  defaults: {
+    DateFrom: null,
+    DateTo: null,
+    GameSegment: DEFAULTS.gameSegment,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    MeasureType: DEFAULTS.measureType,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    PaceAdjust: DEFAULTS.optional,
+    Period: DEFAULTS.period,
+    PerMode: DEFAULTS.perMode,
+    PlusMinus: DEFAULTS.optional,
+    Rank: DEFAULTS.optional,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    ShotClockRange: DEFAULTS.shotClockRange,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division
+  }
+}
+
+export const TEAM_PASS_TRACKING_STATS = {
+  endpoint: '/stats/teamdashptpass',
+  defaults: {
+    DateFrom: null,
+    DateTo: null,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    PerMode: DEFAULTS.perMode,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division
+  }
+}
+
+export const TEAM_PLAYERS = {
+  endpoint: '/stats/teamplayerdashboard',
+  defaults: {
+    DateFrom: null,
+    DateTo: null,
+    GameSegment: DEFAULTS.gameSegment,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    MeasureType: DEFAULTS.measureType,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    PaceAdjust: DEFAULTS.optional,
+    Period: DEFAULTS.period,
+    PerMode: DEFAULTS.perMode,
+    PlusMinus: DEFAULTS.optional,
+    PORound: DEFAULTS.playoffRound,
+    Rank: DEFAULTS.optional,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    ShotClockRange: DEFAULTS.shotClockRange,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division
+  }
+}
+
+export const TEAM_REB_TRACKING_STATS = {
+  endpoint: '/stats/teamdashptreb',
+  defaults: {
+    DateFrom: null,
+    DateTo: null,
+    GameSegment: DEFAULTS.gameSegment,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    Period: DEFAULTS.period,
+    PerMode: DEFAULTS.perMode,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division
   }
 }
 
@@ -624,103 +961,168 @@ export const TEAM_ROSTER = {
   }
 }
 
-/**
- * @todo Implement these endpoints
- */
-
-// http://stats.nba.com/tracking/#!/player/
-export const TRACKING_STATS = {
-  endpoint: '/stats/leaguedashptstats',
-  defaults: {}
-}
-
-// http://stats.nba.com/league/team/#!/
-export const TEAM_STATS = {
-  endpoint: '/stats/leaguedashteamstats',
-  defaults: {}
-}
-
-// http://stats.nba.com/league/team/#!/clutch/
-export const TEAM_CLUTCH_STATS = {
-  endpoint: 'stats/leaguedashteamclutch',
-  defaults: {}
-}
-
-// http://stats.nba.com/league/team/#!/hustle/
-export const TEAM_HUSTLE_STATS = {
-  endpoint: '/stats/leaguehustlestatsteam',
-  defaults: {}
-}
-
-// http://stats.nba.com/league/team/defense/#!/
-export const TEAM_DEFENSE_STATS = {
-  endpoint: '/stats/leaguedashptteamdefend',
-  defaults: {}
-}
-
-// http://stats.nba.com/league/team/shots/#!/
-export const TEAM_SHOT_STATS = {
-  endpoint: '/stats/leaguedashteamptshot',
-  defaults: {}
-}
-
-// http://stats.nba.com/league/team/#!/shooting/
 export const TEAM_SHOT_LOCATION_STATS = {
   endpoint: '/stats/leaguedashteamshotlocations',
-  defaults: {}
+  defaults: {
+    Conference: DEFAULTS.conference,
+    DateFrom: null,
+    DateTo: null,
+    DistanceRange: DEFAULTS.distanceRange,
+    Division: DEFAULTS.division,
+    GameScope: null,
+    GameSegment: DEFAULTS.gameSegment,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    MeasureType: DEFAULTS.measureType,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    PaceAdjust: DEFAULTS.optional,
+    Period: DEFAULTS.period,
+    PerMode: DEFAULTS.perMode,
+    PlayerExperience: null,
+    PlayerPosition: DEFAULTS.playerPosition,
+    PlusMinus: DEFAULTS.optional,
+    PORound: DEFAULTS.playoffRound,
+    Rank: DEFAULTS.optional,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    ShotClockRange: DEFAULTS.shotClockRange,
+    StarterBench: DEFAULTS.starterBench,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division
+  }
 }
 
-// http://stats.nba.com/team/#!/1610612738/stats/
-export const TEAM_SPLITS = {
-  endpoint: '/stats/teamdashboardbygeneralsplits',
-  defaults: {}
+export const TEAM_SHOT_STATS = {
+  endpoint: '/stats/leaguedashteamptshot',
+  defaults: {
+    CloseDefDistRange: DEFAULTS.closeDefDistRange,
+    Conference: DEFAULTS.conference,
+    DateFrom: null,
+    DateTo: null,
+    Division: DEFAULTS.division,
+    DribbleRange: DEFAULTS.dribbleRange,
+    GameSegment: DEFAULTS.gameSegment,
+    GeneralRange: DEFAULTS.generalRange,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    Period: DEFAULTS.period,
+    PerMode: DEFAULTS.perMode,
+    PORound: DEFAULTS.playoffRound,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    ShotClockRange: DEFAULTS.shotClockRange,
+    ShotDistRange: DEFAULTS.shotDistRange,
+    TeamID: DEFAULTS.teamID,
+    TouchTimeRange: DEFAULTS.touchTimeRange,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division
+  }
 }
 
-// http://stats.nba.com/team/#!/1610612738/lineups/
-export const TEAM_LINEUPS = {
-  endpoint: '/stats/teamdashlineups',
-  defaults: {}
-}
-
-// http://stats.nba.com/team/#!/1610612738/players/
-export const TEAM_PLAYERS = {
-  endpoint: '/stats/teamplayerdashboard',
-  defaults: {}
-}
-
-// http://stats.nba.com/team/#!/1610612738/onoffcourt/
-export const TEAM_ON_OFF_COURT = {
-  endpoint: '/stats/teamplayeronoffdetails',
-  defaults: {}
-}
-
-// http://stats.nba.com/team/#!/1610612738/gamelogs/
-export const TEAM_GAMELOG = {
-  endpoint: '/stats/teamgamelog',
-  defaults: {}
-}
-
-// http://stats.nba.com/team/#!/1610612738/seasons/
-// http://stats.nba.com/team/#!/1610612738/yearoveryear/
-export const TEAM_YEARLY_STATS = {
-  endpoint: '/stats/teamyearbyyearstats',
-  defaults: {}
-}
-
-// http://stats.nba.com/team/#!/1610612738/tracking/shots/
 export const TEAM_SHOT_TRACKING_STATS = {
   endpoint: '/stats/teamdashptshots',
-  defaults: {}
+  defaults: {
+    DateFrom: null,
+    DateTo: null,
+    GameSegment: DEFAULTS.gameSegment,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    Period: DEFAULTS.period,
+    PerMode: DEFAULTS.perMode,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division
+  }
 }
 
-// http://stats.nba.com/team/#!/1610612738/tracking/rebounds/
-export const TEAM_REB_TRACKING_STATS = {
-  endpoint: '/stats/teamdashptreb',
-  defaults: {}
+export const TEAM_SPLITS = {
+  endpoint: '/stats/teamdashboardbygeneralsplits',
+  defaults: {
+    DateFrom: null,
+    DateTo: null,
+    GameSegment: DEFAULTS.gameSegment,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    MeasureType: DEFAULTS.measureType,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    PaceAdjust: DEFAULTS.optional,
+    Period: DEFAULTS.period,
+    PerMode: DEFAULTS.perMode,
+    PlusMinus: DEFAULTS.optional,
+    PORound: DEFAULTS.playoffRound,
+    Rank: DEFAULTS.optional,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    ShotClockRange: DEFAULTS.shotClockRange,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division
+  }
 }
 
-// http://stats.nba.com/team/#!/1610612738/tracking/passes/
-export const TEAM_PASS_TRACKING_STATS = {
-  endpoint: '/stats/teamdashptpass',
-  defaults: {}
+export const TEAM_YEARLY_STATS = {
+  endpoint: '/stats/teamyearbyyearstats',
+  defaults: {
+    LeagueID: DEFAULTS.leagueID,
+    PerMode: DEFAULTS.perMode,
+    SeasonType: DEFAULTS.seasonType,
+    TeamID: DEFAULTS.teamID
+  }
+}
+
+export const TRACKING_STATS = {
+  endpoint: '/stats/leaguedashptstats',
+  defaults: {
+    College: null,
+    Conference: DEFAULTS.conference,
+    Country: null,
+    DateFrom: null,
+    DateTo: null,
+    Division: DEFAULTS.division,
+    DraftPick: null,
+    DraftYear: DEFAULTS.draftYear,
+    GameScope: DEFAULTS.gameScope,
+    Height: DEFAULTS.height,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    PerMode: DEFAULTS.perMode,
+    PlayerExperience: null,
+    PlayerOrTeam: DEFAULTS.playerOrTeam,
+    PlayerPosition: DEFAULTS.playerPosition,
+    PORound: DEFAULTS.playoffRound,
+    PtMeasureType: DEFAULTS.ptMeasureType,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    StarterBench: DEFAULTS.starterBench,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division,
+    Weight: DEFAULTS.weight
+  }
 }

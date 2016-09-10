@@ -181,6 +181,38 @@ export const LEAGUE_LEADERS = {
   }
 }
 
+export const LINEUPS = {
+  endpoint: '/stats/leaguedashlineups',
+  defaults: {
+    Conference: DEFAULTS.conference,
+    DateFrom: null,
+    DateTo: null,
+    Division: DEFAULTS.division,
+    GameSegment: DEFAULTS.gameSegment,
+    GroupQuantity: DEFAULTS.groupQuantity,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    MeasureType: DEFAULTS.measureType,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    PaceAdjust: DEFAULTS.optional,
+    Period: DEFAULTS.period,
+    PerMode: DEFAULTS.perMode,
+    PlusMinus: DEFAULTS.optional,
+    PORound: DEFAULTS.playoffRound,
+    Rank: DEFAULTS.optional,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    ShotClockRange: DEFAULTS.shotClockRange,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division
+  }
+}
+
 export const PLAYER_AWARDS = {
   endpoint: '/stats/playerawards',
   defaults: {
@@ -466,6 +498,33 @@ export const PLAYER_INFO = {
   defaults: {
     LeagueID: DEFAULTS.leagueID,
     PlayerID: DEFAULTS.playerID
+  }
+}
+
+export const PLAYER_OPPONENT_STATS = {
+  endpoint: '/stats/leagueplayerondetails',
+  defaults: {
+    DateFrom: null,
+    DateTo: null,
+    GameSegment: DEFAULTS.gameSegment,
+    LastNGames: DEFAULTS.lastNGames,
+    LeagueID: DEFAULTS.leagueID,
+    Location: DEFAULTS.location,
+    MeasureType: DEFAULTS.measureType,
+    Month: DEFAULTS.month,
+    OpponentTeamID: DEFAULTS.teamID,
+    Outcome: DEFAULTS.outcome,
+    PaceAdjust: DEFAULTS.optional,
+    Period: DEFAULTS.period,
+    PerMode: DEFAULTS.perMode,
+    PlusMinus: DEFAULTS.optional,
+    Rank: DEFAULTS.optional,
+    Season: DEFAULTS.season,
+    SeasonSegment: DEFAULTS.seasonSegment,
+    SeasonType: DEFAULTS.seasonType,
+    TeamID: DEFAULTS.teamID,
+    VsConference: DEFAULTS.conference,
+    VsDivision: DEFAULTS.division
   }
 }
 
@@ -1067,7 +1126,3 @@ export const TRACKING_STATS = {
     Weight: DEFAULTS.weight
   }
 }
-
-/**
- * @todo Implement these endpoints
- */

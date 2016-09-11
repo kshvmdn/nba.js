@@ -31,7 +31,7 @@ describe('utils/getJson', () => {
       should.exist(err)
       done()
     })
-  }).timeout(10000)
+  }).timeout(20000)
 
   it('should throw 400 on invalid request', (done) => {
     let request = getJson(endpoint, { query: {} })
@@ -43,7 +43,7 @@ describe('utils/getJson', () => {
     })
   })
 
-  it('should support full URLs in addition to endpoints', (done) => {
+  it('should support full URLs as `endpoint` parameter', (done) => {
     let request = getJson('http://stats.nba.com/stats/teamdetails', { query: { teamId: 1610612741 } })
 
     request.then(res => {
@@ -55,5 +55,5 @@ describe('utils/getJson', () => {
       should.exist(err)
       done()
     })
-  }).timeout(10000)
+  }).timeout(20000)
 })

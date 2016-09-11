@@ -21,5 +21,9 @@ export default function getJson (endpoint = '', opts) {
     json: false
   }, opts || {})
 
-  return got(`${BASE_URL}${endpoint}`, opts)
+  let re = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/
+  let url = re.test(endpoint) ? endpoint : `${BASE_URL}${endpoint}`
+
+  // in the case that endpoint is a URL, use endpoint, else concatenate the endpoint to BASE_URL
+  return got(url, opts)
 }

@@ -20,22 +20,40 @@ describe('utils/getJson', () => {
   })
 
   it('should respond with response/error', (done) => {
-    getJson(endpoint, { query })
-      .then((res) => {
-        should.exist(res)
-        res.should.have.property('body')
-        done()
-      }).catch((err) => {
-        should.exist(err)
-        done()
-      })
+    let request = getJson(endpoint, { query })
+
+    request.then(res => {
+      should.exist(res)
+      done()
+    })
+
+    request.catch(err => {
+      should.exist(err)
+      done()
+    })
   }).timeout(10000)
 
   it('should throw 400 on invalid request', (done) => {
-    getJson(endpoint, { query: {} }).catch((err) => {
+    let request = getJson(endpoint, { query: {} })
+
+    request.catch((err) => {
       should.exist(err)
       err.statusCode.should.equal(400)
       done()
     })
   })
+
+  it('should support full URLs in addition to endpoints', (done) => {
+    let request = getJson('http://stats.nba.com/stats/teamdetails', { query: { teamId: 1610612741 } })
+
+    request.then(res => {
+      should.exist(res)
+      done()
+    })
+
+    request.catch(err => {
+      should.exist(err)
+      done()
+    })
+  }).timeout(10000)
 })

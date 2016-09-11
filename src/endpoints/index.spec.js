@@ -22,13 +22,13 @@ describe('endpoints/index', () => {
   })
 
   describe('requests', () => {
-    it('should return as a Promise', (done) => {
+    it('should respond with a Promise', (done) => {
       let request = e.allPlayers()
       request.should.be.Promise()
       done()
     })
 
-    it('should callback with err/res', (done) => {
+    it('should respond with error-first callback', (done) => {
       e.allPlayers((err, res) => {
         should.exist(res)
         should.not.exist(err)

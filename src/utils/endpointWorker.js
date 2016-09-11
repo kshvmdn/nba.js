@@ -2,19 +2,21 @@ import getJson from './../utils/getJson'
 import flattenResultSet from './../utils/flattenResultSet'
 
 /**
- * Make a request to the API and return the flattened JSON response.
+ * Make a request, parse & flatten the response and return it.
  * @param  {string}   endpoint URL endpoint
- * @param  {Object}   defaults Query defaults for this request
+ * @param  {Object}   query    URL query params for this request
  * @param  {Function} cb       Error-first callback
  * @return {Function}          Flattened API response
  */
-function get (endpoint, defaults, cb) {
-  getJson(endpoint, { query: defaults })
-    .then((res) => res.body)
-    .then((body) => JSON.parse(body))
-    .then((json) => flattenResultSet(json.resultSets || json.resultSet))
-    .then((flattened) => cb(null, flattened))
-    .catch((err) => cb(err))
+function get (endpoint, query, cb) {
+  getJson(endpoint, { query })
+    .then(res => res.body)
+    .then(body => JSON.parse(body))
+    .then(json => flattenResultSet(json.resultSets || [json.resultSet]))
+    .then(flattened => cb(null, flattened))
+    .catch(err => cb(Object.assign(err, {
+      body: err.statusCode && err.statusMessage && err.response && err.response.body ? err.response.body : err.message
+    })))
 }
 
 /**

@@ -6,18 +6,28 @@ let rowSet = [
   [1, 201939, 'Stephen Curry', 1610612744, 'GSW', 'Golden State Warriors', '30', 'G', 30.1],
   [2, 201935, 'James Harden', 1610612745, 'HOU', 'Houston Rockets', '13', 'G', 29.0]
 ]
+let name = 'top_2_scoring_pgs'
+
+let resultSet = [{ headers, rowSet, name }]
 
 describe('utils/flattenResultSet', () => {
   it('should return a Promise', (done) => {
-    let flattened = flattenResultSet({ headers, rowSet })
+    let flattened = flattenResultSet(resultSet)
     flattened.should.be.Promise()
     done()
   })
 
-  it('should not alter values', (done) => {
-    flattenResultSet({ headers, rowSet }).then((flattened) => {
+  it('should return an object hashed by resultSet name', (done) => {
+    flattenResultSet(resultSet).then((res) => {
+      Object.keys(res)[0].should.eql(name)
+      done()
+    })
+  })
+
+  it('should not alter row values', (done) => {
+    flattenResultSet(resultSet).then((res) => {
       for (let i in rowSet) {
-        Object.keys(flattened.rows[i]).map(v => flattened.rows[i][v]).should.eql(rowSet[i])
+        Object.keys(res[name][i]).map(v => res[name][i][v]).should.eql(rowSet[i])
       }
 
       done()
@@ -25,27 +35,31 @@ describe('utils/flattenResultSet', () => {
   })
 
   it('should have lowercase keys', (done) => {
-    flattenResultSet({ headers, rowSet }).then((flattened) => {
+    flattenResultSet(resultSet).then((res) => {
       for (let i in rowSet) {
-        Object.keys(flattened.rows[i]).every(v => v === v.toLowerCase()).should.be.true()
+        Object.keys(res[name][i]).every(v => v === v.toLowerCase()).should.be.true()
       }
 
       done()
     })
   })
 
-  it('should include name key (when it exists)', (done) => {
-    flattenResultSet({ name: 'test', headers, rowSet }).then((flattened) => {
-      flattened.name.should.equal('test')
-      done()
-    })
+  it('should flatten multiple sets and return all with `name` used as key', (done) => {
+    flattenResultSet([ { headers, rowSet, name }, { headers, rowSet, name: `${name}2` } ])
+      .then((res) => {
+        Object.keys(res).should.have.length(2)
+        res.should.have.property(name)
+        res.should.have.property(`${name}2`)
+        done()
+      })
   })
 
-  it('should flatten multiple sets and return all as an array', (done) => {
-    flattenResultSet([{ headers, rowSet }, { headers, rowSet }]).then((flattened) => {
-      flattened.should.be.an.Array
-      flattened.should.have.length(2)
-      done()
-    })
+  it('should merge multiple sets with same `name` key', (done) => {
+    flattenResultSet(resultSet.concat(resultSet))
+      .then((res) => {
+        Object.keys(res).should.have.length(1)
+        res.should.have.property(name)
+        done()
+      })
   })
 })

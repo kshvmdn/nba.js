@@ -630,7 +630,7 @@ export const SCOREBOARD = {
 }
 
 export const TEAM_CLUTCH_STATS = {
-  endpoint: 'stats/leaguedashteamclutch',
+  endpoint: '/stats/leaguedashteamclutch',
   defaults: {
     AheadBehind: DEFAULTS.aheadOrBehind,
     ClutchTime: DEFAULTS.clutchTime,

@@ -790,7 +790,7 @@ export const TEAM_HUSTLE_STATS = {
 }
 
 export const TEAM_HUSTLE_STATS_LEADERS = {
-  endpoint: 'stats/leaguehustlestatsteamleaders',
+  endpoint: '/stats/leaguehustlestatsteamleaders',
   defaults: {
     College: null,
     Conference: DEFAULTS.conference,

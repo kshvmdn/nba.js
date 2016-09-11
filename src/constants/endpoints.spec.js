@@ -21,7 +21,7 @@ describe('constants/endpoints', () => {
   it('should export objects with `endpoint` values that begin with a forward slash', (done) => {
     Object.keys(constants).every(k => {
       let v = constants[k]
-      return v.hasOwnProperty('endpoint') && /\/[^/]/g.test(v.endpoint)
+      return v.hasOwnProperty('endpoint') && /^\/[^/]/g.test(v.endpoint)
     }).should.be.true()
 
     done()

@@ -24,7 +24,7 @@ Install via [npm](https://npmjs.com/packages/npm.js) or [download the source](ht
 
 - Import the module.
   
-  + ES5 (note the `.default`)
+  + ES5
 
     ```js
     const nba = require('nba.js').default;
@@ -32,7 +32,7 @@ Install via [npm](https://npmjs.com/packages/npm.js) or [download the source](ht
     const nba = require('nba.js').endpoints;
     ```
 
-  + ES6
+  + ES2015
 
     ```js
     import nba from 'nba.js';
@@ -41,7 +41,7 @@ Install via [npm](https://npmjs.com/packages/npm.js) or [download the source](ht
 ### API
 
 - Endpoint methods take 2 optional arguments - `query` and `cb`. Each will respond with either a Promise or an error-first callback (if provided) – use whichever you prefer.
-  
+
   ```js
   nba.allPlayers()
     .then(res => console.log(res))
@@ -175,7 +175,7 @@ This project is completely open source. Feel free to [open an issue](https://git
   $ npm test
   ```
 
-- Before submitting a PR, please ensure you have added _adequate_ tests and the changes comply with the [Standard](https://github.com/feross/standard) style guide (`npm run lint`).
+- Before submitting a PR, please ensure you've added tests (if applicable) and the changes comply with the [Standard](https://github.com/feross/standard) style guide (`npm run lint`).
 
 ### License
 

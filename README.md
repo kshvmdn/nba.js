@@ -152,9 +152,9 @@ Install via [npm](https://npmjs.com/packages/npm.js) or [download the source](ht
   + trackingStats
     * [`/stats/leaguedashptstats`](http://stats.nba.com/stats/leaguedashptstats)
 
-- Valid query parameters:
+- Query parameters:
 
-  + _Coming soon._
+  + More details coming soon – for the time being, you can refer to [`src/constants/endpoints.js`](src/constants/endpoints.js) for a list of parameters and valid values.
 
 ### Examples
 

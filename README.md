@@ -17,7 +17,7 @@ Install via [npm](https://npmjs.com/packages/npm.js) or [download the source](ht
 - GitHub
 
   ```sh
-  $ git clone https://github.com/kshvmdn/nba.js.git && cd $_ && npm install
+  $ git clone https://github.com/kshvmdn/nba.js.git nba.js && cd $_ && npm install
   ```
 
 ### Usage
@@ -168,7 +168,7 @@ This project is completely open source. Feel free to [open an issue](https://git
 
   ```sh
   # clone
-  $ git clone https://github.com/kshvmdn/nba.js.git && cd $_ && npm install
+  $ git clone https://github.com/kshvmdn/nba.js.git nba.js && cd $_ && npm install
   # build
   $ npm run build # to watch for changes, use build:watch instead
   # test

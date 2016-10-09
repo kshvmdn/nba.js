@@ -1,5 +1,5 @@
 import should from 'should'
-import * as constants from './stats-endpoints'
+import * as constants from './stats'
 
 describe('constants/endpoints', () => {
   it('should not export DEFAULTS', (done) => {
@@ -9,10 +9,10 @@ describe('constants/endpoints', () => {
     done()
   })
 
-  it('should export objects with `endpoint` & `defaults` keys', (done) => {
+  it('should export objects with `method`, `endpoint` & `defaults` keys', (done) => {
     Object.keys(constants).every(k => {
       let v = constants[k]
-      return v.hasOwnProperty('endpoint') && v.hasOwnProperty('defaults')
+      return v.hasOwnProperty('endpoint') && v.hasOwnProperty('defaults') && v.hasOwnProperty('method')
     }).should.be.true()
 
     done()

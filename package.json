@@ -27,8 +27,8 @@
     "build:watch": "npm run build -- -w",
     "prepublish": "npm run test && npm run build",
     "lint": "eslint src/",
-    "test": "npm run lint && mocha --compilers js:babel-core/register --colors --bail --reporter spec src/**/*.spec.js",
-    "coverage": "istanbul cover _mocha -- --compilers js:babel-core/register --colors --reporter dot src/**/*.spec.js"
+    "test": "npm run lint && mocha --compilers js:babel-core/register --colors --bail --reporter spec $(find src/ -name \"*.spec.js\")",
+    "coverage": "istanbul cover _mocha -- --compilers js:babel-core/register --colors --reporter dot $(find src/ -name \"*.spec.js\")"
   },
   "dependencies": {
     "got": "^6.3.0"

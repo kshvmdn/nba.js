@@ -1,4 +1,4 @@
-import getJson from './../utils/get-json'
+import fetch from './../utils/fetch'
 import flattenResultSet from './../utils/flatten-result-set'
 
 /**
@@ -9,7 +9,7 @@ import flattenResultSet from './../utils/flatten-result-set'
  * @return {Function} Flattened API response
  */
 function get (endpoint, query, cb) {
-  getJson(endpoint, { query })
+  fetch.stats(endpoint, { query })
     .then(res => res.body)
     .then(body => JSON.parse(body))
     .then(json => flattenResultSet(json.resultSets || [json.resultSet]))

@@ -1,5 +1,5 @@
 import should from 'should'
-import getJson from './get-json'
+import { stats as fetch } from './fetch'
 
 let endpoint = '/stats/homepagev2'
 let query = {
@@ -12,15 +12,15 @@ let query = {
   StatType: 'Traditional'
 }
 
-describe('utils/getJson', () => {
+describe('utils/fetch', () => {
   it('should return response/error as a Promise', (done) => {
-    let request = getJson(endpoint, { query })
+    let request = fetch(endpoint, { query })
     request.should.be.Promise()
     done()
   })
 
   it('should respond with response/error', (done) => {
-    let request = getJson(endpoint, { query })
+    let request = fetch(endpoint, { query })
 
     request.then(res => {
       should.exist(res)
@@ -34,7 +34,7 @@ describe('utils/getJson', () => {
   }).timeout(20000)
 
   it('should throw 400 on invalid request', (done) => {
-    let request = getJson(endpoint, { query: {} })
+    let request = fetch(endpoint, { query: {} })
 
     request.catch((err) => {
       should.exist(err)
@@ -44,7 +44,7 @@ describe('utils/getJson', () => {
   })
 
   it('should support full URLs as `endpoint` parameter', (done) => {
-    let request = getJson('http://stats.nba.com/stats/teamdetails', { query: { teamId: 1610612741 } })
+    let request = fetch('http://stats.nba.com/stats/teamdetails', { query: { teamId: 1610612741 } })
 
     request.then(res => {
       should.exist(res)

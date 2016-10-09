@@ -1,5 +1,5 @@
 import should from 'should'
-import flattenResultSet from './flattenResultSet'
+import flattenResultSet from './flatten-result-set'
 
 let headers = ['RANK', 'PLAYER_ID', 'PLAYER', 'TEAM_ID', 'TEAM_ABBREVIATION', 'TEAM_NAME', 'JERSEY_NUM', 'PLAYER_POSITION', 'PTS']
 let rowSet = [
@@ -10,7 +10,7 @@ let name = 'top_2_scoring_pgs'
 
 let resultSet = [{ headers, rowSet, name }]
 
-describe('utils/flattenResultSet', () => {
+describe('endpoints/stats/utils/flatten-result-set', () => {
   it('should return a Promise', (done) => {
     let flattened = flattenResultSet(resultSet)
     flattened.should.be.Promise()

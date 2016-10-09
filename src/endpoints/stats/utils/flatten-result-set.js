@@ -2,7 +2,7 @@
  * Flatten a result set by mapping each of it's rows' indices to
  * the respective header item.
  *
- * @param  {Object[]} resultSets Result set(s) to be flattened
+ * @param {Object[]} resultSets - Result set(s) to be flattened
  * @return {Promise}
  */
 export default function flattenResultSet (resultSets) {

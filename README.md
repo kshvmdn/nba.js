@@ -6,7 +6,7 @@ A Node.js library for current and historical NBA stats, scores, and data.
 
 ### Installation
 
-Install via [npm](https://npmjs.com/packages/npm.js) or [download the source](https://github.com/kshvmdn/nba.js/archive/master.zip) (via GitHub) and build manually.
+Install via [npm](https://npmjs.com/packages/nba.js) or [download the source](https://github.com/kshvmdn/nba.js/archive/master.zip) (via GitHub) and build manually.
 
 - npm
 

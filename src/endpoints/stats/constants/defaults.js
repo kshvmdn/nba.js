@@ -50,6 +50,7 @@ const DEFAULTS = {
 }
 
 export const ALL_PLAYERS = {
+  method: 'allPlayers',
   endpoint: '/stats/commonallplayers',
   defaults: {
     IsOnlyCurrentSeason: 1,
@@ -59,6 +60,7 @@ export const ALL_PLAYERS = {
 }
 
 export const ASSIST_TRACKER = {
+  method: 'assistTracker',
   endpoint: '/stats/assisttracker',
   defaults: {
     PerMode: DEFAULTS.perMode,
@@ -93,6 +95,7 @@ export const ASSIST_TRACKER = {
 }
 
 export const DEFENSE_HUB = {
+  method: 'defenseHub',
   endpoint: '/stats/defensehub',
   defaults: {
     GameScope: DEFAULTS.gameScope,
@@ -105,6 +108,7 @@ export const DEFENSE_HUB = {
 }
 
 export const DRAFT_COMBINE = {
+  method: 'draftCombine',
   endpoint: '/stats/draftcombinestats',
   defaults: {
     LeagueID: DEFAULTS.leagueID,
@@ -113,6 +117,7 @@ export const DRAFT_COMBINE = {
 }
 
 export const DRAFT_HISTORY = {
+  method: 'draftHistory',
   endpoint: '/stats/drafthistory',
   defaults: {
     College: null,
@@ -127,6 +132,7 @@ export const DRAFT_HISTORY = {
 }
 
 export const FRANCHISE_HISTORY = {
+  method: 'franchiseHistory',
   endpoint: '/stats/franchisehistory',
   defaults: {
     LeagueID: DEFAULTS.leagueID
@@ -134,6 +140,7 @@ export const FRANCHISE_HISTORY = {
 }
 
 export const FRANCHISE_LEADERS = {
+  method: 'franchiseLeaders',
   endpoint: '/stats/franchiseleaders',
   defaults: {
     LeagueID: DEFAULTS.leagueID,
@@ -142,6 +149,7 @@ export const FRANCHISE_LEADERS = {
 }
 
 export const HOMEPAGE = {
+  method: 'homepage',
   endpoint: '/stats/homepagev2',
   defaults: {
     GameScope: DEFAULTS.gameScope,
@@ -155,6 +163,7 @@ export const HOMEPAGE = {
 }
 
 export const LEAGUE_GAMELOG = {
+  method: 'leagueGamelog',
   endpoint: '/stats/leaguegamelog',
   defaults: {
     Counter: '1000',
@@ -170,6 +179,7 @@ export const LEAGUE_GAMELOG = {
 }
 
 export const LEAGUE_LEADERS = {
+  method: 'leagueLeaders',
   endpoint: '/stats/leagueleaders',
   defaults: {
     LeagueID: DEFAULTS.leagueID,
@@ -182,6 +192,7 @@ export const LEAGUE_LEADERS = {
 }
 
 export const LINEUPS = {
+  method: 'lineups',
   endpoint: '/stats/leaguedashlineups',
   defaults: {
     Conference: DEFAULTS.conference,
@@ -214,6 +225,7 @@ export const LINEUPS = {
 }
 
 export const PLAYER_AWARDS = {
+  method: 'playerAwards',
   endpoint: '/stats/playerawards',
   defaults: {
     PlayerID: DEFAULTS.playerID
@@ -221,6 +233,7 @@ export const PLAYER_AWARDS = {
 }
 
 export const PLAYER_BIO_STATS = {
+  method: 'playerBioStats',
   endpoint: '/stats/leaguedashplayerbiostats',
   defaults: {
     College: null,
@@ -258,6 +271,7 @@ export const PLAYER_BIO_STATS = {
 }
 
 export const PLAYER_CLUTCH_STATS = {
+  method: 'playerClutchStats',
   endpoint: '/stats/leaguedashplayerclutch',
   defaults: {
     AheadBehind: DEFAULTS.aheadBehind,
@@ -302,6 +316,7 @@ export const PLAYER_CLUTCH_STATS = {
 }
 
 export const PLAYER_CAREER_STATS = {
+  method: 'playerCareerStats',
   endpoint: '/stats/playercareerstats',
   defaults: {
     LeagueID: DEFAULTS.leagueID,
@@ -311,6 +326,7 @@ export const PLAYER_CAREER_STATS = {
 }
 
 export const PLAYER_COMPARE = {
+  method: 'playerCompare',
   endpoint: '/stats/playercompare',
   defaults: {
     Conference: DEFAULTS.conference,
@@ -342,6 +358,7 @@ export const PLAYER_COMPARE = {
 }
 
 export const PLAYER_DEFENSE_STATS = {
+  method: 'playerDefenseStats',
   endpoint: '/stats/leaguedashptdefend',
   defaults: {
     College: null,
@@ -379,6 +396,7 @@ export const PLAYER_DEFENSE_STATS = {
 }
 
 export const PLAYER_GAMELOG = {
+  method: 'playerGamelog',
   endpoint: '/stats/playergamelog',
   defaults: {
     DateFrom: null,
@@ -391,6 +409,7 @@ export const PLAYER_GAMELOG = {
 }
 
 export const PLAYER_GENERAL_STATS = {
+  method: 'playerGeneralStats',
   endpoint: '/stats/leaguedashplayerstats',
   defaults: {
     College: null,
@@ -432,6 +451,7 @@ export const PLAYER_GENERAL_STATS = {
 }
 
 export const PLAYER_HUSTLE_STATS = {
+  method: 'playerHustleStats',
   endpoint: '/stats/leaguehustlestatsplayer',
   defaults: {
     College: null,
@@ -463,6 +483,7 @@ export const PLAYER_HUSTLE_STATS = {
 }
 
 export const PLAYER_HUSTLE_STATS_LEADERS = {
+  method: 'playerHustleStatsLeaders',
   endpoint: '/stats/leaguehustlestatsplayerleaders',
   defaults: {
     College: null,
@@ -494,6 +515,7 @@ export const PLAYER_HUSTLE_STATS_LEADERS = {
 }
 
 export const PLAYER_INFO = {
+  method: 'playerInfo',
   endpoint: '/stats/commonplayerinfo',
   defaults: {
     LeagueID: DEFAULTS.leagueID,
@@ -502,6 +524,7 @@ export const PLAYER_INFO = {
 }
 
 export const PLAYER_OPPONENT_STATS = {
+  method: 'playerOpponentStats',
   endpoint: '/stats/leagueplayerondetails',
   defaults: {
     DateFrom: null,
@@ -529,6 +552,7 @@ export const PLAYER_OPPONENT_STATS = {
 }
 
 export const PLAYER_PROFILE = {
+  method: 'playerProfile',
   endpoint: '/stats/playerprofilev2',
   defaults: {
     LeagueID: DEFAULTS.leagueID,
@@ -538,6 +562,7 @@ export const PLAYER_PROFILE = {
 }
 
 export const PLAYER_SHOT_LOCATION_STATS = {
+  method: 'playerShotLocationStats',
   endpoint: '/stats/leaguedashplayershotlocations',
   defaults: {
     College: null,
@@ -580,6 +605,7 @@ export const PLAYER_SHOT_LOCATION_STATS = {
 }
 
 export const PLAYER_SHOT_STATS = {
+  method: 'playerShotStats',
   endpoint: '/stats/leaguedashplayerptshot',
   defaults: {
     CloseDefDistRange: DEFAULTS.closeDefDistRange,
@@ -621,6 +647,7 @@ export const PLAYER_SHOT_STATS = {
 }
 
 export const SCOREBOARD = {
+  method: 'scoreboard',
   endpoint: '/stats/scoreboardV2',
   defaults: {
     DayOffset: DEFAULTS.dayOffset,
@@ -630,6 +657,7 @@ export const SCOREBOARD = {
 }
 
 export const TEAM_CLUTCH_STATS = {
+  method: 'teamClutchStats',
   endpoint: '/stats/leaguedashteamclutch',
   defaults: {
     AheadBehind: DEFAULTS.aheadOrBehind,
@@ -668,6 +696,7 @@ export const TEAM_CLUTCH_STATS = {
 }
 
 export const TEAM_DEFENSE_STATS = {
+  method: 'teamDefenseStats',
   endpoint: '/stats/leaguedashptteamdefend',
   defaults: {
     Conference: DEFAULTS.conference,
@@ -695,6 +724,7 @@ export const TEAM_DEFENSE_STATS = {
 }
 
 export const TEAM_DETAILS = {
+  method: 'teamDetails',
   endpoint: '/stats/teamdetails',
   defaults: {
     TeamID: DEFAULTS.teamID
@@ -702,6 +732,7 @@ export const TEAM_DETAILS = {
 }
 
 export const TEAM_INFO = {
+  method: 'teamInfo',
   endpoint: '/stats/teaminfocommon',
   defaults: {
     LeagueID: DEFAULTS.leagueID,
@@ -712,6 +743,7 @@ export const TEAM_INFO = {
 }
 
 export const TEAM_GAMELOG = {
+  method: 'teamGamelog',
   endpoint: '/stats/teamgamelog',
   defaults: {
     DateFrom: null,
@@ -724,6 +756,7 @@ export const TEAM_GAMELOG = {
 }
 
 export const TEAM_GENERAL_STATS = {
+  method: 'teamGeneralStats',
   endpoint: '/stats/leaguedashteamstats',
   defaults: {
     Conference: DEFAULTS.conference,
@@ -759,6 +792,7 @@ export const TEAM_GENERAL_STATS = {
 }
 
 export const TEAM_HUSTLE_STATS = {
+  method: 'teamHustleStats',
   endpoint: '/stats/leaguehustlestatsteam',
   defaults: {
     College: null,
@@ -790,6 +824,7 @@ export const TEAM_HUSTLE_STATS = {
 }
 
 export const TEAM_HUSTLE_STATS_LEADERS = {
+  method: 'teamHustleStatsLeaders',
   endpoint: '/stats/leaguehustlestatsteamleaders',
   defaults: {
     College: null,
@@ -821,6 +856,7 @@ export const TEAM_HUSTLE_STATS_LEADERS = {
 }
 
 export const TEAM_LINEUPS = {
+  method: 'teamLineups',
   endpoint: '/stats/teamdashlineups',
   defaults: {
     DateFrom: null,
@@ -852,6 +888,7 @@ export const TEAM_LINEUPS = {
 }
 
 export const TEAM_ON_OFF_COURT = {
+  method: 'teamOnOffCourtStats',
   endpoint: '/stats/teamplayeronoffdetails',
   defaults: {
     DateFrom: null,
@@ -880,6 +917,7 @@ export const TEAM_ON_OFF_COURT = {
 }
 
 export const TEAM_PASS_TRACKING_STATS = {
+  method: 'teamPassTrackingStats',
   endpoint: '/stats/teamdashptpass',
   defaults: {
     DateFrom: null,
@@ -901,6 +939,7 @@ export const TEAM_PASS_TRACKING_STATS = {
 }
 
 export const TEAM_PLAYERS = {
+  method: 'teamPlayers',
   endpoint: '/stats/teamplayerdashboard',
   defaults: {
     DateFrom: null,
@@ -930,6 +969,7 @@ export const TEAM_PLAYERS = {
 }
 
 export const TEAM_REB_TRACKING_STATS = {
+  method: 'teamReboundTrackingStats',
   endpoint: '/stats/teamdashptreb',
   defaults: {
     DateFrom: null,
@@ -953,6 +993,7 @@ export const TEAM_REB_TRACKING_STATS = {
 }
 
 export const TEAM_ROSTER = {
+  method: 'teamRoster',
   endpoint: '/stats/commonteamroster',
   defaults: {
     LeagueID: DEFAULTS.leagueID,
@@ -962,6 +1003,7 @@ export const TEAM_ROSTER = {
 }
 
 export const TEAM_SHOT_LOCATION_STATS = {
+  method: 'teamShotLocationStats',
   endpoint: '/stats/leaguedashteamshotlocations',
   defaults: {
     Conference: DEFAULTS.conference,
@@ -998,6 +1040,7 @@ export const TEAM_SHOT_LOCATION_STATS = {
 }
 
 export const TEAM_SHOT_STATS = {
+  method: 'teamShotStats',
   endpoint: '/stats/leaguedashteamptshot',
   defaults: {
     CloseDefDistRange: DEFAULTS.closeDefDistRange,
@@ -1030,6 +1073,7 @@ export const TEAM_SHOT_STATS = {
 }
 
 export const TEAM_SHOT_TRACKING_STATS = {
+  method: 'teamShotTrackingStats',
   endpoint: '/stats/teamdashptshots',
   defaults: {
     DateFrom: null,
@@ -1053,6 +1097,7 @@ export const TEAM_SHOT_TRACKING_STATS = {
 }
 
 export const TEAM_SPLITS = {
+  method: 'teamSplits',
   endpoint: '/stats/teamdashboardbygeneralsplits',
   defaults: {
     DateFrom: null,
@@ -1082,6 +1127,7 @@ export const TEAM_SPLITS = {
 }
 
 export const TEAM_YEARLY_STATS = {
+  method: 'teamYearlyStats',
   endpoint: '/stats/teamyearbyyearstats',
   defaults: {
     LeagueID: DEFAULTS.leagueID,
@@ -1092,6 +1138,7 @@ export const TEAM_YEARLY_STATS = {
 }
 
 export const TRACKING_STATS = {
+  method: 'trackingStats',
   endpoint: '/stats/leaguedashptstats',
   defaults: {
     College: null,

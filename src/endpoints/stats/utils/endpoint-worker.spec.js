@@ -1,10 +1,10 @@
 import should from 'should'
-import * as worker from './endpointWorker'
-import { ENDPOINTS as e } from './../constants'
+import * as worker from './endpoint-worker'
+import { DEFAULTS as e } from './../constants'
 
 let w = worker.work
 
-describe('utils/endpointWorker', () => {
+describe('endpoints/stats/utils/endpoint-runner', () => {
   it('should respond with a Promise', (done) => {
     w(e.ALL_PLAYERS, null).should.be.Promise()
     done()

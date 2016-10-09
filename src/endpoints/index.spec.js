@@ -1,6 +1,6 @@
 import should from 'should'
 
-import * as e from './'
+import e from './'
 
 describe('endpoints/index', () => {
   it('should export `data` and `stats` objects', (done) => {

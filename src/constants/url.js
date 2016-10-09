@@ -1,1 +1,2 @@
-export const BASE_URL = 'http://stats.nba.com'
+export const stats = 'http://stats.nba.com'
+export const data = 'http://data.nba.net'

@@ -1,4 +1,4 @@
-import * as dataEndpoints from './data'
-import { methods as statsEndpoints } from './stats'
+import * as data from './data'
+import { methods as stats } from './stats'
 
-export { dataEndpoints as data, statsEndpoints as stats }
+export { data, stats }

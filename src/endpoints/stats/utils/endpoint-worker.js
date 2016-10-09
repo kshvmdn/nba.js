@@ -1,5 +1,5 @@
-import fetch from './../utils/fetch'
-import flattenResultSet from './../utils/flatten-result-set'
+import fetch from './fetch'
+import flattenResultSet from './flatten-result-set'
 
 /**
  * Make a request, parse & flatten the response and return it.
@@ -9,7 +9,7 @@ import flattenResultSet from './../utils/flatten-result-set'
  * @return {Function} Flattened API response
  */
 function get (endpoint, query, cb) {
-  fetch.stats(endpoint, { query })
+  fetch(endpoint, { query })
     .then(res => res.body)
     .then(body => JSON.parse(body))
     .then(json => flattenResultSet(json.resultSets || [json.resultSet]))
@@ -21,10 +21,10 @@ function get (endpoint, query, cb) {
 
 /**
  * Make the request and return the response/error in a Promise & callback.
- * @param  {Object}           constants Endpoint constants
- * @param  {Object}           query     Query defaults
- * @param  {Function}         cb        Error first callback
- * @return {Function|Promise}           Request response / error
+ * @param {Object} constants Endpoint constants
+ * @param {Object} query - Query defaults
+ * @param {Function} cb - Error first callback
+ * @return {Function|Promise} Request response / error
  */
 export function work (constants, query, cb) {
   if (typeof query === 'function') {

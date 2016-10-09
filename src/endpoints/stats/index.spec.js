@@ -1,11 +1,11 @@
 import should from 'should'
 
-import { methods as e } from './stats'
-import { ENDPOINTS as c } from './../constants'
+import { methods as e } from './'
+import { DEFAULTS as c } from './constants'
 
-describe('endpoints/stats', () => {
+describe('endpoints/stats/index', () => {
   describe('exports', () => {
-    it('should export all ENDPOINT constants', (done) => {
+    it('should export all DEFAULT constants', (done) => {
       should.equal(Object.keys(c).length, Object.keys(e).length)
       done()
     })

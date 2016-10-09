@@ -1,4 +1,4 @@
-import { ENDPOINTS as c } from './../constants'
+import { DEFAULTS as c } from './../constants'
 
 /**
  * Endpoint runner wrapper.

@@ -1,11 +1,10 @@
 import should from 'should'
-import * as constants from './stats'
+import * as constants from './defaults'
 
-describe('constants/endpoints', () => {
+describe('endpoints/stats/constants/defaults', () => {
   it('should not export DEFAULTS', (done) => {
     constants.should.not.have.property('DEFAULTS')
     should.not.exist(constants.DEFAULTS)
-
     done()
   })
 

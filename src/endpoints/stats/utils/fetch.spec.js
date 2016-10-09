@@ -12,15 +12,15 @@ let query = {
   StatType: 'Traditional'
 }
 
-describe('utils/fetch.stats', () => {
+describe('endpoints/stats/utils/fetch', () => {
   it('should return response/error as a Promise', (done) => {
-    let request = fetch.stats(endpoint, { query })
+    let request = fetch(endpoint, { query })
     request.should.be.Promise()
     done()
   })
 
   it('should respond with response/error', (done) => {
-    let request = fetch.stats(endpoint, { query })
+    let request = fetch(endpoint, { query })
 
     request.then(res => {
       should.exist(res)
@@ -34,7 +34,7 @@ describe('utils/fetch.stats', () => {
   }).timeout(20000)
 
   it('should throw 400 on invalid request', (done) => {
-    let request = fetch.stats(endpoint, { query: {} })
+    let request = fetch(endpoint, { query: {} })
 
     request.catch((err) => {
       should.exist(err)
@@ -44,7 +44,7 @@ describe('utils/fetch.stats', () => {
   })
 
   it('should support full URLs as `endpoint` parameter', (done) => {
-    let request = fetch.stats('http://stats.nba.com/stats/teamdetails', { query: { teamId: 1610612741 } })
+    let request = fetch('http://stats.nba.com/stats/teamdetails', { query: { teamId: 1610612741 } })
 
     request.then(res => {
       should.exist(res)
@@ -56,4 +56,7 @@ describe('utils/fetch.stats', () => {
       done()
     })
   }).timeout(20000)
+})
+
+describe('utils/fetch.data', () => {
 })

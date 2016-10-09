@@ -1,5 +1,5 @@
 import should from 'should'
-import getJson from './getJson'
+import getJson from './get-json'
 
 let endpoint = '/stats/homepagev2'
 let query = {

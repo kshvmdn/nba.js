@@ -6,9 +6,9 @@ import { BASE_URL } from './../constants'
  * Make a request to the API and return an error-first callback with the
  * JSON response.
  *
- * @param  {string}          endpoint Optional API endpoint
- * @param  {Object|Function} opts     Optional object of request options
- * @return {Promise}                  HTTP request response or error
+ * @param {string} endpoint - Optional API endpoint
+ * @param {Object|Function} opts - Optional object of request options
+ * @return {Promise} HTTP request response or error
  */
 export default function getJson (endpoint = '', opts) {
   opts = Object.assign({

@@ -1,5 +1,5 @@
 import should from 'should'
-import flattenResultSet from './flattenResultSet'
+import flattenResultSet from './flatten-result-set'
 
 let headers = ['RANK', 'PLAYER_ID', 'PLAYER', 'TEAM_ID', 'TEAM_ABBREVIATION', 'TEAM_NAME', 'JERSEY_NUM', 'PLAYER_POSITION', 'PTS']
 let rowSet = [

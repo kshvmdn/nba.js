@@ -1,5 +1,5 @@
 import should from 'should'
-import * as worker from './endpointWorker'
+import * as worker from './endpoint-worker'
 import { ENDPOINTS as e } from './../constants'
 
 let w = worker.work

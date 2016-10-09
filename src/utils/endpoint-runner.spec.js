@@ -1,6 +1,6 @@
 import should from 'should'
-import * as runner from './endpointRunner'
-import * as worker from './endpointWorker'
+import * as runner from './endpoint-runner'
+import * as worker from './endpoint-worker'
 
 let r = runner.run(worker.work)
 

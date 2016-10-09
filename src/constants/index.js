@@ -1,5 +1,5 @@
 import { BASE_URL } from './url'
-import * as ENDPOINTS from './endpoints'
+import * as ENDPOINTS from './stats-endpoints'
 
 export {
   BASE_URL,

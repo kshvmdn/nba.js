@@ -1,12 +1,12 @@
-import getJson from './../utils/getJson'
-import flattenResultSet from './../utils/flattenResultSet'
+import getJson from './../utils/get-json'
+import flattenResultSet from './../utils/flatten-result-set'
 
 /**
  * Make a request, parse & flatten the response and return it.
- * @param  {string}   endpoint URL endpoint
- * @param  {Object}   query    URL query params for this request
- * @param  {Function} cb       Error-first callback
- * @return {Function}          Flattened API response
+ * @param {string} endpoint - URL endpoint
+ * @param {Object} query - URL query params for this request
+ * @param {Function} cb - Error-first callback
+ * @return {Function} Flattened API response
  */
 function get (endpoint, query, cb) {
   getJson(endpoint, { query })

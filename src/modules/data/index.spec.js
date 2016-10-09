@@ -1,11 +1,11 @@
 import should from 'should'
 
-import { methods as e } from './'
-import { DEFAULTS as c } from './constants'
+import e from './'
+import { ENDPOINTS as c } from './constants'
 
-describe('endpoints/stats/index', () => {
+describe('modules/data/index', () => {
   describe('exports', () => {
-    it('should export all DEFAULT constants', (done) => {
+    it('should export a functon for each ENDPOINT constants', (done) => {
       should.equal(Object.keys(c).length, Object.keys(e).length)
       done()
     })
@@ -23,13 +23,13 @@ describe('endpoints/stats/index', () => {
 
   describe('requests', () => {
     it('should respond with a Promise', (done) => {
-      let request = e.allPlayers()
+      let request = e.calendar()
       request.should.be.Promise()
       done()
     })
 
     it('should respond with error-first callback', (done) => {
-      e.allPlayers((err, res) => {
+      e.calendar((err, res) => {
         should.exist(res)
         should.not.exist(err)
         done()

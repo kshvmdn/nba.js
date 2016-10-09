@@ -10,7 +10,7 @@ let name = 'top_2_scoring_pgs'
 
 let resultSet = [{ headers, rowSet, name }]
 
-describe('endpoints/stats/utils/flatten-result-set', () => {
+describe('modules/stats/utils/flatten-result-set', () => {
   it('should return a Promise', (done) => {
     let flattened = flattenResultSet(resultSet)
     flattened.should.be.Promise()

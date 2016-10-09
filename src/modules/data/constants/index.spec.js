@@ -1,7 +1,7 @@
 import should from 'should'
 import * as constants from './'
 
-describe('endpoints/stats/constants/index', () => {
+describe('modules/data/constants/index', () => {
   it('should export something', (done) => {
     constants.should.not.be.empty()
     done()
@@ -12,8 +12,8 @@ describe('endpoints/stats/constants/index', () => {
     done()
   })
 
-  it('should export DEFAULTS', (done) => {
-    constants.should.have.property('DEFAULTS')
+  it('should export ENDPOINTS', (done) => {
+    constants.should.have.property('ENDPOINTS')
     done()
   })
 })

@@ -4,7 +4,7 @@ import { DEFAULTS as e } from './../constants'
 
 let w = worker.work
 
-describe('endpoints/stats/utils/endpoint-runner', () => {
+describe('modules/stats/utils/endpoint-worker', () => {
   it('should respond with a Promise', (done) => {
     w(e.ALL_PLAYERS, null).should.be.Promise()
     done()

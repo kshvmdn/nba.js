@@ -2,4 +2,4 @@ language: node_js
 node_js:
   - "6"
 after_success:
-  - npm run coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls
+  - npm run test:coverage -- --report lcovonly && cat ./coverage/lcov.info | coveralls

@@ -12,7 +12,7 @@ let query = {
   StatType: 'Traditional'
 }
 
-describe('endpoints/stats/utils/fetch', () => {
+describe('modules/stats/utils/fetch', () => {
   it('should return response/error as a Promise', (done) => {
     let request = fetch(endpoint, { query })
     request.should.be.Promise()
@@ -41,7 +41,7 @@ describe('endpoints/stats/utils/fetch', () => {
       err.statusCode.should.equal(400)
       done()
     })
-  })
+  }).timeout(5000)
 
   it('should support full URLs as `endpoint` parameter', (done) => {
     let request = fetch('http://stats.nba.com/stats/teamdetails', { query: { teamId: 1610612741 } })
@@ -56,7 +56,4 @@ describe('endpoints/stats/utils/fetch', () => {
       done()
     })
   }).timeout(20000)
-})
-
-describe('utils/fetch.data', () => {
 })

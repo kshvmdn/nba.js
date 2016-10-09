@@ -1,5 +1,4 @@
 import should from 'should'
-// TODO
 import nba from './'
 
 describe('index', () => {

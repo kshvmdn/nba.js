@@ -23,19 +23,11 @@ Install via [npm](https://npmjs.com/packages/nba.js) or [download the source](ht
 ### Usage
 
 - Import the module.
-  
-  + ES5
 
     ```js
-    const nba = require('nba.js').default;
+    const nba = require('nba.js');
     // OR
-    const nba = require('nba.js').endpoints;
-    ```
-
-  + ES2015
-
-    ```js
-    import nba from 'nba.js';
+    import nba from 'nba';
     ```
 
 ### API
@@ -43,13 +35,13 @@ Install via [npm](https://npmjs.com/packages/nba.js) or [download the source](ht
 - Endpoint methods take 2 optional arguments - `query` and `cb`. Each will respond with either a Promise or an error-first callback (if provided) – use whichever you prefer.
 
   ```js
-  nba.allPlayers()
+  nba.stats.allPlayers()
     .then(res => console.log(res))
     .catch(err => console.error(err));
   ```
 
   ```js
-  nba.allPlayers({}, (err, res) => {
+  nba.stats.allPlayers({}, (err, res) => {
     if (err) return console.error(err);
     console.log(res);
   });

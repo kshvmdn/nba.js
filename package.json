@@ -26,9 +26,9 @@
     "build": "npm run clean && babel src/ -d lib/",
     "build:watch": "npm run build -- -w",
     "prepublish": "npm run test && npm run build",
-    "lint": "eslint src/",
-    "test": "npm run lint && mocha --compilers js:babel-core/register --colors --bail --reporter spec $(find src/ -name \"*.spec.js\")",
-    "coverage": "istanbul cover _mocha -- --compilers js:babel-core/register --colors --reporter dot $(find src/ -name \"*.spec.js\")"
+    "test": "npm run test:lint && mocha --compilers js:babel-core/register --colors --bail --reporter spec $(find src/ -name \"*.spec.js\")",
+    "test:lint": "eslint src/",
+    "test:coverage": "istanbul cover _mocha -- --compilers js:babel-core/register --colors --reporter dot $(find src/ -name \"*.spec.js\")"
   },
   "dependencies": {
     "got": "^6.3.0"

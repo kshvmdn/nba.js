@@ -14,7 +14,7 @@ Install via [npm](https://npmjs.com/packages/nba.js) or [download the source](ht
   $ npm install --save nba.js
   ```
 
-- GitHub
+- Source
 
   ```sh
   $ git clone https://github.com/kshvmdn/nba.js.git nba.js && cd $_ && npm install
@@ -28,34 +28,34 @@ Install via [npm](https://npmjs.com/packages/nba.js) or [download the source](ht
 
     ```js
     const nba = require('nba.js').default;
+    // OR
+    const nbaStats = require('nba.js').stats;
+    const nbaData = require('nba.js').data;
     ```
 
   - ES2015
 
-    ```
-    import nba from 'nba';
+    ```js
+    import nba from 'nba.js';
+    // OR
+    import { stats as nbaStats, data as nbaData } from 'nba.js';
     ```
 
 ### API
 
-_Coming soon._
+- This library provides access to endpoints from 2 different sources:
+  + [data.nba.net](http://data.nba.net)
+  + [stats.nba.com](http://stats.nba.com)
+- Each respectively accessible via `nba.data` and `nba.stats`.
+- For the full API guide for each source, see [`API.md`](docs/usage/api)
 
 ### Examples
 
-_Coming soon._
+- See [`EXAMPLES.md`](docs/usage/EXAMPLES.md).
 
 ### Contribute
 
-This project is completely open source. Feel free to [open an issue](https://github.com/kshvmdn/nba.js/issues) or [make a pull request](https://github.com/kshvmdn/nba.js/pulls). :smile:
-
-- To clone / build / test:
-
-  ```sh
-  $ git clone https://github.com/kshvmdn/nba.js.git nba.js && cd $_ 
-  $ npm install
-  $ npm run build # use build:watch to watch for changes
-  $ npm test # use test:lint/test:coverage for linting/coverage
-  ```
+This project is completely open source. Feel free to [open an issue](https://github.com/kshvmdn/nba.js/issues) or [make a pull request](https://github.com/kshvmdn/nba.js/pulls). For more information, see [`CONTRIBUTE.md`](docs/CONTRIBUTE.md).
 
 ### License
 

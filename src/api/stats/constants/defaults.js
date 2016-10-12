@@ -1,52 +1,52 @@
 const DEFAULTS = {
-  aheadBehind: 'Ahead or Behind', // 'Behind or Tied', 'Ahead or Tied'
-  closeDefDistRange: null, // '0-2 Feet - Very Tight', '2-4 Feet - Tight', '4-6 Feet - Open', '6+ Feet - Wide Open'
-  clutchTime: 'Last 5 Minutes', // 'Last 4 Minutes', 'Last 3 Minutes', 'Last 2 Minutes', 'Last 1 Minute', 'Last 30 Seconds', 'Last 10 Seconds'
-  conference: null, // 'East', 'West'
+  aheadBehind: 'Ahead or Behind',
+  closeDefDistRange: null,
+  clutchTime: 'Last 5 Minutes',
+  conference: null,
   dayOffset: '0',
-  defenseCategory: 'Overall', // '3 Pointers', '2 Pointers', 'Less Than 6Ft', 'Less Than 10Ft', 'Greater Than 15Ft'
-  distanceRange: '5ft Range', // '8ft Range', 'By Zone'
-  division: null, // 'Atlantic', 'Central', 'Northwest', 'Pacific', 'Southeast', 'Southwest', 'East', 'West'
-  draftYear: null, // YYYY
-  dribbleRange: null, // '0 Dribbles', '1 Dribble', '2 Dribbles', '3-6 Dribbles', '7+ Dribbles'
-  gameDate: '04/20/2015', // MM/DD/YYYY
+  defenseCategory: 'Overall',
+  distanceRange: '5ft Range',
+  division: null,
+  draftYear: null,
+  dribbleRange: null,
+  gameDate: '04/20/2015',
   gameID: null,
-  gameScope: 'Season', // 'Yesterday', 'Last 10'
-  gameSegment: null, // 'First Half', 'Second Half', 'Overtime'
-  generalRange: 'Overall', // 'Catch and Shoot', 'Pullups', 'Less Than 10 ft'
+  gameScope: 'Season',
+  gameSegment: null,
+  generalRange: 'Overall',
   graphStats: 'PTS',
-  groupQuantity: 5, // 4, 3, 2
-  height: null, // 'GT {ft}-{in}', 'LT {ft}-{in}'
-  lastNGames: '0', // n
-  leagueID: '00', // '10', '20'
-  location: null, // 'Home', 'Away'
-  measureType: 'Base', // 'Advanced', 'Misc', 'Scoring', 'Usage', 'Opponent', 'Defense'
-  month: '0', // null, 0 for all, 1-12 for months of year (12=sept, 1=oct, 2=dec, etc)
-  optional: 'N', // 'Y'
-  outcome: null, // 'W', 'L'
-  period: '0', // 1-14
-  perMode: 'PerGame', // 'Per100Possessions', 'Per36', 'Per40', Per48', 'PerMinute', 'PerPossession', 'PerPlay', 'MinutePer', 'Totals'
-  ptMeasureType: 'CatchShoot', // 'SpeedDistance', 'Rebounding', 'Possessions', 'CatchShoot', 'PullUpShot', 'Defense', 'Drives', 'Passing', 'ElbowTouch', 'PostTouch', 'PaintTouch', 'Efficiency'
+  groupQuantity: 5,
+  height: null,
+  lastNGames: '0',
+  leagueID: '00',
+  location: null,
+  measureType: 'Base',
+  month: '0',
+  optional: 'N',
+  outcome: null,
+  period: '0',
+  perMode: 'PerGame',
+  ptMeasureType: 'CatchShoot',
   playerID: '0',
-  playerOrTeam: 'Player', // 'Team'
-  playerPosition: null, // 'F', 'C', 'G'
+  playerOrTeam: 'Player',
+  playerPosition: null,
   playerScope: 'All Players',
-  playoffRound: '0', // '1', '2', '3', '4'
-  pointDiff: '5', // n
-  scope: 'S', // 'Rookies'
-  season: '2015-16', // YYYY-YY, 'All Time'
-  seasonSegment: null, // 'Pre All-Star', 'Post All-Star'
-  seasonSingleYear: '2015', // YYYY
-  seasonType: 'Regular Season', // 'Pre Season', 'Playoffs', 'All Star'
-  shotClockRange: null, // '24-22', '22-18 Very Early', '18-15 Early', '15-7 Average', '7-4 Late', '4-0 Very Late', 'Shot Clock Off'
-  shotDistRange: null, // (>, >=, <=, <) ft
+  playoffRound: '0',
+  pointDiff: '5',
+  scope: 'S',
+  season: '2015-16',
+  seasonSegment: null,
+  seasonSingleYear: '2015',
+  seasonType: 'Regular Season',
+  shotClockRange: null,
+  shotDistRange: null,
   sorter: 'PTS',
-  starterBench: null, // 'Starters', 'Bench'
-  statCategory: 'PTS', // 'MIN', 'OREB', 'DREB', 'REB', 'AST', 'STL', 'BLK', 'TOV', 'EFF'
-  statType: 'Traditional', // 'Advanced', 'Tracking'
+  starterBench: null,
+  statCategory: 'PTS',
+  statType: 'Traditional',
   teamID: '0',
-  touchTimeRange: null, // 'Touch < 2 Seconds', 'Touch 2-6 Seconds', 'Touch 6+ Seconds'
-  weight: null // 'LT {wt}', 'GT {wt}'
+  touchTimeRange: null,
+  weight: null
 }
 
 export const ALL_PLAYERS = {

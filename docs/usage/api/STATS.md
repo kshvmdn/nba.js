@@ -1,4 +1,5 @@
-### API : Stats
+## Usage: API
+### STats
 
 > API documentation for `nba.stats`.
 

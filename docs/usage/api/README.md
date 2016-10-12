@@ -1,3 +1,32 @@
-## Usage
+## Usage: API
 
-### API
+### Method Design
+
+  - Each API method will take 2 _optional_ parameters:
+
+    + __query__
+
+      * Query parameters for the given request. Refer to [this](#methods-parameters) for the list of methods and their accepted parameters. __Some methods may require this parameter__ (the APIs will throw a `400` error if a required parameter is missing).
+
+    + __cb__
+
+      * Optional error-first callback for your request.
+
+  - Whether or not a callback is provided, the request will resolve as a standard Promise, use whichever you prefer.
+
+    ```js
+    const nba = require('nba').default;
+
+    nba.stats.allPlayers().then(res => console.log(res));
+
+    // this also works
+    nba.stats.allPlayers((err, res) => console.log(res));
+
+    // not sure why you'd do this, but it also works
+    nba.stats.allPlayers((err, res) => console.log(res)).then(res => console.log(res));
+    ```
+
+### Methods Parameters
+
+  - Each method will take a more-or-less unique set of query parameters.
+  - The list of methods and accepted query parameters for each API can be found in [DATA.md](DATA.md) and [STATS.md](STATS.md) for `nba.data`  and `nba.stats` respectively.

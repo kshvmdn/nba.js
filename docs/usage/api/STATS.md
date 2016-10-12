@@ -1020,48 +1020,248 @@
   + Possible values:
     * `'0'`
 - defenseCategory
+  + Possible values:
+    * `'Overall'`
+    * `'3 Pointers'`
+    * `'2 Pointers'`
+    * `'Less Than 6Ft'`
+    * `'Less Than 10Ft'`
+    * `'Greater Than 15Ft'`
 - distanceRange
+  + Possible values:
+    * `'5ft Range'`
+    * `'8ft Range'`
+    * `'By Zone'`
 - division
+  + Possible values:
+    * `null`
+    * `'Atlantic'`
+    * `'Central'`
+    * `'Northwest'`
+    * `'Pacific'`
+    * `'Southeast'`
+    * `'Southwest'`
+    * `'East'`
+    * `'West'`
 - draftYear
+  + Possible values:
+    * `null`
+    * `'{YYYY}'`
 - dribbleRange
+  + Possible values:
+    * `null`
+    * `'0 Dribbles'`
+    * `'1 Dribble'`
+    * `'2 Dribbles'`
+    * `'3-6 Dribbles'`
+    * `'7+ Dribbles'`
 - gameDate
+  + Possible values:
+    * `'{MM/DD/YYYY}'`
 - gameID
+  + Possible values:
+    * `null`
 - gameScope
+  + Possible values:
+    * `'Season'`
+    * `'Yesterday'`
+    * `'Last 10'`
 - gameSegment
+  + Possible values:
+    * `null`
+    * `'First Half'`
+    * `'Second Half'`
+    * `'Overtime'`
 - generalRange
+  + Possible values:
+    * `'Overall'`
+    * `'Catch and Shoot'`
+    * `'Pullups'`
+    * `'Less Than 10 ft'`
 - graphStats
+  + Possible values:
+    * `'PTS'`
 - groupQuantity
+  + Possible values:
+    * `'5'`
+    * `'4'`
+    * `'3'`
+    * `'2'`
 - height
+  + Possible values:
+    * `null`
+    * `'GT {ft}-{in}'`
+    * `'LT {ft}-{in}'`
 - lastNGames
+  + Possible values:
+    * `'0'`
+    * `'n'`
 - leagueID
+  + Possible values:
+    * `'00'`
+    * `'10'`
+    * `'20'`
 - location
+  + Possible values:
+    * `null`
+    * `'Home'`
+    * `'Away'`
 - measureType
+  + Possible values:
+    * `'Base'`
+    * `'Advanced'`
+    * `'Misc'`
+    * `'Scoring'`
+    * `'Usage'`
+    * `'Opponent'`
+    * `'Defense'`
 - month
+  + Possible values:
+    * `'0'`
+    * `null`
+    * 0 for all, 1-12 for months of the NBA season (1=oct, 2=dec, ..., 12=sept)
 - optional
+  + Possible values:
+    * `'N'`
+    * `'Y'`
 - outcome
+  + Possible values:
+    * `null`
+    * `'W'`
+    * `'L'`
 - period
+  + Possible values:
+    * `'0'`
+    * `'-13'`
 - perMode
+  + Possible values:
+    * `'PerGame'`
+    * `'Per100Possessions'`
+    * `'Per36'`
+    * `'Per40'`
+    * `'Per48'`
+    * `'PerMinute'`
+    * `'PerPossession'`
+    * `'PerPlay'`
+    * `'MinutePer'`
+    * `'Totals'`
 - ptMeasureType
+  + Possible values:
+    * `'CatchShoot'`
+    * `'SpeedDistance'`
+    * `'Rebounding'`
+    * `'Possessions'`
+    * `'CatchShoot'`
+    * `'PullUpShot'`
+    * `'Defense'`
+    * `'Drives'`
+    * `'Passing'`
+    * `'ElbowTouch'`
+    * `'PostTouch'`
+    * `'PaintTouch'`
+    * `'Efficiency'`
 - playerID
+  + Possible values:
+    * `'0'`
 - playerOrTeam
+  + Possible values:
+    * `'Player'`
+    * `'Team'`
 - playerPosition
+  + Possible values:
+    * `null`
+    * `'F'`
+    * `'C'`
+    * `'G'`
 - playerScope
+  + Possible values:
+    * `'All Players'`
 - playoffRound
+  + Possible values:
+    * `'0'`
+    * `'1'`
+    * `'2'`
+    * `'3'`
+    * `'4'`
 - pointDiff
+  + Possible values:
+    * `'5'`
+    * `'n'`
 - scope
+  + Possible values:
+    * `'S'`
+    * `'Rookies'`
 - season
+  + Possible values:
+    * `'{YYYY-YY}'`
+    * `'All Time'`
 - seasonSegment
+  + Possible values:
+    * `null`
+    * `'Pre All-Star'`
+    * `'Post All-Star'`
 - seasonSingleYear
+  + Possible values:
+    * `'{YYYY}'`
 - seasonType
+  + Possible values:
+    * `'Regular Season'`
+    * `'Pre Season'`
+    * `'Playoffs'`
+    * `'All Star'`
 - shotClockRange
+  + Possible values:
+    * `null`
+    * `'24-22'`
+    * `'22-18 Very Early'`
+    * `'18-15 Early'`
+    * `'15-7 Average'`
+    * `'7-4 Late'`
+    * `'4-0 Very Late'`
+    * `'Shot Clock Off'`
 - shotDistRange
+  + Possible values:
+    * `null`
+    * `'{>, >=, <=, <} {ft}'`
 - sorter
+  + Possible values:
+    * `'PTS'`
 - starterBench
+  + Possible values:
+    * `null`
+    * `'Starters'`
+    * `'Bench'`
 - statCategory
+  + Possible values:
+    * `'PTS'`
+    * `'MIN'`
+    * `'OREB'`
+    * `'DREB'`
+    * `'REB'`
+    * `'AST'`
+    * `'STL'`
+    * `'BLK'`
+    * `'TOV'`
+    * `'EFF'`
 - statType
+  + Possible values:
+    * `'Traditional'`
+    * `'Advanced'`
+    * `'Tracking'`
 - teamID
+  + Possible values:
+    * `'0'`
 - touchTimeRange
+  + Possible values:
+    * `null`
+    * `'Touch < 2 Seconds'`
+    * `'Touch 2-6 Seconds'`
+    * `'Touch 6+ Seconds'`
 - weight
+  + Possible values:
+    * `null`
+    * `'LT {wt}'`
+    * `'GT {wt}'`
 
 #### Examples
 

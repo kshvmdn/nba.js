@@ -47,7 +47,7 @@ Install via [npm](https://npmjs.com/packages/nba.js) or [download the source](ht
   + [data.nba.net](http://data.nba.net)
   + [stats.nba.com](http://stats.nba.com)
 - Each respectively accessible via `nba.data` and `nba.stats`.
-- For the full API guide for each source, see [`API.md`](docs/usage/api)
+- For the full API guide for each source, see [`API.md`](docs/usage/api).
 
 ### Examples
 

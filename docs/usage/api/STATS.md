@@ -1,5 +1,5 @@
 ## Usage: API
-### STats
+### Stats
 
 > API documentation for `nba.stats`.
 
@@ -991,19 +991,19 @@
   
 #### Paramter Reference
 
-- aheadBehind
+- `aheadBehind`
   + Possible values:
     * `'Ahead or Behind'`
     * `'Behind or Tied'`
     * `'Ahead or Tied'`
-- closeDefDistRange
+- `closeDefDistRange`
   + Possible values:
     * `null`
     * `'0-2 Feet - Very Tight'`
     * `'2-4 Feet - Tight'`
     * `'4-6 Feet - Open'`
     * `'6+ Feet - Wide Open'`
-- clutchTime
+- `clutchTime`
   + Possible values:
     * `'Last 5 Minutes'`
     * `'Last 4 Minutes'`
@@ -1012,15 +1012,15 @@
     * `'Last 1 Minute'`
     * `'Last 30 Seconds'`
     * `'Last 10 Seconds'`
-- conference
+- `conference`
   + Possible values:
     * `null`
     * `'East'`
     * `'West'`
-- dayOffset
+- `dayOffset`
   + Possible values:
     * `'0'`
-- defenseCategory
+- `defenseCategory`
   + Possible values:
     * `'Overall'`
     * `'3 Pointers'`
@@ -1028,12 +1028,12 @@
     * `'Less Than 6Ft'`
     * `'Less Than 10Ft'`
     * `'Greater Than 15Ft'`
-- distanceRange
+- `distanceRange`
   + Possible values:
     * `'5ft Range'`
     * `'8ft Range'`
     * `'By Zone'`
-- division
+- `division`
   + Possible values:
     * `null`
     * `'Atlantic'`
@@ -1044,11 +1044,11 @@
     * `'Southwest'`
     * `'East'`
     * `'West'`
-- draftYear
+- `draftYear`
   + Possible values:
     * `null`
-    * `'{YYYY}'`
-- dribbleRange
+    * `'YYYY'`
+- `dribbleRange`
   + Possible values:
     * `null`
     * `'0 Dribbles'`
@@ -1056,58 +1056,59 @@
     * `'2 Dribbles'`
     * `'3-6 Dribbles'`
     * `'7+ Dribbles'`
-- gameDate
+- `gameDate`
   + Possible values:
-    * `'{MM/DD/YYYY}'`
-- gameID
+    * `'04/20/2015'`
+    * `'MM/DD/YYYY'`
+- `gameID`
   + Possible values:
     * `null`
-- gameScope
+- `gameScope`
   + Possible values:
     * `'Season'`
     * `'Yesterday'`
     * `'Last 10'`
-- gameSegment
+- `gameSegment`
   + Possible values:
     * `null`
     * `'First Half'`
     * `'Second Half'`
     * `'Overtime'`
-- generalRange
+- `generalRange`
   + Possible values:
     * `'Overall'`
     * `'Catch and Shoot'`
     * `'Pullups'`
     * `'Less Than 10 ft'`
-- graphStats
+- `graphStats`
   + Possible values:
     * `'PTS'`
-- groupQuantity
+- `groupQuantity`
   + Possible values:
     * `'5'`
     * `'4'`
     * `'3'`
     * `'2'`
-- height
+- `height`
   + Possible values:
     * `null`
     * `'GT {ft}-{in}'`
     * `'LT {ft}-{in}'`
-- lastNGames
+- `lastNGames`
   + Possible values:
     * `'0'`
     * `'n'`
-- leagueID
+- `leagueID`
   + Possible values:
     * `'00'`
     * `'10'`
     * `'20'`
-- location
+- `location`
   + Possible values:
     * `null`
     * `'Home'`
     * `'Away'`
-- measureType
+- `measureType`
   + Possible values:
     * `'Base'`
     * `'Advanced'`
@@ -1116,25 +1117,25 @@
     * `'Usage'`
     * `'Opponent'`
     * `'Defense'`
-- month
+- `month`
   + Possible values:
     * `'0'`
     * `null`
-    * 0 for all, 1-12 for months of the NBA season (1=oct, 2=dec, ..., 12=sept)
-- optional
+    * `'0 for all, 1-12 for months of year (12=sept, 1=oct, 2=dec, etc)'`
+- `optional`
   + Possible values:
     * `'N'`
     * `'Y'`
-- outcome
+- `outcome`
   + Possible values:
     * `null`
     * `'W'`
     * `'L'`
-- period
+- `period`
   + Possible values:
     * `'0'`
     * `'-13'`
-- perMode
+- `perMode`
   + Possible values:
     * `'PerGame'`
     * `'Per100Possessions'`
@@ -1146,7 +1147,7 @@
     * `'PerPlay'`
     * `'MinutePer'`
     * `'Totals'`
-- ptMeasureType
+- `ptMeasureType`
   + Possible values:
     * `'CatchShoot'`
     * `'SpeedDistance'`
@@ -1161,56 +1162,58 @@
     * `'PostTouch'`
     * `'PaintTouch'`
     * `'Efficiency'`
-- playerID
+- `playerID`
   + Possible values:
     * `'0'`
-- playerOrTeam
+- `playerOrTeam`
   + Possible values:
     * `'Player'`
     * `'Team'`
-- playerPosition
+- `playerPosition`
   + Possible values:
     * `null`
     * `'F'`
     * `'C'`
     * `'G'`
-- playerScope
+- `playerScope`
   + Possible values:
     * `'All Players'`
-- playoffRound
+- `playoffRound`
   + Possible values:
     * `'0'`
     * `'1'`
     * `'2'`
     * `'3'`
     * `'4'`
-- pointDiff
+- `pointDiff`
   + Possible values:
     * `'5'`
     * `'n'`
-- scope
+- `scope`
   + Possible values:
     * `'S'`
     * `'Rookies'`
-- season
+- `season`
   + Possible values:
-    * `'{YYYY-YY}'`
+    * `'2015-16'`
+    * `'YYYY-YY'`
     * `'All Time'`
-- seasonSegment
+- `seasonSegment`
   + Possible values:
     * `null`
     * `'Pre All-Star'`
     * `'Post All-Star'`
-- seasonSingleYear
+- `seasonSingleYear`
   + Possible values:
-    * `'{YYYY}'`
-- seasonType
+    * `'2015'`
+    * `'YYYY'`
+- `seasonType`
   + Possible values:
     * `'Regular Season'`
     * `'Pre Season'`
     * `'Playoffs'`
     * `'All Star'`
-- shotClockRange
+- `shotClockRange`
   + Possible values:
     * `null`
     * `'24-22'`
@@ -1220,19 +1223,19 @@
     * `'7-4 Late'`
     * `'4-0 Very Late'`
     * `'Shot Clock Off'`
-- shotDistRange
+- `shotDistRange`
   + Possible values:
     * `null`
-    * `'{>, >=, <=, <} {ft}'`
-- sorter
+    * `'(>, >=, <=, <) ft'`
+- `sorter`
   + Possible values:
     * `'PTS'`
-- starterBench
+- `starterBench`
   + Possible values:
     * `null`
     * `'Starters'`
     * `'Bench'`
-- statCategory
+- `statCategory`
   + Possible values:
     * `'PTS'`
     * `'MIN'`
@@ -1244,21 +1247,21 @@
     * `'BLK'`
     * `'TOV'`
     * `'EFF'`
-- statType
+- `statType`
   + Possible values:
     * `'Traditional'`
     * `'Advanced'`
     * `'Tracking'`
-- teamID
+- `teamID`
   + Possible values:
     * `'0'`
-- touchTimeRange
+- `touchTimeRange`
   + Possible values:
     * `null`
     * `'Touch < 2 Seconds'`
     * `'Touch 2-6 Seconds'`
     * `'Touch 6+ Seconds'`
-- weight
+- `weight`
   + Possible values:
     * `null`
     * `'LT {wt}'`

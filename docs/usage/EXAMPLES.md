@@ -1,6 +1,4 @@
-## Usage
-
-### Examples
+## Usage: Examples
 
 ```js
 const nba = require('nba.js').default;
@@ -9,11 +7,12 @@ const nba = require('nba.js').default;
 - Each API method will respond with **both** a Promise and an error-first callback. Use whichever you prefer.
 - The following snippets will demonstrate how you can use the two APIs with their various endpoints and parameters.
 
-#### Stats
+### Stats
 
   - `nba.stats`
-  - List of methods: [`STATS.md`](api/STATS.md#method-reference)
-  - Get a list of all players.
+  - [List of methods](api/STATS.md#method-reference).
+
+  - Get a list of all players:
   
   ```js
   nba.stats.allPlayers((err, res) => {
@@ -33,9 +32,7 @@ const nba = require('nba.js').default;
   ```
 
   ```js
-  nba.stats.allPlayers({ 
-    Season: '2014-2015' 
-  }, (err, res) => {
+  nba.stats.allPlayers({ Season: '2014-2015' }, (err, res) => {
     if (err) {
       console.error(err);
       return;
@@ -45,4 +42,7 @@ const nba = require('nba.js').default;
   });
   ```
 
-#### Data
+### Data
+
+  - `nba.data`
+  - [List of methods](api/DATA.md#method-reference).

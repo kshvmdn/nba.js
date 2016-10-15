@@ -32,34 +32,47 @@
 
   - Get a list of all players:
 
-  ```js
-  nba.stats.allPlayers((err, res) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
+    ```js
+    nba.stats.allPlayers((err, res) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
 
-    console.log(res);
-  });
-  ```
+      console.log(res);
+    });
+    ```
 
-  ```js
-  nba.stats.allPlayers({ IsOnlyCurrentSeason: 0 })
-    .then(res => console.log(res))
-    .catch(err => console.error(err));
-  ```
+    ```js
+    nba.stats.allPlayers({ IsOnlyCurrentSeason: 0 })
+      .then(res => console.log(res))
+      .catch(err => console.error(err));
+    ```
 
-  ```js
-  nba.stats.allPlayers({ Season: '2014-2015' }, (err, res) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
+    ```js
+    nba.stats.allPlayers({ Season: '2014-2015' }, (err, res) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
 
-    console.log(res);
-  });
-  ```
+      console.log(res);
+    });
+    ```
 
 ### <a name='data'>Data, `nba.data`</a>
 
   - [List of methods](api/DATA.md#method-reference).
+  
+  - Get a list of standings:
+
+    ```js
+    nba.data.standings((err, res) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+
+      console.log(res);
+    })
+    ```

@@ -1,4 +1,4 @@
-## Usage: API
+## Usage
 
 ### Method Design
 
@@ -12,7 +12,7 @@
 
       * Optional error-first callback for your request.
 
-  - Whether or not a callback is provided, the request will resolve as a standard Promise, use whichever you prefer.
+  - Whether or not a callback is provided, the request will return a standard Promise, use whichever you prefer.
 
     ```js
     const nba = require('nba').default;
@@ -26,7 +26,7 @@
     nba.stats.allPlayers((err, res) => console.log(res)).then(res => console.log(res));
     ```
 
-### Methods Parameters
+### Method Parameters
 
   - Each method will take a more-or-less unique set of query parameters.
-  - The list of methods and accepted query parameters for each API can be found in [DATA.md](DATA.md) and [STATS.md](STATS.md) for `nba.data`  and `nba.stats` respectively.
+  - The list of methods and accepted query parameters for each API can be found in [DATA.md](api/DATA.md) and [STATS.md](api/STATS.md).

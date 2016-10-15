@@ -1,6 +1,6 @@
-## nba.js
+## Documentation
 
-- [Usage](usage)
-    + [API](usage/api)
-    + [Examples](usage/EXAMPLES.md)
-- [Contribute](CONTRIBUTE.md)
+- [Usage](USAGE.md)
+- [API](api/)
+- [Examples](EXAMPLES.md)
+- [Contribute](CONTRIBUTING.md)

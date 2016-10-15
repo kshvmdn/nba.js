@@ -42,3 +42,7 @@ jspm_packages
 
 # Output
 lib/
+
+# Documentation stuff
+t.js
+test.md

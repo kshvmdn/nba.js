@@ -4,11 +4,11 @@
 
   - Each API method will take 2 _optional_ parameters:
 
-    + __query__
+    + query
 
       * Query parameters for the given request. Refer to [this](#methods-parameters) for the list of methods and their accepted parameters. __Some methods may require this parameter__ (the APIs will throw a `400` error if a required parameter is missing).
 
-    + __cb__
+    + cb
 
       * Optional error-first callback for your request.
 

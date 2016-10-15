@@ -17,7 +17,7 @@ npm install --save nba.js
 - This library provides access to data from 2 different APIs:
   + [data.nba.net](http://data.nba.net)
   + [stats.nba.com](http://stats.nba.com)
-- For the full API guide for each source, see [USAGE.md](docs/usage).
+- For the full API guide for each source, see [USAGE.md](docs/USAGE.md).
 
 ### Examples
 

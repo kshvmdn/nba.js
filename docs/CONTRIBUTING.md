@@ -29,13 +29,13 @@ __All contributions are welcome and appreciated, make sure the tests pass and th
     npm install
     ```
 
-- To build (transpile) the source use the following:
+- To build (transpile) the source:
 
   ```sh
   npm run build # use build:watch to watch for changes in src/
   ```
 
-- Tests can be run with:
+- To run tests:
 
   ```sh
   npm run test
@@ -43,7 +43,7 @@ __All contributions are welcome and appreciated, make sure the tests pass and th
 
 - For bugfixes and new features, it'd be appreciated if you added some sort of regression tests (if applicable). 
 
-- Code style is enforced by [ESLint](http://eslint.org/) with the [Standard](https://github.com/feross/standard) guide for JavaScript code. Run the linter with:
+- Code style is enforced by [ESLint](http://eslint.org/) with the [Standard](https://github.com/feross/standard) guide for JavaScript code. To run the linter:
 
   ```sh
   npm run test:lint

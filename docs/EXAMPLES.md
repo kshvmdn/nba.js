@@ -26,9 +26,7 @@
 
 - The following snippets will demonstrate how you can use the two APIs with their various endpoints and parameters.
 
-### Stats
-
-  - `nba.stats`
+### <a name='stats'>Stats, `nba.stats`</a>
 
   - [List of methods](api/STATS.md#method-reference).
 
@@ -62,8 +60,6 @@
   });
   ```
 
-### Data
-
-  - `nba.data`
+### <a name='data'>Data, `nba.data`</a>
 
   - [List of methods](api/DATA.md#method-reference).

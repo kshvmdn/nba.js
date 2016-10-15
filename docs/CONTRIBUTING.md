@@ -46,5 +46,5 @@ __All contributions are welcome and appreciated, make sure the tests pass and th
 - Code style is enforced by [ESLint](http://eslint.org/) with the [Standard](https://github.com/feross/standard) guide for JavaScript code. To run the linter:
 
   ```sh
-  npm run test:lint
+  npm run lint
   ```

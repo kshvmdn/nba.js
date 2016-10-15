@@ -1,6 +1,6 @@
 {
   "name": "nba.js",
-  "version": "0.2.5",
+  "version": "0.3.0",
   "description": "Interact with current and historical NBA stats, scores, and data.",
   "keywords": [
     "nba",

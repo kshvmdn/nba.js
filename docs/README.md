@@ -1,6 +1,6 @@
 ## Documentation
 
 - [Usage](USAGE.md)
-- [API](api/)
+- [API](api)
 - [Examples](EXAMPLES.md)
 - [Contribute](CONTRIBUTING.md)

@@ -5,8 +5,13 @@
   - `calendar`
     + Endpoint: [`/data/10s/prod/v1/calendar.json`](http://data.nba.net//data/10s/prod/v1/calendar.json)
 
-  - `scoreboard`
+  - `currentScoreboard`
     + Endpoint: [`/data/10s/prod/v1/scoreboard.json`](http://data.nba.net//data/10s/prod/v1/scoreboard.json)
+
+  - `scoreboard`
+    + Endpoint: [`/data/10s/prod/v1/scoreboard.json`](http://data.nba.net//data/10s/prod/v1/{{date}}/scoreboard.json)
+    + Parameters:
+      * `date`
 
   - `teams`
     + Endpoint: [`/data/10s/prod/v1/{{year}}/teams.json`](http://data.nba.net//data/10s/prod/v1/{{year}}/teams.json)

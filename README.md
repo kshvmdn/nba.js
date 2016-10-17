@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/nba.js.svg)](https://badge.fury.io/js/nba.js) [![Build Status](https://travis-ci.org/kshvmdn/nba.js.svg?branch=master)](https://travis-ci.org/kshvmdn/nba.js) [![Coverage Status](https://coveralls.io/repos/github/kshvmdn/nba.js/badge.svg?branch=master)](https://coveralls.io/github/kshvmdn/nba.js?branch=master) [![Dependency Status](https://img.shields.io/david/kshvmdn/nba.js.svg)](https://david-dm.org/kshvmdn/nba.js) ![code style : standard](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)
 
-> A Node.js & browser library for current and historical NBA stats, scores, and data.
+> A Node.js library for current and historical NBA stats, scores, and data.
 
 ### Installation
 

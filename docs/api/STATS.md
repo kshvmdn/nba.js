@@ -1162,6 +1162,7 @@
   - `playerID`
     + Possible values:
       * `'0'`
+      * Refer to [this](http://stats.nba.com/stats/commonallplayers?IsOnlyCurrentSeason=1&LeagueID=00&Season=2016-17) for a list of all current players and their respective IDs (change `IsOnlyCurrentSeason` to `0` for all players).
   - `playerOrTeam`
     + Possible values:
       * `'Player'`

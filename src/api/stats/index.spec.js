@@ -3,7 +3,7 @@ import should from 'should'
 import e from './'
 import { DEFAULTS as c } from './constants'
 
-describe('modules/stats/index', () => {
+describe('api/stats/index', () => {
   describe('exports', () => {
     it('should export all DEFAULT constants', (done) => {
       should.equal(Object.keys(c).length, Object.keys(e).length)

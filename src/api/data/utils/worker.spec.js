@@ -3,7 +3,7 @@ import { work as w } from './worker'
 
 const ENDPOINT = '/data/10s/prod/v1/current/standings_all.json'
 
-describe('modules/data/utils/worker', () => {
+describe('api/data/utils/worker', () => {
   it('should respond with a Promise', (done) => {
     w(ENDPOINT).should.be.Promise()
     done()

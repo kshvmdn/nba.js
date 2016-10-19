@@ -1,7 +1,7 @@
 import should from 'should'
 import formEndpoint from './form-endpoint'
 
-describe('modules/data/utils/form-endpoint', () => {
+describe('api/data/utils/form-endpoint', () => {
   it('should export a function', (done) => {
     formEndpoint.should.be.a.Function
     done()

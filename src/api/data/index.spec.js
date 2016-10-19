@@ -3,7 +3,7 @@ import should from 'should'
 import e from './'
 import { ENDPOINTS as c } from './constants'
 
-describe('modules/data/index', () => {
+describe('api/data/index', () => {
   describe('exports', () => {
     it('should export a functon for each ENDPOINT constants', (done) => {
       should.equal(Object.keys(c).length, Object.keys(e).length)

@@ -12,7 +12,7 @@ let query = {
   StatType: 'Traditional'
 }
 
-describe('modules/stats/utils/fetch', () => {
+describe('api/stats/utils/fetch', () => {
   it('should return response/error as a Promise', (done) => {
     let request = fetch(endpoint, { query })
     request.should.be.Promise()

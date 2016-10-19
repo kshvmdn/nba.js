@@ -1,7 +1,7 @@
 import should from 'should'
 import * as constants from './endpoints'
 
-describe('modules/data/constants/endpoints', () => {
+describe('api/data/constants/endpoints', () => {
   it('should export objects with `method` & `endpoint` keys', (done) => {
     Object.keys(constants).every(k => {
       let v = constants[k]

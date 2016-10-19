@@ -3,7 +3,7 @@ import fetch from './fetch'
 
 const ENDPOINT = '/data/10s/prod/v1/scoreboard.json'
 
-describe('modules/data/utils/fetch', () => {
+describe('api/data/utils/fetch', () => {
   it('should return response/error as a Promise', (done) => {
     let request = fetch(ENDPOINT)
     request.should.be.Promise()

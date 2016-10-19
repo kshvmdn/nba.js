@@ -1,7 +1,7 @@
 import should from 'should'
 import * as constants from './'
 
-describe('modules/stats/constants/index', () => {
+describe('api/stats/constants/index', () => {
   it('should export something', (done) => {
     constants.should.not.be.empty()
     done()

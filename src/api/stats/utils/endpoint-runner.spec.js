@@ -4,7 +4,7 @@ import * as worker from './endpoint-worker'
 
 let r = runner.run(worker.work)
 
-describe('modules/stats/utils/endpoint-runner', () => {
+describe('api/stats/utils/endpoint-runner', () => {
   it('should error out if no worker is provided', (done) => {
     runner.run()(null, null, (err, res) => {
       should.exist(err)

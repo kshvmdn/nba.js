@@ -20,7 +20,7 @@ describe('modules/stats/utils/endpoint-runner', () => {
       err.should.have.property('message')
       err.message.should.eql('Invalid endpoint type.')
       done()
-    })
+    }).catch(e => e)
   })
 
   it('should respond with Promise', (done) => {

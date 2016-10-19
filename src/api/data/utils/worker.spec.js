@@ -3,7 +3,7 @@ import { work as w } from './worker'
 
 const ENDPOINT = '/data/10s/prod/v1/current/standings_all.json'
 
-describe('modules/data/utils/runner', () => {
+describe('modules/data/utils/worker', () => {
   it('should respond with a Promise', (done) => {
     w(ENDPOINT).should.be.Promise()
     done()
@@ -23,6 +23,6 @@ describe('modules/data/utils/runner', () => {
       err.should.have.property('message')
       err.message.should.eql('Response code 404 (Not Found)')
       done()
-    })
+    }).catch(e => e)
   }).timeout(10000)
 })

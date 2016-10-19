@@ -24,6 +24,6 @@ describe('modules/stats/utils/endpoint-worker', () => {
       err.should.have.property('body')
       err.body.should.eql('The field PlayerID must be between 1 and 2147483647.')
       done()
-    })
+    }).catch(e => e)
   }).timeout(10000)
 })

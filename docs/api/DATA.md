@@ -9,7 +9,7 @@
     + Endpoint: [`/data/10s/prod/v1/scoreboard.json`](http://data.nba.net//data/10s/prod/v1/scoreboard.json)
 
   - `scoreboard`
-    + Endpoint: [`/data/10s/prod/v1/scoreboard.json`](http://data.nba.net//data/10s/prod/v1/{{date}}/scoreboard.json)
+    + Endpoint: [`/data/10s/prod/v1/{{date}}/scoreboard.json`](http://data.nba.net//data/10s/prod/v1/{{date}}/scoreboard.json)
     + Parameters:
       * `date`
 

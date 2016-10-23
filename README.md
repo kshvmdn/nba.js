@@ -1,4 +1,4 @@
-## nba.js 
+## nba.js
 
 [![npm version](https://badge.fury.io/js/nba.js.svg)](https://badge.fury.io/js/nba.js) [![Build Status](https://travis-ci.org/kshvmdn/nba.js.svg?branch=master)](https://travis-ci.org/kshvmdn/nba.js) [![Coverage Status](https://coveralls.io/repos/github/kshvmdn/nba.js/badge.svg?branch=master)](https://coveralls.io/github/kshvmdn/nba.js?branch=master) [![Dependency Status](https://img.shields.io/david/kshvmdn/nba.js.svg)](https://david-dm.org/kshvmdn/nba.js) ![code style : standard](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)
 
@@ -29,7 +29,7 @@ See [EXAMPLES.md](docs/EXAMPLES.md).
 
 ### Contribute
 
-This project is completely open source. Feel free to [open an issue](https://github.com/kshvmdn/nba.js/issues) or [make a pull request](https://github.com/kshvmdn/nba.js/pulls). 
+This project is completely open source. Feel free to [open an issue](https://github.com/kshvmdn/nba.js/issues) or [make a pull request](https://github.com/kshvmdn/nba.js/pulls).
 
 For more information, see [CONTRIBUTING.md](docs/CONTRIBUTING.md).
 

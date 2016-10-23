@@ -45,3 +45,6 @@ src/
 
 # Tests
 *.spec.js
+
+# Docs
+docs/

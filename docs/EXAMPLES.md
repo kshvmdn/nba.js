@@ -33,7 +33,7 @@
   - Get a list of all players:
 
     ```js
-    nba.stats.allPlayers((err, res) => {
+    nba.stats.allPlayers(function(err, res) {
       if (err) {
         console.error(err);
         return;
@@ -75,4 +75,16 @@
 
       console.log(res);
     })
+    ```
+
+    - Get a list of teams from the 2016 season:
+
+    ```js
+    nba.data.teams({
+      year: 2016
+    }).then(function(res) {
+      console.log(res);
+    }).catch(function(err) {
+      console.error(err);
+    });
     ```

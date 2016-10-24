@@ -17,13 +17,26 @@
     ```js
     const nba = require('nba').default;
 
-    nba.stats.allPlayers().then(res => console.log(res));
+    nba.stats.allPlayers().then(res => {
+      console.log(res)
+    });
 
     // this also works
-    nba.stats.allPlayers((err, res) => console.log(res));
+    nba.stats.allPlayers(function(err, res) {
+      if (err) {
+        console.error(err);
+        return;
+      }
+
+      console.log(res);
+    });
 
     // not sure why you'd do this, but it also works
-    nba.stats.allPlayers((err, res) => console.log(res)).then(res => console.log(res));
+    nba.stats.allPlayers((err, res) => {
+      console.log(res)
+    }).then(res => {
+      console.log(res)
+    });
     ```
 
 ### Method Parameters

@@ -166,11 +166,12 @@
   - `personId`
     + Via [player page](http://www.nba.com/players).
     + E.g. `2544` for http://www.nba.com/players/lebron/james/2544.
+    + You can find a list of all players and their respective `personId` [here](https://gist.github.com/kshvmdn/5946cf62a4081be2a6a23fa1cedbfba4).
 
   - `teamName`
     + Via [team page](http://www.nba.com/teams/).
     + E.g. `bulls` for http://www.nba.com/teams/bulls.
-    + Valid values for `teamName` parameter for the 2016 season
+    + Valid values for the 2016 season:
     + Western Conference Teams
       + Southwest
         + `mavericks`
@@ -216,11 +217,11 @@
         + `wizards`
 
     +  Preseason only teams
-        + `fcbarcelona` 
-        + `san_lorenzo`
-        + `maccabi_haifa`
-        + `real_madrid`
-        + `shanghai_sharks`
+      + `fcbarcelona` 
+      + `san_lorenzo`
+      + `maccabi_haifa`
+      + `real_madrid`
+      + `shanghai_sharks`
         
 ### Examples
 

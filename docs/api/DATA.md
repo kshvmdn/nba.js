@@ -215,7 +215,7 @@
         + `magic`
         + `wizards`
 
-      + Preseason only teams
+    +  Preseason only teams
         + `fcbarcelona` 
         + `san_lorenzo`
         + `maccabi_haifa`

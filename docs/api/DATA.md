@@ -147,7 +147,34 @@
 
 ### Parameter Reference
 
-  - _Coming soon..._
+  - `date`
+    + `"YYYYMMDD"`
+
+  - `year`
+    + `"YYYY"`
+
+  - `gameDate`
+    + `"YYYYMMDD"`
+
+  - `gameId`
+    + Can be found on the gamepage. Currently looking for a source for these IDs (or just a method for how they're formed, _they seem to be completely random_). **A PR/contribution would be very appreciated.**
+
+  - `periodNum`
+    + `1`
+    + `2`
+    + `3`
+    + `4`
+    + `4+n` for OT`n` (e.g. `5` for OT1)
+
+  - `personId`
+    + Via [player page](http://www.nba.com/players).
+    + E.g. `2544` for http://www.nba.com/players/lebron/james/2544.
+
+  - `teamUrlCode`
+    + _TODO_
+
+  - `seasonScheduleYear`
+    + _TODO_
 
 ### Examples
 

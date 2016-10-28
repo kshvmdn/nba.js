@@ -65,32 +65,32 @@ export const LEAGUE_LAST_FIVE_GAME_TEAM_STATS = {
 
 export const PREVIEW_ARTICLE = {
   method: 'previewArticle',
-  endpoint: '/data/10s/prod/v1/{{gameDate}}/{{gameId}}_preview_article.json'
+  endpoint: '/data/10s/prod/v1/{{date}}/{{gameId}}_preview_article.json'
 }
 
 export const RECAP_ARTICLE = {
   method: 'recapArticle',
-  endpoint: '/data/10s/prod/v1/{{gameDate}}/{{gameId}}_recap_article.json'
+  endpoint: '/data/10s/prod/v1/{{date}}/{{gameId}}_recap_article.json'
 }
 
 export const BOXSCORE = {
   method: 'boxscore',
-  endpoint: '/data/10s/prod/v1/{{gameDate}}/{{gameId}}_boxscore.json'
+  endpoint: '/data/10s/prod/v1/{{date}}/{{gameId}}_boxscore.json'
 }
 
 export const MINI_BOXSCORE = {
   method: 'miniBoxscore',
-  endpoint: '/data/10s/prod/v1/{{gameDate}}/{{gameId}}_mini_boxscore.json'
+  endpoint: '/data/10s/prod/v1/{{date}}/{{gameId}}_mini_boxscore.json'
 }
 
 export const PLAY_BY_PLAY = {
   method: 'pbp',
-  endpoint: '/data/10s/prod/v1/{{gameDate}}/{{gameId}}_pbp_{{periodNum}}.json'
+  endpoint: '/data/10s/prod/v1/{{date}}/{{gameId}}_pbp_{{period}}.json'
 }
 
 export const LEAD_TRACKER = {
   method: 'leadTracker',
-  endpoint: '/data/10s/prod/v1/{{gameDate}}/{{gameId}}_lead_tracker_{{periodNum}}.json'
+  endpoint: '/data/10s/prod/v1/{{date}}/{{gameId}}_lead_tracker_{{period}}.json'
 }
 
 export const PLAYER_GAMELOG = {
@@ -110,7 +110,7 @@ export const PLAYER_UBER_STATS = {
 
 export const TEAM_SCHEDULE = {
   method: 'teamSchedule',
-  endpoint: '/data/10s/prod/v1/{{year}}/teams/{{teamUrlCode}}/schedule.json'
+  endpoint: '/data/10s/prod/v1/{{year}}/teams/{{teamName}}/schedule.json'
 }
 
 export const TEAMS_CONFIG = {
@@ -120,20 +120,20 @@ export const TEAMS_CONFIG = {
 
 export const TEAM_ROSTER = {
   method: 'teamRoster',
-  endpoint: '/data/10s/prod/v1/{{year}}/teams/{{teamUrlCode}}/roster.json'
+  endpoint: '/data/10s/prod/v1/{{year}}/teams/{{teamName}}/roster.json'
 }
 
 export const TEAMS_CONFIG_YEAR = {
   method: 'teamsConfigYear',
-  endpoint: '/data/1h/prod/{{seasonScheduleYear}}/teams_config.json'
+  endpoint: '/data/1h/prod/{{year}}/teams_config.json'
 }
 
 export const TEAM_SCHEDULE_YEAR = {
   method: 'teamScheduleYear',
-  endpoint: '/data/10s/prod/v1/{{seasonScheduleYear}}/teams/{{teamUrlCode}}/schedule.json'
+  endpoint: '/data/10s/prod/v1/{{year}}/teams/{{teamName}}/schedule.json'
 }
 
 export const TEAM_LEADERS = {
   method: 'teamLeaders',
-  endpoint: '/data/10s/prod/v1/{{year}}/teams/{{teamUrlCode}}/leaders.json'
+  endpoint: '/data/10s/prod/v1/{{year}}/teams/{{teamName}}/leaders.json'
 }

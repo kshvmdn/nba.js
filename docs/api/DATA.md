@@ -170,7 +170,58 @@
   - `teamName`
     + Via [team page](http://www.nba.com/teams/).
     + E.g. `bulls` for http://www.nba.com/teams/bulls.
+    + Valid values for `teamName` parameter for the 2016 season
+    + Western Conference Teams
+      + Southwest
+        + `mavericks`
+        + `rockets`
+        + `grizzlies`
+        + `pelicans`
+        + `spurs`
 
+      + Northwest
+        + `nuggets`
+        + `timberwolves`
+        + `thunder`
+        + `blazers`
+        + `jazz`
+
+      + Pacific
+        + `warriors`
+        + `clippers`
+        + `lakers`
+        + `suns`
+        + `kings`
+
+    + Eastern Conference Teams
+      + Atlantic
+        + `celtics`
+        + `nets`
+        + `knicks`
+        + `sixers`
+        + `raptors`
+
+      + Central
+        + `bulls`
+        + `cavaliers`
+        + `pistons`
+        + `pacers`
+        + `bucks` 
+
+      + Southeast
+        + `hawks`
+        + `hornets`
+        + `heat`
+        + `magic`
+        + `wizards`
+
+      + Preseason only teams
+        + `fcbarcelona` 
+        + `san_lorenzo`
+        + `maccabi_haifa`
+        + `real_madrid`
+        + `shanghai_sharks`
+        
 ### Examples
 
 See [EXAMPLES.md](../EXAMPLES.md#data).

@@ -31,18 +31,18 @@
     "test:coverage": "istanbul cover -x *.spec.js _mocha -- --compilers js:babel-core/register --colors --reporter dot $(find src/ -name \"*.spec.js\")"
   },
   "dependencies": {
-    "got": "^6.3.0"
+    "got": "^6.6.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.11.4",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.14.0",
-    "babel-preset-es2015": "^6.13.2",
+    "babel-cli": "^6.18.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
     "babel-preset-stage-0": "^6.5.0",
-    "babel-register": "^6.14.0",
+    "babel-register": "^6.18.0",
     "coveralls": "^2.11.12",
-    "eslint": "^3.3.1",
-    "eslint-config-standard": "^6.0.0-beta.3",
-    "eslint-plugin-promise": "^2.0.1",
+    "eslint": "^3.9.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.3.0",
     "eslint-plugin-standard": "^2.0.0",
     "istanbul": "^1.1.0-alpha.1",
     "mocha": "^3.0.2",

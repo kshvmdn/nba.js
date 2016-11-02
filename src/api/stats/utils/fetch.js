@@ -21,6 +21,7 @@ export default function fetch (endpoint = '', opts) {
     json: false
   }, opts || {})
 
+  // eslint-disable-next-line no-useless-escape
   let re = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/
   let url = re.test(endpoint) ? endpoint : `${URL}${endpoint}`
 

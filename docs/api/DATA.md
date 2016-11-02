@@ -1,37 +1,37 @@
 ## API: Data
 
+- The `nba.data` object provides access to endpoints from [data.nba.net](http://data.nba.net/).
+- For this endpoint, if a method has a parameter, it is __required__.
+
 ### Method Reference
 
   - `calendar`
     + Endpoint: [`/data/10s/prod/v1/calendar.json`](http://data.nba.net/data/10s/prod/v1/calendar.json)
 
-  - `currentScoreboard`
-    + Endpoint: [`/data/10s/prod/v1/scoreboard.json`](http://data.nba.net/data/10s/prod/v1/scoreboard.json)
-
   - `scoreboard`
     + Endpoint: [`/data/10s/prod/v1/{{date}}/scoreboard.json`](http://data.nba.net/data/10s/prod/v1/{{date}}/scoreboard.json)
     + Parameters:
-      * `date`
+      * `date`*
 
   - `teams`
     + Endpoint: [`/data/10s/prod/v1/{{year}}/teams.json`](http://data.nba.net/data/10s/prod/v1/{{year}}/teams.json)
     + Parameters:
-      * `year`
+      * `year`*
 
   - `players`
     + Endpoint: [`/data/10s/prod/v1/{{year}}/players.json`](http://data.nba.net/data/10s/prod/v1/{{year}}/players.json)
     + Parameters:
-      * `year`
+      * `year`*
 
   - `coaches`
     + Endpoint: [`/data/10s/prod/v1/{{year}}/coaches.json`](http://data.nba.net/data/10s/prod/v1/{{year}}/coaches.json)
     + Parameters:
-      * `year`
+      * `year`*
 
   - `schedule`
     + Endpoint: [`/data/10s/prod/v1/{{year}}/schedule.json`](http://data.nba.net/data/10s/prod/v1/{{year}}/schedule.json)
     + Parameters:
-      * `year`
+      * `year`*
 
   - `conferenceStandings`
     + Endpoint: [`/data/10s/prod/v1/current/standings_conference.json`](http://data.nba.net/data/10s/prod/v1/current/standings_conference.json)
@@ -48,102 +48,102 @@
   - `teamStatsLeaders`
     + Endpoint: [`/data/10s/prod/v1/{{year}}/team_stats_rankings.json`](http://data.nba.net/data/10s/prod/v1/{{year}}/team_stats_rankings.json)
     + Parameters:
-      * `year`
+      * `year`*
 
   - `lastFiveGameTeamStats`
     + Endpoint: [`/data/10s/prod/v1/{{year}}/team_stats_last_five_games.json`](http://data.nba.net/data/10s/prod/v1/{{year}}/team_stats_last_five_games.json)
     + Parameters:
-      * `year`
+      * `year`*
 
   - `previewArticle`
     + Endpoint: [`/data/10s/prod/v1/{{date}}/{{gameId}}_preview_article.json`](http://data.nba.net/data/10s/prod/v1/{{date}}/{{gameId}}_preview_article.json)
     + Parameters:
-      * `date`
-      * `gameId`
+      * `date`*
+      * `gameId`*
 
   - `recapArticle`
     + Endpoint: [`/data/10s/prod/v1/{{date}}/{{gameId}}_recap_article.json`](http://data.nba.net/data/10s/prod/v1/{{date}}/{{gameId}}_recap_article.json)
     + Parameters:
-      * `date`
-      * `gameId`
+      * `date`*
+      * `gameId`*
 
   - `boxscore`
     + Endpoint: [`/data/10s/prod/v1/{{date}}/{{gameId}}_boxscore.json`](http://data.nba.net/data/10s/prod/v1/{{date}}/{{gameId}}_boxscore.json)
     + Parameters:
-      * `date`
-      * `gameId`
+      * `date`*
+      * `gameId`*
 
   - `miniBoxscore`
     + Endpoint: [`/data/10s/prod/v1/{{date}}/{{gameId}}_mini_boxscore.json`](http://data.nba.net/data/10s/prod/v1/{{date}}/{{gameId}}_mini_boxscore.json)
     + Parameters:
-      * `date`
-      * `gameId`
+      * `date`*
+      * `gameId`*
 
   - `pbp`
     + Endpoint: [`/data/10s/prod/v1/{{date}}/{{gameId}}_pbp_{{period}}.json`](http://data.nba.net/data/10s/prod/v1/{{date}}/{{gameId}}_pbp_{{period}}.json)
     + Parameters:
-      * `date`
-      * `gameId`
-      * `period`
+      * `date`*
+      * `gameId`*
+      * `period`*
 
   - `leadTracker`
     + Endpoint: [`/data/10s/prod/v1/{{date}}/{{gameId}}_lead_tracker_{{period}}.json`](http://data.nba.net/data/10s/prod/v1/{{date}}/{{gameId}}_lead_tracker_{{period}}.json)
     + Parameters:
-      * `date`
-      * `gameId`
-      * `period`
+      * `date`*
+      * `gameId`*
+      * `period`*
 
   - `playerGamelog`
     + Endpoint: [`/data/10s/prod/v1/{{year}}/players/{{personId}}_gamelog.json`](http://data.nba.net/data/10s/prod/v1/{{year}}/players/{{personId}}_gamelog.json)
     + Parameters:
-      * `year`
-      * `personId`
+      * `year`*
+      * `personId`*
 
   - `playerProfile`
     + Endpoint: [`/data/10s/prod/v1/{{year}}/players/{{personId}}_profile.json`](http://data.nba.net/data/10s/prod/v1/{{year}}/players/{{personId}}_profile.json)
     + Parameters:
-      * `year`
-      * `personId`
+      * `year`*
+      * `personId`*
 
   - `playerUberStats`
     + Endpoint: [`/data/10s/prod/v1/{{year}}/players/{{personId}}_uber_stats.json`](http://data.nba.net/data/10s/prod/v1/{{year}}/players/{{personId}}_uber_stats.json)
     + Parameters:
-      * `year`
-      * `personId`
+      * `year`*
+      * `personId`*
 
   - `teamSchedule`
     + Endpoint: [`/data/10s/prod/v1/{{year}}/teams/{{teamName}}/schedule.json`](http://data.nba.net/data/10s/prod/v1/{{year}}/teams/{{teamName}}/schedule.json)
     + Parameters:
-      * `year`
-      * `teamName`
+      * `year`*
+      * `teamName`*
 
   - `teamsConfig`
     + Endpoint: [`/data/1h/prod/{{year}}/teams_config.json`](http://data.nba.net/data/1h/prod/{{year}}/teams_config.json)
     + Parameters:
-      * `year`
+      * `year`*
 
   - `teamRoster`
     + Endpoint: [`/data/10s/prod/v1/{{year}}/teams/{{teamName}}/roster.json`](http://data.nba.net/data/10s/prod/v1/{{year}}/teams/{{teamName}}/roster.json)
     + Parameters:
-      * `year`
-      * `teamName`
+      * `year`*
+      * `teamName`*
 
   - `teamsConfigYear`
     + Endpoint: [`/data/1h/prod/{{year}}/teams_config.json`](http://data.nba.net/data/1h/prod/{{year}}/teams_config.json)
     + Parameters:
-      * `year`
+      * `year`*
 
   - `teamScheduleYear`
     + Endpoint: [`/data/10s/prod/v1/{{year}}/teams/{{teamName}}/schedule.json`](http://data.nba.net/data/10s/prod/v1/{{year}}/teams/{{teamName}}/schedule.json)
     + Parameters:
-      * `year`
-      * `teamName`
+      * `year`*
+      * `teamName`*
 
   - `teamLeaders`
     + Endpoint: [`/data/10s/prod/v1/{{year}}/teams/{{teamName}}/leaders.json`](http://data.nba.net/data/10s/prod/v1/{{year}}/teams/{{teamName}}/leaders.json)
     + Parameters:
-      * `year`
-      * `teamName`
+      * `year`*
+      * `teamName`*
 
 ### Parameter Reference
 

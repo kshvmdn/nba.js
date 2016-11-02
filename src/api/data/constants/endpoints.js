@@ -3,11 +3,6 @@ export const CALENDAR = {
   endpoint: '/data/10s/prod/v1/calendar.json'
 }
 
-export const CURRENT_SCOREBOARD = {
-  method: 'currentScoreboard',
-  endpoint: '/data/10s/prod/v1/scoreboard.json'
-}
-
 export const SCOREBOARD = {
   method: 'scoreboard',
   endpoint: '/data/10s/prod/v1/{{date}}/scoreboard.json'

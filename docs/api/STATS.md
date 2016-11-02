@@ -1055,8 +1055,8 @@
       * `'7+ Dribbles'`
   - `gameDate`
     + Possible values:
-      * `'04/20/2015'`
       * `'MM/DD/YYYY'`
+      * e.g. `'10/25/2016'`
   - `gameID`
     + Possible values:
       * `null`
@@ -1073,10 +1073,10 @@
       * `'Overtime'`
   - `generalRange`
     + Possible values:
-      * `'Overall'`
       * `'Catch and Shoot'`
-      * `'Pullups'`
       * `'Less Than 10 ft'`
+      * `'Overall'`
+      * `'Pullups'`
   - `graphStats`
     + Possible values:
       * `'PTS'`
@@ -1089,8 +1089,8 @@
   - `height`
     + Possible values:
       * `null`
-      * `'GT {ft}-{in}'`
-      * `'LT {ft}-{in}'`
+      * `'GT {ft}-{in}'`, e.g. `'GT 6-2'`
+      * `'LT {ft}-{in}'`, e.g. `'LT 6-2'`
   - `lastNGames`
     + Possible values:
       * `'0'`
@@ -1118,7 +1118,7 @@
     + Possible values:
       * `'0'`
       * `null`
-      * `'0 for all, 1-12 for months of year (12=sept, 1=oct, 2=dec, etc)'`
+      * 0 for all, 1-12 for months of year (12=sept, 1=oct, 2=dec, etc)
   - `optional`
     + Possible values:
       * `'N'`
@@ -1162,7 +1162,7 @@
   - `playerID`
     + Possible values:
       * `'0'`
-      * Refer to [this](http://stats.nba.com/stats/commonallplayers?IsOnlyCurrentSeason=1&LeagueID=00&Season=2016-17) for a list of all current players and their respective IDs (change `IsOnlyCurrentSeason` to `0` for all players).
+      * Refer to [this](http://stats.nba.com/stats/commonallplayers?IsOnlyCurrentSeason=1&LeagueID=00&Season=2016-17) for a list of all current players and their respective IDs (change `IsOnlyCurrentSeason` to `0` for players from all seasons).
   - `playerOrTeam`
     + Possible values:
       * `'Player'`
@@ -1193,8 +1193,7 @@
       * `'Rookies'`
   - `season`
     + Possible values:
-      * `'2015-16'`
-      * `'YYYY-YY'`
+      * `'YYYY-YY'`, e.g. `'2015-2016'`
       * `'All Time'`
   - `seasonSegment`
     + Possible values:
@@ -1203,7 +1202,6 @@
       * `'Post All-Star'`
   - `seasonSingleYear`
     + Possible values:
-      * `'2015'`
       * `'YYYY'`
   - `seasonType`
     + Possible values:
@@ -1224,7 +1222,7 @@
   - `shotDistRange`
     + Possible values:
       * `null`
-      * `'(>, >=, <=, <) ft'`
+      * `'{>, >=, <=, <} {ft}'`, e.g. `'> 10'`
   - `sorter`
     + Possible values:
       * `'PTS'`
@@ -1292,8 +1290,8 @@
   - `weight`
     + Possible values:
       * `null`
-      * `'LT {wt}'`
-      * `'GT {wt}'`
+      * `'LT {wt}'`, e.g. `'LT 250'`
+      * `'GT {wt}'`, e.g. `'GT 250'`
 
 ### Examples
 

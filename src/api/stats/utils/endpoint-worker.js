@@ -34,16 +34,11 @@ export function work (constants, query, cb) {
 
   query = Object.assign(constants.defaults, query || {})
 
-  return new Promise((resolve, reject) => {
-    get(constants.endpoint, query, (err, res) => {
-      if (err) {
-        if (cb) cb(err)
-        reject(err)
-        return
-      }
-
-      if (cb) cb(null, res)
-      resolve(res)
-    })
+  const doRequest = (handleResponse, handleError) => get(constants.endpoint, query, (err, res) => {
+    if (err) return handleError(err)
+    return handleResponse(res)
   })
+
+  if (cb) return doRequest(res => cb(null, res), cb)
+  return new Promise(doRequest)
 }

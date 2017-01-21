@@ -1,7 +1,5 @@
 import fetch from './fetch'
 
-const noop = () => {}
-
 /**
  * Make the request to the API, parse and format the JSON, and return it.
  * @param  {string}   endpoint - URL endpoint.
@@ -25,22 +23,18 @@ function get (endpoint, cb) {
 }
 
 /**
- * Make the request and return the response as a Promise + callback if provided.
+ * Make the request and return the response as a callback iff a callback is provided,
+ * otherwise a Promise.
  * @param  {string} endpoint - Encoded URL endpoint.
  * @param  {Function} cb - Optional error-first callback for the response/error.
- * @return {Promise} Promise containing JSON response.
+ * @return {Function|Promise} Error-first callback or Promise containing JSON response.
  */
-export function work (endpoint, cb = noop) {
-  return new Promise((resolve, reject) => {
-    get(endpoint, (err, res) => {
-      if (err) {
-        if (cb) cb(err)
-        reject(err)
-        return
-      }
-
-      if (cb) cb(null, res)
-      resolve(res)
-    })
+export function work (endpoint, cb) {
+  const doRequest = (handleResponse, handleError) => get(endpoint, (err, res) => {
+    if (err) return handleError(err)
+    return handleResponse(res)
   })
+
+  if (cb) return doRequest(res => cb(null, res), cb)
+  return new Promise(doRequest)
 }

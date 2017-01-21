@@ -13,13 +13,13 @@ let query = {
 }
 
 describe('api/stats/utils/fetch', () => {
-  it('should return response/error as a Promise', (done) => {
+  it('should return response/error as a Promise', done => {
     let request = fetch(endpoint, { query })
     request.should.be.Promise()
     done()
   })
 
-  it('should respond with response/error', (done) => {
+  it('should respond with response/error', done => {
     let request = fetch(endpoint, { query })
 
     request.then(res => {
@@ -33,7 +33,7 @@ describe('api/stats/utils/fetch', () => {
     })
   }).timeout(20000)
 
-  it('should throw 400 on invalid request', (done) => {
+  it('should throw 400 on invalid request', done => {
     let request = fetch(endpoint, { query: {} })
 
     request.catch((err) => {
@@ -43,7 +43,7 @@ describe('api/stats/utils/fetch', () => {
     })
   }).timeout(5000)
 
-  it('should support full URLs as `endpoint` parameter', (done) => {
+  it('should support full URLs as `endpoint` parameter', done => {
     let request = fetch('http://stats.nba.com/stats/teamdetails', { query: { teamId: 1610612741 } })
 
     request.then(res => {

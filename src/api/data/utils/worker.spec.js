@@ -4,12 +4,12 @@ import { work as w } from './worker'
 const ENDPOINT = '/data/10s/prod/v1/current/standings_all.json'
 
 describe('api/data/utils/worker', () => {
-  it('should respond with a Promise', (done) => {
+  it('should respond with a Promise', done => {
     w(ENDPOINT).should.be.Promise()
     done()
   })
 
-  it('should respond with an error-first cb', (done) => {
+  it('should respond with an error-first cb', done => {
     w(ENDPOINT, (err, res) => {
       should.not.exist(err)
       should.exist(res)
@@ -17,12 +17,12 @@ describe('api/data/utils/worker', () => {
     })
   }).timeout(10000)
 
-  it('should throw HTTPError on invalid request', (done) => {
+  it('should throw HTTPError on invalid request', done => {
     w('FOOBAR', (err, res) => {
       should.exist(err)
       err.should.have.property('message')
       err.message.should.eql('Response code 404 (Not Found)')
       done()
-    }).catch(e => e)
+    })
   }).timeout(10000)
 })

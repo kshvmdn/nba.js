@@ -11,20 +11,20 @@ let name = 'top_2_scoring_pgs'
 let resultSet = [{ headers, rowSet, name }]
 
 describe('api/stats/utils/flatten-result-set', () => {
-  it('should return a Promise', (done) => {
+  it('should return a Promise', done => {
     let flattened = flattenResultSet(resultSet)
     flattened.should.be.Promise()
     done()
   })
 
-  it('should return an object hashed by resultSet name', (done) => {
+  it('should return an object hashed by resultSet name', done => {
     flattenResultSet(resultSet).then((res) => {
       Object.keys(res)[0].should.eql(name)
       done()
     })
   })
 
-  it('should not alter row values', (done) => {
+  it('should not alter row values', done => {
     flattenResultSet(resultSet).then((res) => {
       for (let i in rowSet) {
         Object.keys(res[name][i]).map(v => res[name][i][v]).should.eql(rowSet[i])
@@ -34,7 +34,7 @@ describe('api/stats/utils/flatten-result-set', () => {
     })
   })
 
-  it('should have lowercase keys', (done) => {
+  it('should have lowercase keys', done => {
     flattenResultSet(resultSet).then((res) => {
       for (let i in rowSet) {
         Object.keys(res[name][i]).every(v => v === v.toLowerCase()).should.be.true()
@@ -44,7 +44,7 @@ describe('api/stats/utils/flatten-result-set', () => {
     })
   })
 
-  it('should flatten multiple sets and return all with `name` used as key', (done) => {
+  it('should flatten multiple sets and return all with `name` used as key', done => {
     flattenResultSet([ { headers, rowSet, name }, { headers, rowSet, name: `${name}2` } ])
       .then((res) => {
         Object.keys(res).should.have.length(2)
@@ -54,7 +54,7 @@ describe('api/stats/utils/flatten-result-set', () => {
       })
   })
 
-  it('should merge multiple sets with same `name` key', (done) => {
+  it('should merge multiple sets with same `name` key', done => {
     flattenResultSet(resultSet.concat(resultSet))
       .then((res) => {
         Object.keys(res).should.have.length(1)

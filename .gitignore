@@ -45,4 +45,6 @@ lib/
 
 # Documentation stuff
 t.js
-test.md
+t.md
+t.py
+t.json

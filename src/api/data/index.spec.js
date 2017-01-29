@@ -34,6 +34,6 @@ describe('api/data/index', () => {
         should.not.exist(err)
         done()
       })
-    }).timeout(10000)
+    })
   })
 })

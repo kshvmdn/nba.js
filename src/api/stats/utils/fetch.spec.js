@@ -19,20 +19,6 @@ describe('api/stats/utils/fetch', () => {
     done()
   })
 
-  it('should respond with response/error', done => {
-    let request = fetch(endpoint, { query })
-
-    request.then(res => {
-      should.exist(res)
-      done()
-    })
-
-    request.catch(err => {
-      should.exist(err)
-      done()
-    })
-  }).timeout(20000)
-
   it('should throw 400 on invalid request', done => {
     let request = fetch(endpoint, { query: {} })
 
@@ -41,7 +27,7 @@ describe('api/stats/utils/fetch', () => {
       err.statusCode.should.equal(400)
       done()
     })
-  }).timeout(5000)
+  })
 
   it('should support full URLs as `endpoint` parameter', done => {
     let request = fetch('http://stats.nba.com/stats/teamdetails', { query: { teamId: 1610612741 } })
@@ -55,5 +41,5 @@ describe('api/stats/utils/fetch', () => {
       should.exist(err)
       done()
     })
-  }).timeout(20000)
+  })
 })

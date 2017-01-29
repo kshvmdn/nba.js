@@ -15,7 +15,7 @@ describe('api/data/utils/worker', () => {
       should.exist(res)
       done()
     })
-  }).timeout(10000)
+  })
 
   it('should throw HTTPError on invalid request', done => {
     w('FOOBAR', (err, res) => {
@@ -24,5 +24,5 @@ describe('api/data/utils/worker', () => {
       err.message.should.eql('Response code 404 (Not Found)')
       done()
     })
-  }).timeout(10000)
+  })
 })

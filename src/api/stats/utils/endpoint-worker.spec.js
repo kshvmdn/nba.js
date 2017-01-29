@@ -16,7 +16,7 @@ describe('api/stats/utils/endpoint-worker', () => {
       should.exist(res)
       done()
     })
-  }).timeout(10000)
+  })
 
   it('should throw HTTPError when invalid query params are provided', done => {
     w(e.PLAYER_AWARDS, null, (err, res) => {
@@ -25,5 +25,5 @@ describe('api/stats/utils/endpoint-worker', () => {
       err.body.should.eql('The field PlayerID must be between 1 and 2147483647.')
       done()
     })
-  }).timeout(20000)
+  })
 })

@@ -22,7 +22,7 @@ describe('api/data/utils/fetch', () => {
       should.exist(err)
       done()
     })
-  }).timeout(20000)
+  })
 
   it('should throw 404 on invalid request', done => {
     let request = fetch('FOOBAR')
@@ -32,7 +32,7 @@ describe('api/data/utils/fetch', () => {
       err.statusCode.should.equal(404)
       done()
     })
-  }).timeout(5000)
+  })
 
   it('should support full URLs as `endpoint` parameter', done => {
     let request = fetch(`http://data.nba.net${ENDPOINT}`)
@@ -46,5 +46,5 @@ describe('api/data/utils/fetch', () => {
       should.exist(err)
       done()
     })
-  }).timeout(20000)
+  })
 })

@@ -34,5 +34,5 @@ describe('api/stats/utils/endpoint-runner', () => {
       should.exist(res)
       done()
     })
-  }).timeout(20000)
+  })
 })

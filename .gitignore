@@ -43,8 +43,5 @@ jspm_packages
 # Output
 lib/
 
-# Documentation stuff
-t.js
-t.md
-t.py
-t.json
+# Documentation scripts
+*.doc.*

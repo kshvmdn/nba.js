@@ -31,7 +31,7 @@
     "test:coverage": "istanbul cover -x *.spec.js _mocha -- --compilers js:babel-core/register --colors --reporter dot $(find src/ -name \"*.spec.js\")  --timeout 30000"
   },
   "dependencies": {
-    "got": "^6.6.1"
+    "got": "^7.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",
@@ -41,9 +41,11 @@
     "babel-register": "^6.18.0",
     "coveralls": "^2.11.12",
     "eslint": "^3.9.1",
-    "eslint-config-standard": "^6.2.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-node": "^5.0.0",
     "eslint-plugin-promise": "^3.3.0",
-    "eslint-plugin-standard": "^2.0.0",
+    "eslint-plugin-standard": "^3.0.1",
     "istanbul": "^1.1.0-alpha.1",
     "mocha": "^3.0.2",
     "mocha-lcov-reporter": "^1.2.0",

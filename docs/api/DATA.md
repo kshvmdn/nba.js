@@ -34,16 +34,16 @@
       * `year`
 
   - `conferenceStandings`
-    + Endpoint: [`/data/10s/prod/v1/current/standings_conference.json`](http://data.nba.net/data/10s/prod/v1/current/standings_conference.json)
+    + Endpoint: [`/data/10s/prod/v1/{{date}}/standings_conference.json`](http://data.nba.net/data/10s/prod/v1/{{date}}/standings_conference.json)
 
   - `divisionStandings`
-    + Endpoint: [`/data/10s/prod/v1/current/standings_division.json`](http://data.nba.net/data/10s/prod/v1/current/standings_division.json)
+    + Endpoint: [`/data/10s/prod/v1/{{date}}/standings_division.json`](http://data.nba.net/data/10s/prod/v1/{{date}}/standings_division.json)
 
   - `standings`
-    + Endpoint: [`/data/10s/prod/v1/current/standings_all.json`](http://data.nba.net/data/10s/prod/v1/current/standings_all.json)
+    + Endpoint: [`/data/10s/prod/v1/{{date}}/standings_all.json`](http://data.nba.net/data/10s/prod/v1/{{date}}/standings_all.json)
 
   - `miniStandings`
-    + Endpoint: [`/data/10s/prod/v1/current/standings_all_no_sort_keys.json`](http://data.nba.net/data/10s/prod/v1/current/standings_all_no_sort_keys.json)
+    + Endpoint: [`/data/10s/prod/v1/{{date}}/standings_all_no_sort_keys.json`](http://data.nba.net/data/10s/prod/v1/{{date}}/standings_all_no_sort_keys.json)
 
   - `teamStatsLeaders`
     + Endpoint: [`/data/10s/prod/v1/{{year}}/team_stats_rankings.json`](http://data.nba.net/data/10s/prod/v1/{{year}}/team_stats_rankings.json)
@@ -148,7 +148,7 @@
 ### Parameter Reference
 
   - `date`
-    + `"YYYYMMDD"`
+    + `"YYYYMMDD"` (or `"current"` for the current date for every method but `scoreboard`)
 
   - `year`
     + `"YYYY"`

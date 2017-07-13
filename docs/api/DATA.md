@@ -148,7 +148,7 @@
 ### Parameter Reference
 
   - `date`
-    + `"YYYYMMDD"` (or `"current"` for the current date for all endpoints other than `scoreboard`)
+    + `"YYYYMMDD"` (or `"current"` for the current date for every method but `scoreboard`)
 
   - `year`
     + `"YYYY"`

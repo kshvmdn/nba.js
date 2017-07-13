@@ -30,22 +30,22 @@ export const LEAGUE_SCHEDULE = {
 
 export const LEAGUE_CONFERENCE_STANDINGS = {
   method: 'conferenceStandings',
-  endpoint: '/data/10s/prod/v1/current/standings_conference.json'
+  endpoint: '/data/10s/prod/v1/{{date}}/standings_conference.json'
 }
 
 export const LEAGUE_DIVISION_STANDINGS = {
   method: 'divisionStandings',
-  endpoint: '/data/10s/prod/v1/current/standings_division.json'
+  endpoint: '/data/10s/prod/v1/{{date}}/standings_division.json'
 }
 
 export const LEAGUE_UNGROUPED_STANDINGS = {
   method: 'standings',
-  endpoint: '/data/10s/prod/v1/current/standings_all.json'
+  endpoint: '/data/10s/prod/v1/{{date}}/standings_all.json'
 }
 
 export const LEAGUE_MINI_STANDINGS = {
   method: 'miniStandings',
-  endpoint: '/data/10s/prod/v1/current/standings_all_no_sort_keys.json'
+  endpoint: '/data/10s/prod/v1/{{date}}/standings_all_no_sort_keys.json'
 }
 
 export const LEAGUE_TEAM_STATS_LEADERS = {

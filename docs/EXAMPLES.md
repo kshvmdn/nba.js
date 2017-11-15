@@ -50,7 +50,7 @@
     ```
 
     ```js
-    nba.stats.allPlayers({ Season: '2014-2015' }, (err, res) => {
+    nba.stats.allPlayers({ Season: '2014-15' }, (err, res) => {
       if (err) {
         console.error(err);
         return;

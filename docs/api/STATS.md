@@ -40,6 +40,21 @@
       * `VsConference`
       * `VsDivision`
       * `Weight`
+
+  - `boxscoreSummary`
+    + Endpoint: [`/stats/boxscoresummaryv2`](http://stats.nba.com/stats/boxscoresummaryv2)
+    + Parameters:
+      * GameID
+
+  - `boxscoreTraditional`
+    + Endpoint: [`/stats/boxscoretraditionalv2`](http://stats.nba.com/stats/boxscoretraditionalv2)
+    + Parameters:
+      * `GameID`
+      * `EndPeriod`
+      * `EndRange`
+      * `RangeType`
+      * `StartPeriod`
+      * `StartRange`
     
   - `defenseHub`
     + Endpoint: [`/stats/defensehub`](http://stats.nba.com/stats/defensehub)
@@ -1077,6 +1092,9 @@
       * `'12'`
       * `'13'`
       * `'14'`
+  - `endRange`
+    + Possible values:
+      * `'0 - 2147483647'`
   - `gameDate`
     + Possible values:
       * `'MM/DD/YYYY'`
@@ -1211,6 +1229,11 @@
     + Possible values:
       * `'5'`
       * `'n'`
+  - `rangeType`
+    + Possible values:
+      * `'0'`
+      * `'1'`
+      * `'2'`
   - `scope`
     + Possible values:
       * `'S'`
@@ -1267,6 +1290,9 @@
       * `'12'`
       * `'13'`
       * `'14'`
+  - `startRange`
+    + Possible values:
+      * `'0 - 2147483647'`
   - `starterBench`
     + Possible values:
       * `null`

@@ -10,6 +10,7 @@ const DEFAULTS = {
   draftYear: null,
   dribbleRange: null,
   endPeriod: 14,
+  endRange: 28800,
   gameDate: '04/20/2015',
   gameID: null,
   gameScope: 'Season',
@@ -34,6 +35,7 @@ const DEFAULTS = {
   playerScope: 'All Players',
   playoffRound: '0',
   pointDiff: '5',
+  rangeType: 0,
   scope: 'S',
   season: '2015-16',
   seasonSegment: null,
@@ -43,6 +45,7 @@ const DEFAULTS = {
   shotDistRange: null,
   sorter: 'PTS',
   startPeriod: 1,
+  startRange: 0,
   starterBench: null,
   statCategory: 'PTS',
   statType: 'Traditional',
@@ -93,6 +96,29 @@ export const ASSIST_TRACKER = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division,
     Weight: DEFAULTS.weight
+  }
+}
+
+export const BOXSCORE_SUMMARY_V2 = {
+  method: 'boxscoreSummary',
+  endpoint: '/stats/boxscoresummaryv2',
+  defaults: {
+    GameID: DEFAULTS.gameID
+  }
+}
+
+export const BOXSCORE_TRADITIONAL_V2 = {
+  method: 'boxscoreTraditional',
+  endpoint: '/stats/boxscoretraditionalv2',
+  defaults: {
+    EndPeriod: DEFAULTS.endPeriod,
+    EndRange: DEFAULTS.endRange,
+    GameID: DEFAULTS.gameID,
+    RangeType: DEFAULTS.rangeType,
+    Season: DEFAULTS.season,
+    SeasonType: DEFAULTS.seasonType,
+    StartPeriod: DEFAULTS.startPeriod,
+    StartRange: DEFAULTS.startRange
   }
 }
 

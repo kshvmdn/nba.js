@@ -9,6 +9,7 @@ const DEFAULTS = {
   division: null,
   draftYear: null,
   dribbleRange: null,
+  endPeriod: 14,
   gameDate: '04/20/2015',
   gameID: null,
   gameScope: 'Season',
@@ -41,6 +42,7 @@ const DEFAULTS = {
   shotClockRange: null,
   shotDistRange: null,
   sorter: 'PTS',
+  startPeriod: 1,
   starterBench: null,
   statCategory: 'PTS',
   statType: 'Traditional',
@@ -221,6 +223,16 @@ export const LINEUPS = {
     TeamID: DEFAULTS.teamID,
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division
+  }
+}
+
+export const PLAY_BY_PLAY = {
+  method: 'playByPlay',
+  endpoint: '/stats/playbyplay',
+  defaults: {
+    GameID: DEFAULTS.gameID,
+    StartPeriod: DEFAULTS.startPeriod,
+    EndPeriod: DEFAULTS.endPeriod
   }
 }
 

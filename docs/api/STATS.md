@@ -143,6 +143,13 @@
       * `TeamID`
       * `VsConference`
       * `VsDivision`
+
+  - `playByPlay`
+    + Endpoint: [`/stats/playbyplay`](http://stats.nba.com/stats/playbyplay)
+    + Parameters:
+      * `GameID`
+      * `StartPeriod`
+      * `EndPeriod`
     
   - `playerAwards`
     + Endpoint: [`/stats/playerawards`](http://stats.nba.com/stats/playerawards)
@@ -1053,6 +1060,23 @@
       * `'2 Dribbles'`
       * `'3-6 Dribbles'`
       * `'7+ Dribbles'`
+  - `endPeriod`
+    + Possible values:
+      * `'0'`
+      * `'1'`
+      * `'2'`
+      * `'3'`
+      * `'4'`
+      * `'5'`
+      * `'6'`
+      * `'7'`
+      * `'8'`
+      * `'9'`
+      * `'10'`
+      * `'11'`
+      * `'12'`
+      * `'13'`
+      * `'14'`
   - `gameDate`
     + Possible values:
       * `'MM/DD/YYYY'`
@@ -1226,6 +1250,23 @@
   - `sorter`
     + Possible values:
       * `'PTS'`
+  - `startPeriod`
+    + Possible values:
+      * `'0'`
+      * `'1'`
+      * `'2'`
+      * `'3'`
+      * `'4'`
+      * `'5'`
+      * `'6'`
+      * `'7'`
+      * `'8'`
+      * `'9'`
+      * `'10'`
+      * `'11'`
+      * `'12'`
+      * `'13'`
+      * `'14'`
   - `starterBench`
     + Possible values:
       * `null`

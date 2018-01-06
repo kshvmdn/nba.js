@@ -99,7 +99,75 @@ export const ASSIST_TRACKER = {
   }
 }
 
-export const BOXSCORE_SUMMARY_V2 = {
+export const BOXSCORE_ADVANCED = {
+  method: 'boxscoreAdvanced',
+  endpoint: '/stats/boxscoreadvancedv2',
+  defaults: {
+    EndPeriod: DEFAULTS.endPeriod,
+    EndRange: DEFAULTS.endRange,
+    GameID: DEFAULTS.gameID,
+    RangeType: DEFAULTS.rangeType,
+    Season: DEFAULTS.season,
+    SeasonType: DEFAULTS.seasonType,
+    StartPeriod: DEFAULTS.startPeriod,
+    StartRange: DEFAULTS.startRange
+  }
+}
+
+export const BOXSCORE_FOUR_FACTORS = {
+  method: 'boxscoreFourFactors',
+  endpoint: '/stats/boxscorefourfactorsv2',
+  defaults: {
+    EndPeriod: DEFAULTS.endPeriod,
+    EndRange: DEFAULTS.endRange,
+    GameID: DEFAULTS.gameID,
+    RangeType: DEFAULTS.rangeType,
+    Season: DEFAULTS.season,
+    SeasonType: DEFAULTS.seasonType,
+    StartPeriod: DEFAULTS.startPeriod,
+    StartRange: DEFAULTS.startRange
+  }
+}
+
+export const BOXSCORE_HUSTLE_STATS = {
+  method: 'boxscoreHustleStats',
+  endpoint: '/stats/hustlestatsboxscore',
+  defaults: {
+    GameID: DEFAULTS.gameID
+  }
+}
+
+export const BOXSCORE_MISC = {
+  method: 'boxscoreMisc',
+  endpoint: '/stats/boxscoremiscv2',
+  defaults: {
+    EndPeriod: DEFAULTS.endPeriod,
+    EndRange: DEFAULTS.endRange,
+    GameID: DEFAULTS.gameID,
+    RangeType: DEFAULTS.rangeType,
+    Season: DEFAULTS.season,
+    SeasonType: DEFAULTS.seasonType,
+    StartPeriod: DEFAULTS.startPeriod,
+    StartRange: DEFAULTS.startRange
+  }
+}
+
+export const BOXSCORE_PLAYER_TRACKING = {
+  method: 'boxscorePlayerTracking',
+  endpoint: '/stats/boxscoreplayertrackv2',
+  defaults: {
+    EndPeriod: DEFAULTS.endPeriod,
+    EndRange: DEFAULTS.endRange,
+    GameID: DEFAULTS.gameID,
+    RangeType: DEFAULTS.rangeType,
+    Season: DEFAULTS.season,
+    SeasonType: DEFAULTS.seasonType,
+    StartPeriod: DEFAULTS.startPeriod,
+    StartRange: DEFAULTS.startRange
+  }
+}
+
+export const BOXSCORE_SUMMARY = {
   method: 'boxscoreSummary',
   endpoint: '/stats/boxscoresummaryv2',
   defaults: {
@@ -107,9 +175,24 @@ export const BOXSCORE_SUMMARY_V2 = {
   }
 }
 
-export const BOXSCORE_TRADITIONAL_V2 = {
+export const BOXSCORE_TRADITIONAL = {
   method: 'boxscoreTraditional',
   endpoint: '/stats/boxscoretraditionalv2',
+  defaults: {
+    EndPeriod: DEFAULTS.endPeriod,
+    EndRange: DEFAULTS.endRange,
+    GameID: DEFAULTS.gameID,
+    RangeType: DEFAULTS.rangeType,
+    Season: DEFAULTS.season,
+    SeasonType: DEFAULTS.seasonType,
+    StartPeriod: DEFAULTS.startPeriod,
+    StartRange: DEFAULTS.startRange
+  }
+}
+
+export const BOXSCORE_USAGE = {
+  method: 'boxscoreUsage',
+  endpoint: '/stats/boxscoreusagev2',
   defaults: {
     EndPeriod: DEFAULTS.endPeriod,
     EndRange: DEFAULTS.endRange,

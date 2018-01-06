@@ -8,7 +8,7 @@
       * `IsOnlyCurrentSeason`
       * `LeagueID`
       * `Season`
-    
+
   - `assistTracker`
     + Endpoint: [`/stats/assisttracker`](http://stats.nba.com/stats/assisttracker)
     + Parameters:
@@ -41,21 +41,88 @@
       * `VsDivision`
       * `Weight`
 
+  - `boxscoreAdvanced`
+    + Endpoint: [`/stats/boxscoreadvancedv2`](http://stats.nba.com/stats/boxscoreadvancedv2)
+    + Parameters:
+      * `EndPeriod`
+      * `EndRange`
+      * `GameID`
+      * `RangeType`
+      * `Season`
+      * `SeasonType`
+      * `StartPeriod`
+      * `StartRange`
+
+  - `boxscoreFourFactors`
+    + Endpoint: [`/stats/boxscorefourfactorsv2`](http://stats.nba.com/stats/boxscorefourfactorsv2)
+    + Parameters:
+      * `EndPeriod`
+      * `EndRange`
+      * `GameID`
+      * `RangeType`
+      * `Season`
+      * `SeasonType`
+      * `StartPeriod`
+      * `StartRange`
+
+  - `boxscoreHustleStats`
+    + Endpoint: [`/stats/hustlestatsboxscore`](http://stats.nba.com/stats/hustlestatsboxscore)
+    + Parameters:
+      * `GameID`
+
+  - `boxscoreMisc`
+    + Endpoint: [`/stats/boxscoremiscv2`](http://stats.nba.com/stats/boxscoremiscv2)
+    + Parameters:
+      * `EndPeriod`
+      * `EndRange`
+      * `GameID`
+      * `RangeType`
+      * `Season`
+      * `SeasonType`
+      * `StartPeriod`
+      * `StartRange`
+
+  - `boxscorePlayerTracking`
+    + Endpoint: [`/stats/boxscoreplayertrackv2`](http://stats.nba.com/stats/boxscoreplayertrackv2)
+    + Parameters:
+      * `EndPeriod`
+      * `EndRange`
+      * `GameID`
+      * `RangeType`
+      * `Season`
+      * `SeasonType`
+      * `StartPeriod`
+      * `StartRange`
+
   - `boxscoreSummary`
     + Endpoint: [`/stats/boxscoresummaryv2`](http://stats.nba.com/stats/boxscoresummaryv2)
     + Parameters:
-      * GameID
+      * `GameID`
 
   - `boxscoreTraditional`
     + Endpoint: [`/stats/boxscoretraditionalv2`](http://stats.nba.com/stats/boxscoretraditionalv2)
     + Parameters:
-      * `GameID`
       * `EndPeriod`
       * `EndRange`
+      * `GameID`
       * `RangeType`
+      * `Season`
+      * `SeasonType`
       * `StartPeriod`
       * `StartRange`
-    
+
+  - `boxscoreUsage`
+    + Endpoint: [`/stats/boxscoreusagev2`](http://stats.nba.com/stats/boxscoreusagev2)
+    + Parameters:
+      * `EndPeriod`
+      * `EndRange`
+      * `GameID`
+      * `RangeType`
+      * `Season`
+      * `SeasonType`
+      * `StartPeriod`
+      * `StartRange`
+
   - `defenseHub`
     + Endpoint: [`/stats/defensehub`](http://stats.nba.com/stats/defensehub)
     + Parameters:
@@ -65,13 +132,13 @@
       * `PlayerScope`
       * `Season`
       * `SeasonType`
-    
+
   - `draftCombine`
     + Endpoint: [`/stats/draftcombinestats`](http://stats.nba.com/stats/draftcombinestats)
     + Parameters:
       * `LeagueID`
       * `SeasonYear`
-    
+
   - `draftHistory`
     + Endpoint: [`/stats/drafthistory`](http://stats.nba.com/stats/drafthistory)
     + Parameters:
@@ -83,18 +150,18 @@
       * `Season`
       * `TeamID`
       * `TopX`
-    
+
   - `franchiseHistory`
     + Endpoint: [`/stats/franchisehistory`](http://stats.nba.com/stats/franchisehistory)
     + Parameters:
       * `LeagueID`
-    
+
   - `franchiseLeaders`
     + Endpoint: [`/stats/franchiseleaders`](http://stats.nba.com/stats/franchiseleaders)
     + Parameters:
       * `LeagueID`
       * `TeamID`
-    
+
   - `homepage`
     + Endpoint: [`/stats/homepagev2`](http://stats.nba.com/stats/homepagev2)
     + Parameters:
@@ -105,7 +172,7 @@
       * `Season`
       * `SeasonType`
       * `StatType`
-    
+
   - `leagueGamelog`
     + Endpoint: [`/stats/leaguegamelog`](http://stats.nba.com/stats/leaguegamelog)
     + Parameters:
@@ -118,7 +185,7 @@
       * `Season`
       * `SeasonType`
       * `Sorter`
-    
+
   - `leagueLeaders`
     + Endpoint: [`/stats/leagueleaders`](http://stats.nba.com/stats/leagueleaders)
     + Parameters:
@@ -128,7 +195,7 @@
       * `Season`
       * `SeasonType`
       * `StatCategory`
-    
+
   - `lineups`
     + Endpoint: [`/stats/leaguedashlineups`](http://stats.nba.com/stats/leaguedashlineups)
     + Parameters:
@@ -165,12 +232,12 @@
       * `GameID`
       * `StartPeriod`
       * `EndPeriod`
-    
+
   - `playerAwards`
     + Endpoint: [`/stats/playerawards`](http://stats.nba.com/stats/playerawards)
     + Parameters:
       * `PlayerID`
-    
+
   - `playerBioStats`
     + Endpoint: [`/stats/leaguedashplayerbiostats`](http://stats.nba.com/stats/leaguedashplayerbiostats)
     + Parameters:
@@ -205,7 +272,7 @@
       * `VsConference`
       * `VsDivision`
       * `Weight`
-    
+
   - `playerClutchStats`
     + Endpoint: [`/stats/leaguedashplayerclutch`](http://stats.nba.com/stats/leaguedashplayerclutch)
     + Parameters:
@@ -247,14 +314,14 @@
       * `VsConference`
       * `VsDivision`
       * `Weight`
-    
+
   - `playerCareerStats`
     + Endpoint: [`/stats/playercareerstats`](http://stats.nba.com/stats/playercareerstats)
     + Parameters:
       * `LeagueID`
       * `PerMode`
       * `PlayerID`
-    
+
   - `playerCompare`
     + Endpoint: [`/stats/playercompare`](http://stats.nba.com/stats/playercompare)
     + Parameters:
@@ -283,7 +350,7 @@
       * `VsConference`
       * `VsDivision`
       * `VsPlayerIDList`
-    
+
   - `playerDefenseStats`
     + Endpoint: [`/stats/leaguedashptdefend`](http://stats.nba.com/stats/leaguedashptdefend)
     + Parameters:
@@ -318,7 +385,7 @@
       * `VsConference`
       * `VsDivision`
       * `Weight`
-    
+
   - `playerGamelog`
     + Endpoint: [`/stats/playergamelog`](http://stats.nba.com/stats/playergamelog)
     + Parameters:
@@ -328,7 +395,7 @@
       * `PlayerID`
       * `Season`
       * `SeasonType`
-    
+
   - `playerGeneralStats`
     + Endpoint: [`/stats/leaguedashplayerstats`](http://stats.nba.com/stats/leaguedashplayerstats)
     + Parameters:
@@ -367,7 +434,7 @@
       * `VsConference`
       * `VsDivision`
       * `Weight`
-    
+
   - `playerHustleStats`
     + Endpoint: [`/stats/leaguehustlestatsplayer`](http://stats.nba.com/stats/leaguehustlestatsplayer)
     + Parameters:
@@ -396,7 +463,7 @@
       * `VsConference`
       * `VsDivision`
       * `Weight`
-    
+
   - `playerHustleStatsLeaders`
     + Endpoint: [`/stats/leaguehustlestatsplayerleaders`](http://stats.nba.com/stats/leaguehustlestatsplayerleaders)
     + Parameters:
@@ -425,13 +492,13 @@
       * `VsConference`
       * `VsDivision`
       * `Weight`
-    
+
   - `playerInfo`
     + Endpoint: [`/stats/commonplayerinfo`](http://stats.nba.com/stats/commonplayerinfo)
     + Parameters:
       * `LeagueID`
       * `PlayerID`
-    
+
   - `playerOpponentStats`
     + Endpoint: [`/stats/leagueplayerondetails`](http://stats.nba.com/stats/leagueplayerondetails)
     + Parameters:
@@ -456,14 +523,14 @@
       * `TeamID`
       * `VsConference`
       * `VsDivision`
-    
+
   - `playerProfile`
     + Endpoint: [`/stats/playerprofilev2`](http://stats.nba.com/stats/playerprofilev2)
     + Parameters:
       * `LeagueID`
       * `PerMode`
       * `PlayerID`
-    
+
   - `playerShotLocationStats`
     + Endpoint: [`/stats/leaguedashplayershotlocations`](http://stats.nba.com/stats/leaguedashplayershotlocations)
     + Parameters:
@@ -503,7 +570,7 @@
       * `VsConference`
       * `VsDivision`
       * `Weight`
-    
+
   - `playerShotStats`
     + Endpoint: [`/stats/leaguedashplayerptshot`](http://stats.nba.com/stats/leaguedashplayerptshot)
     + Parameters:
@@ -542,14 +609,14 @@
       * `VsConference`
       * `VsDivision`
       * `Weight`
-    
+
   - `scoreboard`
     + Endpoint: [`/stats/scoreboardV2`](http://stats.nba.com/stats/scoreboardV2)
     + Parameters:
       * `DayOffset`
       * `LeagueID`
       * `gameDate`
-    
+
   - `teamClutchStats`
     + Endpoint: [`/stats/leaguedashteamclutch`](http://stats.nba.com/stats/leaguedashteamclutch)
     + Parameters:
@@ -585,7 +652,7 @@
       * `TeamID`
       * `VsConference`
       * `VsDivision`
-    
+
   - `teamDefenseStats`
     + Endpoint: [`/stats/leaguedashptteamdefend`](http://stats.nba.com/stats/leaguedashptteamdefend)
     + Parameters:
@@ -610,12 +677,12 @@
       * `TeamID`
       * `VsConference`
       * `VsDivision`
-    
+
   - `teamDetails`
     + Endpoint: [`/stats/teamdetails`](http://stats.nba.com/stats/teamdetails)
     + Parameters:
       * `TeamID`
-    
+
   - `teamInfo`
     + Endpoint: [`/stats/teaminfocommon`](http://stats.nba.com/stats/teaminfocommon)
     + Parameters:
@@ -623,7 +690,7 @@
       * `Season`
       * `SeasonType`
       * `TeamID`
-    
+
   - `teamGamelog`
     + Endpoint: [`/stats/teamgamelog`](http://stats.nba.com/stats/teamgamelog)
     + Parameters:
@@ -633,7 +700,7 @@
       * `Season`
       * `SeasonType`
       * `TeamID`
-    
+
   - `teamGeneralStats`
     + Endpoint: [`/stats/leaguedashteamstats`](http://stats.nba.com/stats/leaguedashteamstats)
     + Parameters:
@@ -666,7 +733,7 @@
       * `TeamID`
       * `VsConference`
       * `VsDivision`
-    
+
   - `teamHustleStats`
     + Endpoint: [`/stats/leaguehustlestatsteam`](http://stats.nba.com/stats/leaguehustlestatsteam)
     + Parameters:
@@ -695,7 +762,7 @@
       * `VsConference`
       * `VsDivision`
       * `Weight`
-    
+
   - `teamHustleStatsLeaders`
     + Endpoint: [`/stats/leaguehustlestatsteamleaders`](http://stats.nba.com/stats/leaguehustlestatsteamleaders)
     + Parameters:
@@ -724,7 +791,7 @@
       * `VsConference`
       * `VsDivision`
       * `Weight`
-    
+
   - `teamLineups`
     + Endpoint: [`/stats/teamdashlineups`](http://stats.nba.com/stats/teamdashlineups)
     + Parameters:
@@ -753,7 +820,7 @@
       * `TeamID`
       * `VsConference`
       * `VsDivision`
-    
+
   - `teamOnOffCourtStats`
     + Endpoint: [`/stats/teamplayeronoffdetails`](http://stats.nba.com/stats/teamplayeronoffdetails)
     + Parameters:
@@ -779,7 +846,7 @@
       * `TeamID`
       * `VsConference`
       * `VsDivision`
-    
+
   - `teamPassTrackingStats`
     + Endpoint: [`/stats/teamdashptpass`](http://stats.nba.com/stats/teamdashptpass)
     + Parameters:
@@ -798,7 +865,7 @@
       * `TeamID`
       * `VsConference`
       * `VsDivision`
-    
+
   - `teamPlayers`
     + Endpoint: [`/stats/teamplayerdashboard`](http://stats.nba.com/stats/teamplayerdashboard)
     + Parameters:
@@ -825,7 +892,7 @@
       * `TeamID`
       * `VsConference`
       * `VsDivision`
-    
+
   - `teamReboundTrackingStats`
     + Endpoint: [`/stats/teamdashptreb`](http://stats.nba.com/stats/teamdashptreb)
     + Parameters:
@@ -846,14 +913,14 @@
       * `TeamID`
       * `VsConference`
       * `VsDivision`
-    
+
   - `teamRoster`
     + Endpoint: [`/stats/commonteamroster`](http://stats.nba.com/stats/commonteamroster)
     + Parameters:
       * `LeagueID`
       * `Season`
       * `TeamID`
-    
+
   - `teamShotLocationStats`
     + Endpoint: [`/stats/leaguedashteamshotlocations`](http://stats.nba.com/stats/leaguedashteamshotlocations)
     + Parameters:
@@ -887,7 +954,7 @@
       * `TeamID`
       * `VsConference`
       * `VsDivision`
-    
+
   - `teamShotStats`
     + Endpoint: [`/stats/leaguedashteamptshot`](http://stats.nba.com/stats/leaguedashteamptshot)
     + Parameters:
@@ -917,7 +984,7 @@
       * `TouchTimeRange`
       * `VsConference`
       * `VsDivision`
-    
+
   - `teamShotTrackingStats`
     + Endpoint: [`/stats/teamdashptshots`](http://stats.nba.com/stats/teamdashptshots)
     + Parameters:
@@ -938,7 +1005,7 @@
       * `TeamID`
       * `VsConference`
       * `VsDivision`
-    
+
   - `teamSplits`
     + Endpoint: [`/stats/teamdashboardbygeneralsplits`](http://stats.nba.com/stats/teamdashboardbygeneralsplits)
     + Parameters:
@@ -965,7 +1032,7 @@
       * `TeamID`
       * `VsConference`
       * `VsDivision`
-    
+
   - `teamYearlyStats`
     + Endpoint: [`/stats/teamyearbyyearstats`](http://stats.nba.com/stats/teamyearbyyearstats)
     + Parameters:
@@ -973,7 +1040,7 @@
       * `PerMode`
       * `SeasonType`
       * `TeamID`
-    
+
   - `trackingStats`
     + Endpoint: [`/stats/leaguedashptstats`](http://stats.nba.com/stats/leaguedashptstats)
     + Parameters:
@@ -1007,7 +1074,7 @@
       * `VsConference`
       * `VsDivision`
       * `Weight`
-  
+
 ### Parameter Reference
 
   - `aheadBehind`

@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.org/kshvmdn/nba.js.svg?branch=master)](https://travis-ci.org/kshvmdn/nba.js)
 [![Coverage Status](https://coveralls.io/repos/github/kshvmdn/nba.js/badge.svg?branch=master)](https://coveralls.io/github/kshvmdn/nba.js?branch=master)
 [![Dependency Status](https://img.shields.io/david/kshvmdn/nba.js.svg)](https://david-dm.org/kshvmdn/nba.js)
-![code style : standard](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 > A Node.js library for current and historical NBA stats, scores, and data.
 

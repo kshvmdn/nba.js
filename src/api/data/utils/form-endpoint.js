@@ -4,11 +4,11 @@
  * @param  {Object} params - Object of URL variables.
  * @return {string} Encoded endpoint.
  */
-export default function formEndpoint (endpoint, params = {}) {
+export default function formEndpoint(endpoint, params = {}) {
   Object.keys(params).forEach(k => {
     if (params.hasOwnProperty(k)) {
-      endpoint = endpoint.split(`{{${k}}}`).join(params[k])
+      endpoint = endpoint.split(`{{${k}}}`).join(params[k]);
     }
-  })
-  return endpoint
+  });
+  return endpoint;
 }

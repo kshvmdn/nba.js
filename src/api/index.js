@@ -1,4 +1,4 @@
-import data from './data'
-import stats from './stats'
+import data from "./data";
+import stats from "./stats";
 
-export default { data, stats }
+export default { data, stats };

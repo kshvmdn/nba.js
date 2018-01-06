@@ -1,11 +1,11 @@
-import { DEFAULTS as c } from './../constants'
+import { DEFAULTS as c } from "./../constants";
 
 /**
  * Endpoint runner wrapper.
  * @param {Function} worker - Worker function to be used
  * @return {Function} Request function
  */
-export function run (worker) {
+export function run(worker) {
   /**
    * Make request
    * @param {string} type - Endpoint name
@@ -15,13 +15,13 @@ export function run (worker) {
    */
   return (type, query, cb) => {
     if (!worker) {
-      return cb(new Error('Expected worker function.'))
+      return cb(new Error("Expected worker function."));
     }
 
     if (!c.hasOwnProperty(type)) {
-      return cb(new Error('Invalid endpoint type.'))
+      return cb(new Error("Invalid endpoint type."));
     }
 
-    return worker(c[type], query, cb)
-  }
+    return worker(c[type], query, cb);
+  };
 }

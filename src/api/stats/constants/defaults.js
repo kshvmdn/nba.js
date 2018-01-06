@@ -1,72 +1,72 @@
 const DEFAULTS = {
-  aheadBehind: 'Ahead or Behind',
+  aheadBehind: "Ahead or Behind",
   closeDefDistRange: null,
-  clutchTime: 'Last 5 Minutes',
+  clutchTime: "Last 5 Minutes",
   conference: null,
-  dayOffset: '0',
-  defenseCategory: 'Overall',
-  distanceRange: '5ft Range',
+  dayOffset: "0",
+  defenseCategory: "Overall",
+  distanceRange: "5ft Range",
   division: null,
   draftYear: null,
   dribbleRange: null,
   endPeriod: 14,
   endRange: 28800,
-  gameDate: '04/20/2015',
+  gameDate: "04/20/2015",
   gameID: null,
-  gameScope: 'Season',
+  gameScope: "Season",
   gameSegment: null,
-  generalRange: 'Overall',
-  graphStats: 'PTS',
+  generalRange: "Overall",
+  graphStats: "PTS",
   groupQuantity: 5,
   height: null,
-  lastNGames: '0',
-  leagueID: '00',
+  lastNGames: "0",
+  leagueID: "00",
   location: null,
-  measureType: 'Base',
-  month: '0',
-  optional: 'N',
+  measureType: "Base",
+  month: "0",
+  optional: "N",
   outcome: null,
-  period: '0',
-  perMode: 'PerGame',
-  ptMeasureType: 'CatchShoot',
-  playerID: '0',
-  playerOrTeam: 'Player',
+  period: "0",
+  perMode: "PerGame",
+  ptMeasureType: "CatchShoot",
+  playerID: "0",
+  playerOrTeam: "Player",
   playerPosition: null,
-  playerScope: 'All Players',
-  playoffRound: '0',
-  pointDiff: '5',
+  playerScope: "All Players",
+  playoffRound: "0",
+  pointDiff: "5",
   rangeType: 0,
-  scope: 'S',
-  season: '2015-16',
+  scope: "S",
+  season: "2015-16",
   seasonSegment: null,
-  seasonSingleYear: '2015',
-  seasonType: 'Regular Season',
+  seasonSingleYear: "2015",
+  seasonType: "Regular Season",
   shotClockRange: null,
   shotDistRange: null,
-  sorter: 'PTS',
+  sorter: "PTS",
   startPeriod: 1,
   startRange: 0,
   starterBench: null,
-  statCategory: 'PTS',
-  statType: 'Traditional',
-  teamID: '0',
+  statCategory: "PTS",
+  statType: "Traditional",
+  teamID: "0",
   touchTimeRange: null,
   weight: null
-}
+};
 
 export const ALL_PLAYERS = {
-  method: 'allPlayers',
-  endpoint: '/stats/commonallplayers',
+  method: "allPlayers",
+  endpoint: "/stats/commonallplayers",
   defaults: {
     IsOnlyCurrentSeason: 1,
     LeagueID: DEFAULTS.leagueID,
     Season: DEFAULTS.season
   }
-}
+};
 
 export const ASSIST_TRACKER = {
-  method: 'assistTracker',
-  endpoint: '/stats/assisttracker',
+  method: "assistTracker",
+  endpoint: "/stats/assisttracker",
   defaults: {
     College: null,
     Conference: DEFAULTS.conference,
@@ -97,11 +97,11 @@ export const ASSIST_TRACKER = {
     VsDivision: DEFAULTS.division,
     Weight: DEFAULTS.weight
   }
-}
+};
 
 export const BOXSCORE_ADVANCED = {
-  method: 'boxscoreAdvanced',
-  endpoint: '/stats/boxscoreadvancedv2',
+  method: "boxscoreAdvanced",
+  endpoint: "/stats/boxscoreadvancedv2",
   defaults: {
     EndPeriod: DEFAULTS.endPeriod,
     EndRange: DEFAULTS.endRange,
@@ -112,11 +112,11 @@ export const BOXSCORE_ADVANCED = {
     StartPeriod: DEFAULTS.startPeriod,
     StartRange: DEFAULTS.startRange
   }
-}
+};
 
 export const BOXSCORE_FOUR_FACTORS = {
-  method: 'boxscoreFourFactors',
-  endpoint: '/stats/boxscorefourfactorsv2',
+  method: "boxscoreFourFactors",
+  endpoint: "/stats/boxscorefourfactorsv2",
   defaults: {
     EndPeriod: DEFAULTS.endPeriod,
     EndRange: DEFAULTS.endRange,
@@ -127,19 +127,19 @@ export const BOXSCORE_FOUR_FACTORS = {
     StartPeriod: DEFAULTS.startPeriod,
     StartRange: DEFAULTS.startRange
   }
-}
+};
 
 export const BOXSCORE_HUSTLE_STATS = {
-  method: 'boxscoreHustleStats',
-  endpoint: '/stats/hustlestatsboxscore',
+  method: "boxscoreHustleStats",
+  endpoint: "/stats/hustlestatsboxscore",
   defaults: {
     GameID: DEFAULTS.gameID
   }
-}
+};
 
 export const BOXSCORE_MISC = {
-  method: 'boxscoreMisc',
-  endpoint: '/stats/boxscoremiscv2',
+  method: "boxscoreMisc",
+  endpoint: "/stats/boxscoremiscv2",
   defaults: {
     EndPeriod: DEFAULTS.endPeriod,
     EndRange: DEFAULTS.endRange,
@@ -150,11 +150,11 @@ export const BOXSCORE_MISC = {
     StartPeriod: DEFAULTS.startPeriod,
     StartRange: DEFAULTS.startRange
   }
-}
+};
 
 export const BOXSCORE_PLAYER_TRACKING = {
-  method: 'boxscorePlayerTracking',
-  endpoint: '/stats/boxscoreplayertrackv2',
+  method: "boxscorePlayerTracking",
+  endpoint: "/stats/boxscoreplayertrackv2",
   defaults: {
     EndPeriod: DEFAULTS.endPeriod,
     EndRange: DEFAULTS.endRange,
@@ -165,19 +165,19 @@ export const BOXSCORE_PLAYER_TRACKING = {
     StartPeriod: DEFAULTS.startPeriod,
     StartRange: DEFAULTS.startRange
   }
-}
+};
 
 export const BOXSCORE_SUMMARY = {
-  method: 'boxscoreSummary',
-  endpoint: '/stats/boxscoresummaryv2',
+  method: "boxscoreSummary",
+  endpoint: "/stats/boxscoresummaryv2",
   defaults: {
     GameID: DEFAULTS.gameID
   }
-}
+};
 
 export const BOXSCORE_TRADITIONAL = {
-  method: 'boxscoreTraditional',
-  endpoint: '/stats/boxscoretraditionalv2',
+  method: "boxscoreTraditional",
+  endpoint: "/stats/boxscoretraditionalv2",
   defaults: {
     EndPeriod: DEFAULTS.endPeriod,
     EndRange: DEFAULTS.endRange,
@@ -188,11 +188,11 @@ export const BOXSCORE_TRADITIONAL = {
     StartPeriod: DEFAULTS.startPeriod,
     StartRange: DEFAULTS.startRange
   }
-}
+};
 
 export const BOXSCORE_USAGE = {
-  method: 'boxscoreUsage',
-  endpoint: '/stats/boxscoreusagev2',
+  method: "boxscoreUsage",
+  endpoint: "/stats/boxscoreusagev2",
   defaults: {
     EndPeriod: DEFAULTS.endPeriod,
     EndRange: DEFAULTS.endRange,
@@ -203,11 +203,11 @@ export const BOXSCORE_USAGE = {
     StartPeriod: DEFAULTS.startPeriod,
     StartRange: DEFAULTS.startRange
   }
-}
+};
 
 export const DEFENSE_HUB = {
-  method: 'defenseHub',
-  endpoint: '/stats/defensehub',
+  method: "defenseHub",
+  endpoint: "/stats/defensehub",
   defaults: {
     GameScope: DEFAULTS.gameScope,
     LeagueID: DEFAULTS.leaugeID,
@@ -216,20 +216,20 @@ export const DEFENSE_HUB = {
     Season: DEFAULTS.season,
     SeasonType: DEFAULTS.seasonType
   }
-}
+};
 
 export const DRAFT_COMBINE = {
-  method: 'draftCombine',
-  endpoint: '/stats/draftcombinestats',
+  method: "draftCombine",
+  endpoint: "/stats/draftcombinestats",
   defaults: {
     LeagueID: DEFAULTS.leagueID,
     SeasonYear: DEFAULTS.season
   }
-}
+};
 
 export const DRAFT_HISTORY = {
-  method: 'draftHistory',
-  endpoint: '/stats/drafthistory',
+  method: "draftHistory",
+  endpoint: "/stats/drafthistory",
   defaults: {
     College: null,
     LeagueID: DEFAULTS.leagueID,
@@ -240,28 +240,28 @@ export const DRAFT_HISTORY = {
     TeamID: DEFAULTS.teamID,
     TopX: null
   }
-}
+};
 
 export const FRANCHISE_HISTORY = {
-  method: 'franchiseHistory',
-  endpoint: '/stats/franchisehistory',
+  method: "franchiseHistory",
+  endpoint: "/stats/franchisehistory",
   defaults: {
     LeagueID: DEFAULTS.leagueID
   }
-}
+};
 
 export const FRANCHISE_LEADERS = {
-  method: 'franchiseLeaders',
-  endpoint: '/stats/franchiseleaders',
+  method: "franchiseLeaders",
+  endpoint: "/stats/franchiseleaders",
   defaults: {
     LeagueID: DEFAULTS.leagueID,
     TeamID: DEFAULTS.teamID
   }
-}
+};
 
 export const HOMEPAGE = {
-  method: 'homepage',
-  endpoint: '/stats/homepagev2',
+  method: "homepage",
+  endpoint: "/stats/homepagev2",
   defaults: {
     GameScope: DEFAULTS.gameScope,
     LeagueID: DEFAULTS.leagueID,
@@ -271,27 +271,27 @@ export const HOMEPAGE = {
     SeasonType: DEFAULTS.seasonType,
     StatType: DEFAULTS.statType
   }
-}
+};
 
 export const LEAGUE_GAMELOG = {
-  method: 'leagueGamelog',
-  endpoint: '/stats/leaguegamelog',
+  method: "leagueGamelog",
+  endpoint: "/stats/leaguegamelog",
   defaults: {
-    Counter: '1000',
+    Counter: "1000",
     DateFrom: null,
     DateTo: null,
-    Direction: 'DESC',
+    Direction: "DESC",
     LeagueID: DEFAULTS.leagueID,
     PlayerOrTeam: DEFAULTS.playerOrTeam,
     Season: DEFAULTS.season,
     SeasonType: DEFAULTS.seasonType,
     Sorter: DEFAULTS.sorter
   }
-}
+};
 
 export const LEAGUE_LEADERS = {
-  method: 'leagueLeaders',
-  endpoint: '/stats/leagueleaders',
+  method: "leagueLeaders",
+  endpoint: "/stats/leagueleaders",
   defaults: {
     LeagueID: DEFAULTS.leagueID,
     PerMode: DEFAULTS.perMode,
@@ -300,11 +300,11 @@ export const LEAGUE_LEADERS = {
     SeasonType: DEFAULTS.seasonType,
     StatCategory: DEFAULTS.statCategory
   }
-}
+};
 
 export const LINEUPS = {
-  method: 'lineups',
-  endpoint: '/stats/leaguedashlineups',
+  method: "lineups",
+  endpoint: "/stats/leaguedashlineups",
   defaults: {
     Conference: DEFAULTS.conference,
     DateFrom: null,
@@ -333,29 +333,29 @@ export const LINEUPS = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division
   }
-}
+};
 
 export const PLAY_BY_PLAY = {
-  method: 'playByPlay',
-  endpoint: '/stats/playbyplay',
+  method: "playByPlay",
+  endpoint: "/stats/playbyplay",
   defaults: {
     GameID: DEFAULTS.gameID,
     StartPeriod: DEFAULTS.startPeriod,
     EndPeriod: DEFAULTS.endPeriod
   }
-}
+};
 
 export const PLAYER_AWARDS = {
-  method: 'playerAwards',
-  endpoint: '/stats/playerawards',
+  method: "playerAwards",
+  endpoint: "/stats/playerawards",
   defaults: {
     PlayerID: DEFAULTS.playerID
   }
-}
+};
 
 export const PLAYER_BIO_STATS = {
-  method: 'playerBioStats',
-  endpoint: '/stats/leaguedashplayerbiostats',
+  method: "playerBioStats",
+  endpoint: "/stats/leaguedashplayerbiostats",
   defaults: {
     College: null,
     Conference: DEFAULTS.conference,
@@ -389,11 +389,11 @@ export const PLAYER_BIO_STATS = {
     VsDivision: DEFAULTS.conference,
     Weight: DEFAULTS.weight
   }
-}
+};
 
 export const PLAYER_CLUTCH_STATS = {
-  method: 'playerClutchStats',
-  endpoint: '/stats/leaguedashplayerclutch',
+  method: "playerClutchStats",
+  endpoint: "/stats/leaguedashplayerclutch",
   defaults: {
     AheadBehind: DEFAULTS.aheadBehind,
     ClutchTime: DEFAULTS.clutchTime,
@@ -434,21 +434,21 @@ export const PLAYER_CLUTCH_STATS = {
     VsDivision: DEFAULTS.division,
     Weight: DEFAULTS.weight
   }
-}
+};
 
 export const PLAYER_CAREER_STATS = {
-  method: 'playerCareerStats',
-  endpoint: '/stats/playercareerstats',
+  method: "playerCareerStats",
+  endpoint: "/stats/playercareerstats",
   defaults: {
     LeagueID: DEFAULTS.leagueID,
     PerMode: DEFAULTS.perMode,
     PlayerID: DEFAULTS.playerID
   }
-}
+};
 
 export const PLAYER_COMPARE = {
-  method: 'playerCompare',
-  endpoint: '/stats/playercompare',
+  method: "playerCompare",
+  endpoint: "/stats/playercompare",
   defaults: {
     Conference: DEFAULTS.conference,
     DateFrom: null,
@@ -476,11 +476,11 @@ export const PLAYER_COMPARE = {
     VsDivision: DEFAULTS.division,
     VsPlayerIDList: DEFAULTS.playerID
   }
-}
+};
 
 export const PLAYER_DEFENSE_STATS = {
-  method: 'playerDefenseStats',
-  endpoint: '/stats/leaguedashptdefend',
+  method: "playerDefenseStats",
+  endpoint: "/stats/leaguedashptdefend",
   defaults: {
     College: null,
     Conference: DEFAULTS.conference,
@@ -514,11 +514,11 @@ export const PLAYER_DEFENSE_STATS = {
     VsDivision: DEFAULTS.division,
     Weight: DEFAULTS.weight
   }
-}
+};
 
 export const PLAYER_GAMELOG = {
-  method: 'playerGamelog',
-  endpoint: '/stats/playergamelog',
+  method: "playerGamelog",
+  endpoint: "/stats/playergamelog",
   defaults: {
     DateFrom: null,
     DateTo: null,
@@ -527,11 +527,11 @@ export const PLAYER_GAMELOG = {
     Season: DEFAULTS.season,
     SeasonType: DEFAULTS.seasonType
   }
-}
+};
 
 export const PLAYER_GENERAL_STATS = {
-  method: 'playerGeneralStats',
-  endpoint: '/stats/leaguedashplayerstats',
+  method: "playerGeneralStats",
+  endpoint: "/stats/leaguedashplayerstats",
   defaults: {
     College: null,
     Conference: DEFAULTS.conference,
@@ -569,11 +569,11 @@ export const PLAYER_GENERAL_STATS = {
     VsDivision: DEFAULTS.division,
     Weight: DEFAULTS.weight
   }
-}
+};
 
 export const PLAYER_HUSTLE_STATS = {
-  method: 'playerHustleStats',
-  endpoint: '/stats/leaguehustlestatsplayer',
+  method: "playerHustleStats",
+  endpoint: "/stats/leaguehustlestatsplayer",
   defaults: {
     College: null,
     Conference: DEFAULTS.conference,
@@ -601,11 +601,11 @@ export const PLAYER_HUSTLE_STATS = {
     VsDivision: DEFAULTS.division,
     Weight: DEFAULTS.weight
   }
-}
+};
 
 export const PLAYER_HUSTLE_STATS_LEADERS = {
-  method: 'playerHustleStatsLeaders',
-  endpoint: '/stats/leaguehustlestatsplayerleaders',
+  method: "playerHustleStatsLeaders",
+  endpoint: "/stats/leaguehustlestatsplayerleaders",
   defaults: {
     College: null,
     Conference: DEFAULTS.conference,
@@ -633,20 +633,20 @@ export const PLAYER_HUSTLE_STATS_LEADERS = {
     VsDivision: DEFAULTS.division,
     Weight: DEFAULTS.weight
   }
-}
+};
 
 export const PLAYER_INFO = {
-  method: 'playerInfo',
-  endpoint: '/stats/commonplayerinfo',
+  method: "playerInfo",
+  endpoint: "/stats/commonplayerinfo",
   defaults: {
     LeagueID: DEFAULTS.leagueID,
     PlayerID: DEFAULTS.playerID
   }
-}
+};
 
 export const PLAYER_OPPONENT_STATS = {
-  method: 'playerOpponentStats',
-  endpoint: '/stats/leagueplayerondetails',
+  method: "playerOpponentStats",
+  endpoint: "/stats/leagueplayerondetails",
   defaults: {
     DateFrom: null,
     DateTo: null,
@@ -670,21 +670,21 @@ export const PLAYER_OPPONENT_STATS = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division
   }
-}
+};
 
 export const PLAYER_PROFILE = {
-  method: 'playerProfile',
-  endpoint: '/stats/playerprofilev2',
+  method: "playerProfile",
+  endpoint: "/stats/playerprofilev2",
   defaults: {
     LeagueID: DEFAULTS.leagueID,
     PerMode: DEFAULTS.perMode,
     PlayerID: DEFAULTS.playerID
   }
-}
+};
 
 export const PLAYER_SHOT_LOCATION_STATS = {
-  method: 'playerShotLocationStats',
-  endpoint: '/stats/leaguedashplayershotlocations',
+  method: "playerShotLocationStats",
+  endpoint: "/stats/leaguedashplayershotlocations",
   defaults: {
     College: null,
     Conference: DEFAULTS.conference,
@@ -723,11 +723,11 @@ export const PLAYER_SHOT_LOCATION_STATS = {
     VsDivision: DEFAULTS.division,
     Weight: DEFAULTS.weight
   }
-}
+};
 
 export const PLAYER_SHOT_STATS = {
-  method: 'playerShotStats',
-  endpoint: '/stats/leaguedashplayerptshot',
+  method: "playerShotStats",
+  endpoint: "/stats/leaguedashplayerptshot",
   defaults: {
     CloseDefDistRange: DEFAULTS.closeDefDistRange,
     College: null,
@@ -765,21 +765,21 @@ export const PLAYER_SHOT_STATS = {
     VsDivision: DEFAULTS.division,
     Weight: DEFAULTS.weight
   }
-}
+};
 
 export const SCOREBOARD = {
-  method: 'scoreboard',
-  endpoint: '/stats/scoreboardV2',
+  method: "scoreboard",
+  endpoint: "/stats/scoreboardV2",
   defaults: {
     DayOffset: DEFAULTS.dayOffset,
     LeagueID: DEFAULTS.leagueID,
     gameDate: DEFAULTS.gameDate
   }
-}
+};
 
 export const TEAM_CLUTCH_STATS = {
-  method: 'teamClutchStats',
-  endpoint: '/stats/leaguedashteamclutch',
+  method: "teamClutchStats",
+  endpoint: "/stats/leaguedashteamclutch",
   defaults: {
     AheadBehind: DEFAULTS.aheadOrBehind,
     ClutchTime: DEFAULTS.clutchTime,
@@ -814,11 +814,11 @@ export const TEAM_CLUTCH_STATS = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division
   }
-}
+};
 
 export const TEAM_DEFENSE_STATS = {
-  method: 'teamDefenseStats',
-  endpoint: '/stats/leaguedashptteamdefend',
+  method: "teamDefenseStats",
+  endpoint: "/stats/leaguedashptteamdefend",
   defaults: {
     Conference: DEFAULTS.conference,
     DateFrom: null,
@@ -842,30 +842,30 @@ export const TEAM_DEFENSE_STATS = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division
   }
-}
+};
 
 export const TEAM_DETAILS = {
-  method: 'teamDetails',
-  endpoint: '/stats/teamdetails',
+  method: "teamDetails",
+  endpoint: "/stats/teamdetails",
   defaults: {
     TeamID: DEFAULTS.teamID
   }
-}
+};
 
 export const TEAM_INFO = {
-  method: 'teamInfo',
-  endpoint: '/stats/teaminfocommon',
+  method: "teamInfo",
+  endpoint: "/stats/teaminfocommon",
   defaults: {
     LeagueID: DEFAULTS.leagueID,
     Season: DEFAULTS.season,
     SeasonType: DEFAULTS.seasonType,
     TeamID: DEFAULTS.teamID
   }
-}
+};
 
 export const TEAM_GAMELOG = {
-  method: 'teamGamelog',
-  endpoint: '/stats/teamgamelog',
+  method: "teamGamelog",
+  endpoint: "/stats/teamgamelog",
   defaults: {
     DateFrom: null,
     DateTo: null,
@@ -874,11 +874,11 @@ export const TEAM_GAMELOG = {
     SeasonType: DEFAULTS.seasonType,
     TeamID: DEFAULTS.teamID
   }
-}
+};
 
 export const TEAM_GENERAL_STATS = {
-  method: 'teamGeneralStats',
-  endpoint: '/stats/leaguedashteamstats',
+  method: "teamGeneralStats",
+  endpoint: "/stats/leaguedashteamstats",
   defaults: {
     Conference: DEFAULTS.conference,
     DateFrom: null,
@@ -910,11 +910,11 @@ export const TEAM_GENERAL_STATS = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division
   }
-}
+};
 
 export const TEAM_HUSTLE_STATS = {
-  method: 'teamHustleStats',
-  endpoint: '/stats/leaguehustlestatsteam',
+  method: "teamHustleStats",
+  endpoint: "/stats/leaguehustlestatsteam",
   defaults: {
     College: null,
     Conference: DEFAULTS.conference,
@@ -942,11 +942,11 @@ export const TEAM_HUSTLE_STATS = {
     VsDivision: DEFAULTS.division,
     Weight: DEFAULTS.weight
   }
-}
+};
 
 export const TEAM_HUSTLE_STATS_LEADERS = {
-  method: 'teamHustleStatsLeaders',
-  endpoint: '/stats/leaguehustlestatsteamleaders',
+  method: "teamHustleStatsLeaders",
+  endpoint: "/stats/leaguehustlestatsteamleaders",
   defaults: {
     College: null,
     Conference: DEFAULTS.conference,
@@ -974,11 +974,11 @@ export const TEAM_HUSTLE_STATS_LEADERS = {
     VsDivision: DEFAULTS.division,
     Weight: DEFAULTS.weight
   }
-}
+};
 
 export const TEAM_LINEUPS = {
-  method: 'teamLineups',
-  endpoint: '/stats/teamdashlineups',
+  method: "teamLineups",
+  endpoint: "/stats/teamdashlineups",
   defaults: {
     DateFrom: null,
     DateTo: null,
@@ -1006,11 +1006,11 @@ export const TEAM_LINEUPS = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division
   }
-}
+};
 
 export const TEAM_ON_OFF_COURT = {
-  method: 'teamOnOffCourtStats',
-  endpoint: '/stats/teamplayeronoffdetails',
+  method: "teamOnOffCourtStats",
+  endpoint: "/stats/teamplayeronoffdetails",
   defaults: {
     DateFrom: null,
     DateTo: null,
@@ -1035,11 +1035,11 @@ export const TEAM_ON_OFF_COURT = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division
   }
-}
+};
 
 export const TEAM_PASS_TRACKING_STATS = {
-  method: 'teamPassTrackingStats',
-  endpoint: '/stats/teamdashptpass',
+  method: "teamPassTrackingStats",
+  endpoint: "/stats/teamdashptpass",
   defaults: {
     DateFrom: null,
     DateTo: null,
@@ -1057,11 +1057,11 @@ export const TEAM_PASS_TRACKING_STATS = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division
   }
-}
+};
 
 export const TEAM_PLAYERS = {
-  method: 'teamPlayers',
-  endpoint: '/stats/teamplayerdashboard',
+  method: "teamPlayers",
+  endpoint: "/stats/teamplayerdashboard",
   defaults: {
     DateFrom: null,
     DateTo: null,
@@ -1087,11 +1087,11 @@ export const TEAM_PLAYERS = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division
   }
-}
+};
 
 export const TEAM_REB_TRACKING_STATS = {
-  method: 'teamReboundTrackingStats',
-  endpoint: '/stats/teamdashptreb',
+  method: "teamReboundTrackingStats",
+  endpoint: "/stats/teamdashptreb",
   defaults: {
     DateFrom: null,
     DateTo: null,
@@ -1111,21 +1111,21 @@ export const TEAM_REB_TRACKING_STATS = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division
   }
-}
+};
 
 export const TEAM_ROSTER = {
-  method: 'teamRoster',
-  endpoint: '/stats/commonteamroster',
+  method: "teamRoster",
+  endpoint: "/stats/commonteamroster",
   defaults: {
     LeagueID: DEFAULTS.leagueID,
     Season: DEFAULTS.season,
     TeamID: DEFAULTS.teamID
   }
-}
+};
 
 export const TEAM_SHOT_LOCATION_STATS = {
-  method: 'teamShotLocationStats',
-  endpoint: '/stats/leaguedashteamshotlocations',
+  method: "teamShotLocationStats",
+  endpoint: "/stats/leaguedashteamshotlocations",
   defaults: {
     Conference: DEFAULTS.conference,
     DateFrom: null,
@@ -1158,11 +1158,11 @@ export const TEAM_SHOT_LOCATION_STATS = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division
   }
-}
+};
 
 export const TEAM_SHOT_STATS = {
-  method: 'teamShotStats',
-  endpoint: '/stats/leaguedashteamptshot',
+  method: "teamShotStats",
+  endpoint: "/stats/leaguedashteamptshot",
   defaults: {
     CloseDefDistRange: DEFAULTS.closeDefDistRange,
     Conference: DEFAULTS.conference,
@@ -1191,11 +1191,11 @@ export const TEAM_SHOT_STATS = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division
   }
-}
+};
 
 export const TEAM_SHOT_TRACKING_STATS = {
-  method: 'teamShotTrackingStats',
-  endpoint: '/stats/teamdashptshots',
+  method: "teamShotTrackingStats",
+  endpoint: "/stats/teamdashptshots",
   defaults: {
     DateFrom: null,
     DateTo: null,
@@ -1215,11 +1215,11 @@ export const TEAM_SHOT_TRACKING_STATS = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division
   }
-}
+};
 
 export const TEAM_SPLITS = {
-  method: 'teamSplits',
-  endpoint: '/stats/teamdashboardbygeneralsplits',
+  method: "teamSplits",
+  endpoint: "/stats/teamdashboardbygeneralsplits",
   defaults: {
     DateFrom: null,
     DateTo: null,
@@ -1245,22 +1245,22 @@ export const TEAM_SPLITS = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division
   }
-}
+};
 
 export const TEAM_YEARLY_STATS = {
-  method: 'teamYearlyStats',
-  endpoint: '/stats/teamyearbyyearstats',
+  method: "teamYearlyStats",
+  endpoint: "/stats/teamyearbyyearstats",
   defaults: {
     LeagueID: DEFAULTS.leagueID,
     PerMode: DEFAULTS.perMode,
     SeasonType: DEFAULTS.seasonType,
     TeamID: DEFAULTS.teamID
   }
-}
+};
 
 export const TRACKING_STATS = {
-  method: 'trackingStats',
-  endpoint: '/stats/leaguedashptstats',
+  method: "trackingStats",
+  endpoint: "/stats/leaguedashptstats",
   defaults: {
     College: null,
     Conference: DEFAULTS.conference,
@@ -1293,4 +1293,4 @@ export const TRACKING_STATS = {
     VsDivision: DEFAULTS.division,
     Weight: DEFAULTS.weight
   }
-}
+};

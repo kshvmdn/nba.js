@@ -37,7 +37,7 @@ const DEFAULTS = {
   pointDiff: "5",
   rangeType: 0,
   scope: "S",
-  season: "2015-16",
+  season: "2017-18",
   seasonSegment: null,
   seasonSingleYear: "2015",
   seasonType: "Regular Season",
@@ -1292,5 +1292,15 @@ export const TRACKING_STATS = {
     VsConference: DEFAULTS.conference,
     VsDivision: DEFAULTS.division,
     Weight: DEFAULTS.weight
+  }
+};
+
+export const LEAGUE_STANDINGS = {
+  method: "leagueStandings",
+  endpoint: "/stats/leaguestandingsv3",
+  defaults: {
+    LeagueID: DEFAULTS.leagueID,
+    SeasonType: DEFAULTS.seasonType,
+    Season: DEFAULTS.season
   }
 };

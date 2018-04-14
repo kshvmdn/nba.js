@@ -199,6 +199,12 @@
     * `year`
     * `teamName`
 
+* `teamStatsRankings`
+  * Endpoint:
+    [`/data/10s/prod/v1/{{year}}/team_stats_rankings.json`](https://data.nba.net/data/10s/prod/v1/{{year}}/team_stats_rankings.json)
+  * Parameters:
+    * `year`
+
 ### Parameter Reference
 
 * `date`

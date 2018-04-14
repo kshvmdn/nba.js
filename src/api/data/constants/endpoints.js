@@ -132,3 +132,8 @@ export const TEAM_LEADERS = {
   method: "teamLeaders",
   endpoint: "/data/10s/prod/v1/{{year}}/teams/{{teamName}}/leaders.json"
 };
+
+export const TEAM_STATS_RANKINGS = {
+  method: "teamStatsRankings",
+  endpoint: "/data/10s/prod/v1/{{year}}/team_stats_rankings.json"
+};

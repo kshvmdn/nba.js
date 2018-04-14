@@ -154,6 +154,12 @@
     * `year`
     * `personId`
 
+* `playoffsBracket`
+  * Endpoint:
+    [`/data/10s/prod/v1/{{year}}/playoffsBracket.json`](https://data.nba.net/data/10s/prod/v1/{{year}}/playoffsBracket.json)
+  * Parameters:
+    * `year`
+
 * `teamSchedule`
 
   * Endpoint:

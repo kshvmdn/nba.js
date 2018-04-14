@@ -103,6 +103,11 @@ export const PLAYER_UBER_STATS = {
   endpoint: "/data/10s/prod/v1/{{year}}/players/{{personId}}_uber_stats.json"
 };
 
+export const PLAYOFFS_BRACKET = {
+  method: "playoffsBracket",
+  endpoint: "/data/10s/prod/v1/{{year}}/playoffsBracket.json"
+};
+
 export const TEAM_SCHEDULE = {
   method: "teamSchedule",
   endpoint: "/data/10s/prod/v1/{{year}}/teams/{{teamName}}/schedule.json"
